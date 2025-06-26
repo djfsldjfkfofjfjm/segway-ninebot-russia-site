@@ -521,11 +521,13 @@ document.addEventListener('DOMContentLoaded', function() {
             video.setAttribute('autoplay', '');
             video.setAttribute('playsinline', '');
             video.setAttribute('webkit-playsinline', '');
-            
+            video.setAttribute('preload', 'auto');
+
             // Устанавливаем правильные булевые значения
             video.muted = true;
             video.autoplay = true;
             video.playsinline = true;
+            video.preload = 'auto';
             
             if (video.hasAttribute('loop')) {
                 video.setAttribute('loop', '');
@@ -608,10 +610,22 @@ document.addEventListener('DOMContentLoaded', function() {
         });
     });
     
-    observer.observe(document.body, { 
-        childList: true, 
-        subtree: true 
+    observer.observe(document.body, {
+        childList: true,
+        subtree: true
     });
+
+    // Автовоспроизведение при появлении видео в зоне видимости
+    const visibilityObserver = new IntersectionObserver(entries => {
+        entries.forEach(entry => {
+            if (entry.isIntersecting) {
+                const vid = entry.target;
+                vid.play().catch(e => console.log('play error:', e));
+            }
+        });
+    }, { threshold: 0.5 });
+
+    document.querySelectorAll('video').forEach(v => visibilityObserver.observe(v));
 });
 
 // Специальная обработка для iOS Safari
