@@ -447,6 +447,56 @@ video[x5-video-player-type] {
     width: 100% !important;
     height: auto !important;
 }
+
+/* Критическое исправление для видео на мобильных устройствах */
+@media screen and (max-width: 1023px) {
+    /* Показываем все видео элементы */
+    video {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Переопределяем скрытие для специфичных классов */
+    .home-banner_mobile_hidden {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Исправляем для home-brand-module */
+    .home-brand-module_wrapper video,
+    .home-brand-module-swiper video,
+    .home-brand-module-swiper_m video {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Убеждаемся что segway-mobile видео показываются */
+    .segway-mobile video,
+    video.segway-mobile {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Исправляем для всех segway-img100 видео */
+    video.segway-img100,
+    .segway-img100 video {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+    
+    /* Переопределяем все возможные скрытия */
+    .home-brand-module_pc video[class*="hidden"],
+    .home-brand-module_wrapper video[class*="hidden"] {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+    }
+}
 </style>
 
 <script>
@@ -491,6 +541,11 @@ document.addEventListener('DOMContentLoaded', function() {
         videos.forEach(video => {
             // ВАЖНО: Удаляем класс, который скрывает видео
             video.classList.remove('home-banner_mobile_hidden');
+            
+            // Добавляем класс для мобильных если нужно
+            if (window.innerWidth <= 1023 && !video.classList.contains('segway-mobile')) {
+                video.classList.add('segway-mobile');
+            }
             
             // Полностью очищаем все inline стили
             video.removeAttribute('style');

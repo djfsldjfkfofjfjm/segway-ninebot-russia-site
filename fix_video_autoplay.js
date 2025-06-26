@@ -10,7 +10,7 @@ document.addEventListener('DOMContentLoaded', function() {
             const sources = video.querySelectorAll('source');
             sources.forEach(function(source) {
                 // Убеждаемся что у источника есть src
-                if (\!source.src && source.dataset.src) {
+                if (!source.src && source.dataset.src) {
                     source.src = source.dataset.src;
                 }
             });
