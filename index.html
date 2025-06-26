@@ -505,30 +505,36 @@ video[x5-video-player-type] {
     }
 }
 
-/* Исправление ТОЛЬКО для видео элементов на мобильных устройствах */
+/* КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ ВИДЕО НА МОБИЛЬНЫХ */
 @media screen and (max-width: 1023px) {
-    /* Показываем видео с классом segway-mobile */
-    video.segway-mobile {
+    /* ПОКАЗЫВАЕМ ВСЕ ВИДЕО БЕЗ ИСКЛЮЧЕНИЙ */
+    video {
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
+        width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Убираем класс home-banner_mobile_hidden */
+    .home-banner_mobile_hidden {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
     
-    /* Удаляем скрытие с видео элементов */
-    video.home-banner_mobile_hidden {
+    /* Форсируем показ мобильной карусели */
+    .home-brand-module-swiper_m {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
     
-    /* Исправляем видео в каруселях */
-    .home-brand-module_wrapper video,
-    .home-brand-module-swiper video,
-    .home-brand-module-swiper_m video {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+    /* Скрываем десктопную карусель */
+    .home-brand-module_pc {
+        display: none !important;
     }
+    
 }
 </style>
 
@@ -613,21 +619,22 @@ document.addEventListener('DOMContentLoaded', function() {
             
             // Для мобильных устройств
             if (window.innerWidth <= 1023) {
+                // ВСЕГДА показываем контролы на мобильных
+                video.controls = true;
+                
                 // Перезагружаем видео
                 video.load();
                 
                 // Пытаемся запустить воспроизведение
                 const playPromise = video.play();
                 if (playPromise !== undefined) {
-                    playPromise.catch(error => {
+                    playPromise.then(() => {
+                        // Если автовоспроизведение работает, убираем контролы
+                        video.controls = false;
+                    }).catch(error => {
                         console.log('Автовоспроизведение заблокировано:', error);
-                        // На iOS показываем кнопку play вместо контролов
-                        if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-                            video.controls = false;
-                            video.setAttribute('poster', video.getAttribute('poster') || '');
-                        } else {
-                            video.controls = true;
-                        }
+                        // Оставляем контролы, чтобы пользователь мог запустить вручную
+                        video.controls = true;
                     });
                 }
             }

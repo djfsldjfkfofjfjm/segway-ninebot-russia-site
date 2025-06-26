@@ -23,6 +23,25 @@ document.addEventListener('DOMContentLoaded', function() {
             video.style.visibility = 'visible';
             video.style.opacity = '1';
             
+            // Добавляем контролы для мобильных
+            if (window.innerWidth <= 1023) {
+                video.controls = true;
+                
+                // Перезагружаем и пытаемся воспроизвести
+                video.load();
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        // Если автовоспроизведение работает, убираем контролы
+                        video.controls = false;
+                    }).catch(error => {
+                        // Оставляем контролы для ручного запуска
+                        video.controls = true;
+                        console.log('Видео требует ручного запуска');
+                    });
+                }
+            }
+            
             // НЕ трогаем родительские элементы, работаем только с видео
         });
         
@@ -43,8 +62,21 @@ document.addEventListener('DOMContentLoaded', function() {
                     }
                 });
                 
+                // Добавляем контролы
+                video.controls = true;
+                
                 // Перезагружаем видео
                 video.load();
+                
+                // Пытаемся воспроизвести
+                const playPromise = video.play();
+                if (playPromise !== undefined) {
+                    playPromise.then(() => {
+                        video.controls = false;
+                    }).catch(() => {
+                        video.controls = true;
+                    });
+                }
             });
         }
     }
