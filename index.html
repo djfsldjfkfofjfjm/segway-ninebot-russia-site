@@ -491,10 +491,18 @@ video[x5-video-player-type] {
         height: auto !important;
     }
     
-    /* УБИРАЕМ ВСЕ ПАДИНГИ У КОНТЕНТА */
+    /* Правильное позиционирование контента */
     .home-primary-banner .banner-content-wrapper {
         padding-bottom: 60px !important;
-        height: auto !important;
+        height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: flex-end !important;
+    }
+    
+    /* Дополнительный отступ для кнопок, чтобы не наезжали на пагинацию */
+    .home-primary-banner .home-banner_btns {
+        margin-bottom: 10px !important;
     }
 }
 
