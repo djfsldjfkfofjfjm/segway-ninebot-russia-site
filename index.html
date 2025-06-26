@@ -415,10 +415,12 @@ p,
 }
 
 /* ИСПРАВЛЕНИЯ ДЛЯ ВИДЕО НА МОБИЛЬНЫХ УСТРОЙСТВАХ */
-/* Убираем скрытие видео на мобильных */
+/* Показываем видео на мобильных вместо скрытия */
 @media screen and (max-width: 1023px) {
     .home-banner_mobile_hidden {
-        display: none !important;
+        display: block !important;
+        visibility: visible !important;
+        opacity: 1 !important;
     }
     
     /* Показываем мобильные видео */
@@ -508,81 +510,113 @@ document.addEventListener('DOMContentLoaded', function() {
         const videos = document.querySelectorAll('video');
         
         videos.forEach(video => {
-            // Исправляем атрибуты
-            if (video.hasAttribute('muted')) {
-                video.muted = true;
-                video.setAttribute('muted', '');
-            }
+            // ВАЖНО: Удаляем класс, который скрывает видео
+            video.classList.remove('home-banner_mobile_hidden');
             
-            if (video.hasAttribute('autoplay')) {
-                video.autoplay = true;
-                video.setAttribute('autoplay', '');
-            }
+            // Полностью очищаем все inline стили
+            video.removeAttribute('style');
+            
+            // Исправляем формат атрибутов для iOS
+            video.setAttribute('muted', '');
+            video.setAttribute('autoplay', '');
+            video.setAttribute('playsinline', '');
+            video.setAttribute('webkit-playsinline', '');
+            
+            // Устанавливаем правильные булевые значения
+            video.muted = true;
+            video.autoplay = true;
+            video.playsinline = true;
             
             if (video.hasAttribute('loop')) {
-                video.loop = true;
                 video.setAttribute('loop', '');
+                video.loop = true;
             }
             
-            // Убираем проблемные атрибуты
+            // Убираем проблемные атрибуты Android
             video.removeAttribute('x5-video-player-type');
             video.removeAttribute('x5-video-player-fullscreen');
             
-            // Добавляем/исправляем необходимые атрибуты
-            video.setAttribute('playsinline', '');
-            video.setAttribute('webkit-playsinline', '');
+            // Добавляем поддержку AirPlay
             video.setAttribute('x-webkit-airplay', 'allow');
             
-            // Убираем transform scale
-            if (video.style.transform && video.style.transform.includes('scale')) {
-                video.style.transform = '';
-            }
-            
-            // Убираем display: none если есть
-            if (video.style.display === 'none' || 
-                window.getComputedStyle(video).display === 'none') {
-                video.style.display = 'block';
-            }
+            // Обеспечиваем видимость
+            video.style.display = 'block';
+            video.style.visibility = 'visible';
+            video.style.opacity = '1';
             
             // Для мобильных устройств
             if (window.innerWidth <= 1023) {
-                // Перезапускаем видео
+                // Перезагружаем видео
                 video.load();
                 
                 // Пытаемся запустить воспроизведение
                 const playPromise = video.play();
                 if (playPromise !== undefined) {
                     playPromise.catch(error => {
-                        // Если автовоспроизведение заблокировано, показываем контролы
                         console.log('Автовоспроизведение заблокировано:', error);
-                        video.controls = true;
+                        // На iOS показываем кнопку play вместо контролов
+                        if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+                            video.controls = false;
+                            video.setAttribute('poster', video.getAttribute('poster') || '');
+                        } else {
+                            video.controls = true;
+                        }
                     });
                 }
             }
         });
     }
     
-    // Запускаем исправления
+    // Запускаем исправления сразу
     fixVideoAttributes();
     
-    // Повторяем через 1 секунду для динамически загруженных видео
-    setTimeout(fixVideoAttributes, 1000);
+    // Повторяем через 500мс и 1.5с для динамического контента
+    setTimeout(fixVideoAttributes, 500);
+    setTimeout(fixVideoAttributes, 1500);
     
-    // Обработчик для Swiper (карусель)
-    if (typeof Swiper !== 'undefined') {
-        const swiperContainers = document.querySelectorAll('.swiper-container');
+    // Обработчик для Swiper каруселей
+    function attachSwiperHandlers() {
+        // Ищем все возможные Swiper инстанции
+        const swiperContainers = document.querySelectorAll('.swiper-container, .home-brand-module-swiper, .home-brand-module-swiper_m');
         swiperContainers.forEach(container => {
             if (container.swiper) {
-                container.swiper.on('slideChange', function() {
-                    setTimeout(fixVideoAttributes, 100);
+                container.swiper.on('slideChangeTransitionEnd', fixVideoAttributes);
+                container.swiper.on('init', fixVideoAttributes);
+            }
+        });
+        
+        // Также проверяем глобальные переменные
+        if (window.homeBrandSwiper) {
+            window.homeBrandSwiper.on('slideChangeTransitionEnd', fixVideoAttributes);
+        }
+    }
+    
+    // Пробуем подключиться к Swiper с задержкой
+    setTimeout(attachSwiperHandlers, 1000);
+    setTimeout(attachSwiperHandlers, 2000);
+    
+    // MutationObserver для отслеживания новых видео
+    const observer = new MutationObserver(function(mutations) {
+        mutations.forEach(function(mutation) {
+            if (mutation.addedNodes.length) {
+                mutation.addedNodes.forEach(node => {
+                    if (node.nodeName === 'VIDEO' || (node.querySelectorAll && node.querySelectorAll('video').length)) {
+                        setTimeout(fixVideoAttributes, 100);
+                    }
                 });
             }
         });
-    }
+    });
+    
+    observer.observe(document.body, { 
+        childList: true, 
+        subtree: true 
+    });
 });
 
-// Дополнительная проверка для iOS Safari
+// Специальная обработка для iOS Safari
 if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
+    // Обработчик первого касания для запуска видео
     document.addEventListener('touchstart', function() {
         const videos = document.querySelectorAll('video[autoplay]');
         videos.forEach(video => {
@@ -591,6 +625,17 @@ if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
             }
         });
     }, { once: true });
+    
+    // Дополнительная проверка при загрузке
+    window.addEventListener('load', function() {
+        setTimeout(function() {
+            document.querySelectorAll('video').forEach(video => {
+                video.classList.remove('home-banner_mobile_hidden');
+                video.style.display = 'block';
+                video.style.visibility = 'visible';
+            });
+        }, 500);
+    });
 }
 </script>
 
@@ -1029,7 +1074,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </style>
 
 <div class="video-section-fullwidth xyber-video-section">
-    <video autoplay muted loop playsinline>
+    <video autoplay muted loop playsinline webkit-playsinline>
         <source src="./local_assets/is/content/ninebotstage/Xyber_Cutdown_new.mp4" type="video/mp4">
     </video>
 </div>
@@ -1810,61 +1855,61 @@ document.addEventListener('DOMContentLoaded', function() {
   ]
 };
 </script>
-<div data-uuid="51cb5dc1-dd12-33f1-a662-c91428bfd397" class="home-brand-module_wrapper"><div class="home-brand-module_pc segway-pc"><div class="swiper home-brand-module-swiper swiper-container swiper-container-initialized swiper-container-horizontal"><div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-4114px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" x5-video-player-type="h5" webkit-playsinline="true" playsinline="true" class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">MMax2 110P</div> <div class="home-brand-module-swiper-content_desc">
+<div data-uuid="51cb5dc1-dd12-33f1-a662-c91428bfd397" class="home-brand-module_wrapper"><div class="home-brand-module_pc segway-pc"><div class="swiper home-brand-module-swiper swiper-container swiper-container-initialized swiper-container-horizontal"><div class="swiper-wrapper" style="transition-duration: 0ms; transform: translate3d(-4114px, 0px, 0px);"><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted autoplay loop poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" webkit-playsinline playsinline class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">MMax2 110P</div> <div class="home-brand-module-swiper-content_desc">
               Премиум мощность для городских путешествий 
-            </div></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" x5-video-player-type="h5" webkit-playsinline="true" playsinline="true" class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">Xafari</div> <div class="home-brand-module-swiper-content_desc">
+            </div></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted autoplay loop poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" webkit-playsinline playsinline class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">Xafari</div> <div class="home-brand-module-swiper-content_desc">
               Безграничные приключения
-            </div></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" x5-video-player-type="h5" webkit-playsinline="true" playsinline="true" class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">E300SE</div> <div class="home-brand-module-swiper-content_desc">
+            </div></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted autoplay loop poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" webkit-playsinline playsinline class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">E300SE</div> <div class="home-brand-module-swiper-content_desc">
               Покори мощь электрического разгона!
-            </div></div></div><div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" x5-video-player-type="h5" webkit-playsinline="true" playsinline="true" class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">MMax2 110P</div> <div class="home-brand-module-swiper-content_desc">
+            </div></div></div><div class="swiper-slide swiper-slide-prev" data-swiper-slide-index="0" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted autoplay loop poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" webkit-playsinline playsinline class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">MMax2 110P</div> <div class="home-brand-module-swiper-content_desc">
               Премиум мощность для городских путешествий 
-            </div></div></div><div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" x5-video-player-type="h5" webkit-playsinline="true" playsinline="true" class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">Xafari</div> <div class="home-brand-module-swiper-content_desc">
+            </div></div></div><div class="swiper-slide swiper-slide-active" data-swiper-slide-index="1" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted autoplay loop poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" webkit-playsinline playsinline class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">Xafari</div> <div class="home-brand-module-swiper-content_desc">
               Безграничные приключения
-            </div></div></div><div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" x5-video-player-type="h5" webkit-playsinline="true" playsinline="true" class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">E300SE</div> <div class="home-brand-module-swiper-content_desc">
+            </div></div></div><div class="swiper-slide swiper-slide-next" data-swiper-slide-index="2" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted autoplay loop poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" webkit-playsinline playsinline class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">E300SE</div> <div class="home-brand-module-swiper-content_desc">
               Покори мощь электрического разгона!
-            </div></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" x5-video-player-type="h5" webkit-playsinline="true" playsinline="true" class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">MMax2 110P</div> <div class="home-brand-module-swiper-content_desc">
+            </div></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-prev" data-swiper-slide-index="0" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted autoplay loop poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" webkit-playsinline playsinline class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">MMax2 110P</div> <div class="home-brand-module-swiper-content_desc">
               Премиум мощность для городских путешествий 
-            </div></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" x5-video-player-type="h5" webkit-playsinline="true" playsinline="true" class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">Xafari</div> <div class="home-brand-module-swiper-content_desc">
+            </div></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-active" data-swiper-slide-index="1" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted autoplay loop poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" webkit-playsinline playsinline class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">Xafari</div> <div class="home-brand-module-swiper-content_desc">
               Безграничные приключения
-            </div></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" x5-video-player-type="h5" webkit-playsinline="true" playsinline="true" class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">E300SE</div> <div class="home-brand-module-swiper-content_desc">
+            </div></div></div><div class="swiper-slide swiper-slide-duplicate swiper-slide-duplicate-next" data-swiper-slide-index="2" style="margin-right: 16px;"><div class="menban"></div> <div class="home-brand-module-swiper-img"><!----> <div class="segway-wh100"><video muted autoplay loop poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" webkit-playsinline playsinline class="s-primary-banner_img home-banner_mobile_hidden segway-img100"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div></div> <div class="home-brand-module-swiper-content"><div class="title-h3">E300SE</div> <div class="home-brand-module-swiper-content_desc">
               Покори мощь электрического разгона!
             </div></div></div></div> <div class="swiper-button-next lightbg" tabindex="0" role="button" aria-label="Следующий слайд"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8.91421 3.00009L7.5 4.41431L14.5711 11.4854L15.9853 11.4854L15.9853 10.0712L8.91421 3.00009Z" fill="white"></path> <path d="M8.91421 20.8388L7.5 19.4246L14.5711 12.3535L15.9853 12.3535L15.9853 13.7677L8.91421 20.8388Z" fill="white"></path></svg></div> <div class="swiper-button-prev lightbg" tabindex="0" role="button" aria-label="Предыдущий слайд"><svg width="24" height="24" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M15.0858 3.00009L16.5 4.41431L9.42893 11.4854L8.01472 11.4854L8.01472 10.0712L15.0858 3.00009Z" fill="white"></path> <path d="M15.0858 20.8388L16.5 19.4246L9.42893 12.3535L8.01472 12.3535L8.01472 13.7677L15.0858 20.8388Z" fill="white"></path></svg></div> <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Перейти к слайду 1"></span><span class="swiper-pagination-bullet swiper-pagination-bullet-active" tabindex="0" role="button" aria-label="Перейти к слайду 2"></span><span class="swiper-pagination-bullet" tabindex="0" role="button" aria-label="Перейти к слайду 3"></span></div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div></div> <div class="swiper home-brand-module-swiper_m segway-mobile swiper-container swiper-container-initialized swiper-container-horizontal"><div class="swiper-wrapper" style="transition-duration: 0ms;"><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
               MMax2 110P
             </div> <div class="home-brand-module_displayflex"><div class="home-brand-module-swiper-content_desc_m">
                 Премиум мощность для городских путешествий 
-              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" playsinline="true" poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" x5-video-player-type="h5" webkit-playsinline="true" class="segway-mobile segway-img100" style="transform: scale(0.9999);"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
+              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted autoplay loop playsinline webkit-playsinline poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" class="segway-mobile segway-img100"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
               Xafari
             </div> <div class="home-brand-module_displayflex"><div class="home-brand-module-swiper-content_desc_m">
                 Безграничные приключения
-              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" playsinline="true" poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" x5-video-player-type="h5" webkit-playsinline="true" class="segway-mobile segway-img100" style="transform: scale(0.9999);"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
+              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted autoplay loop playsinline webkit-playsinline poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" class="segway-mobile segway-img100"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
               E300SE
             </div> <div class="home-brand-module_displayflex"><div class="home-brand-module-swiper-content_desc_m">
                 Покори мощь электрического разгона!
-              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" playsinline="true" poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" x5-video-player-type="h5" webkit-playsinline="true" class="segway-mobile segway-img100" style="transform: scale(0.9999);"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide" data-swiper-slide-index="0"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
+              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted autoplay loop playsinline webkit-playsinline poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" class="segway-mobile segway-img100"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide" data-swiper-slide-index="0"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
               MMax2 110P
             </div> <div class="home-brand-module_displayflex"><div class="home-brand-module-swiper-content_desc_m">
                 Премиум мощность для городских путешествий 
-              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" playsinline="true" poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" x5-video-player-type="h5" webkit-playsinline="true" class="segway-mobile segway-img100" style="transform: scale(0.9999);"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide" data-swiper-slide-index="1"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
+              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted autoplay loop playsinline webkit-playsinline poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" class="segway-mobile segway-img100"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide" data-swiper-slide-index="1"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
               Xafari
             </div> <div class="home-brand-module_displayflex"><div class="home-brand-module-swiper-content_desc_m">
                 Безграничные приключения
-              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" playsinline="true" poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" x5-video-player-type="h5" webkit-playsinline="true" class="segway-mobile segway-img100" style="transform: scale(0.9999);"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide" data-swiper-slide-index="2"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
+              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted autoplay loop playsinline webkit-playsinline poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" class="segway-mobile segway-img100"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide" data-swiper-slide-index="2"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
               E300SE
             </div> <div class="home-brand-module_displayflex"><div class="home-brand-module-swiper-content_desc_m">
                 Покори мощь электрического разгона!
-              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" playsinline="true" poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" x5-video-player-type="h5" webkit-playsinline="true" class="segway-mobile segway-img100" style="transform: scale(0.9999);"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
+              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted autoplay loop playsinline webkit-playsinline poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" class="segway-mobile segway-img100"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="0"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
               MMax2 110P
             </div> <div class="home-brand-module_displayflex"><div class="home-brand-module-swiper-content_desc_m">
                 Премиум мощность для городских путешествий 
-              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" playsinline="true" poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" x5-video-player-type="h5" webkit-playsinline="true" class="segway-mobile segway-img100" style="transform: scale(0.9999);"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
+              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted autoplay loop playsinline webkit-playsinline poster="./local_assets/us/en/segway/VideoBanner_MAXG3.webp" class="segway-mobile segway-img100"><source src="./local_assets/is/content/ninebotstage/NineBot MMAX2 Introduction.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="1"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
               Xafari
             </div> <div class="home-brand-module_displayflex"><div class="home-brand-module-swiper-content_desc_m">
                 Безграничные приключения
-              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" playsinline="true" poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" x5-video-player-type="h5" webkit-playsinline="true" class="segway-mobile segway-img100" style="transform: scale(0.9999);"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
+              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted autoplay loop playsinline webkit-playsinline poster="./local_assets/us/en/segway/VideoBanner_E2Pro.webp" class="segway-mobile segway-img100"><source src="./local_assets/is/content/ninebotstage/xafari-banner-video.mp4" type="video/mp4"></video></div> <!----></div></div></div><div class="swiper-slide swiper-slide-duplicate" data-swiper-slide-index="2"><div class="bannerItem_container"><div class="home-brand-module-swiper-content_m"><div class="home-brand-module-swiper-content_title_m">
               E300SE
             </div> <div class="home-brand-module_displayflex"><div class="home-brand-module-swiper-content_desc_m">
                 Покори мощь электрического разгона!
-              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted="muted" autoplay="autoplay" loop="loop" playsinline="true" poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" x5-video-player-type="h5" webkit-playsinline="true" class="segway-mobile segway-img100" style="transform: scale(0.9999);"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div> <!----></div></div></div></div> <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div></div>
+              </div></div></div> <div class="radius_container"><!----> <div class="segway-wh100"><video muted autoplay loop playsinline webkit-playsinline poster="./local_assets/us/en/segway/VideoBanner_ZT3.webp" class="segway-mobile segway-img100"><source src="./local_assets/is/content/ninebotstage/Segway eScooter E300SE.mp4" type="video/mp4"></video></div> <!----></div></div></div></div> <div class="swiper-pagination swiper-pagination-clickable swiper-pagination-bullets"></div><span class="swiper-notification" aria-live="assertive" aria-atomic="true"></span></div></div>
 
     
 <link rel="stylesheet" href="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/clientlibs.5161ce2c578102df3e0dfac16f4c8b2c.css" type="text/css">
