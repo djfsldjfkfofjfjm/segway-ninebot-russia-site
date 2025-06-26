@@ -688,17 +688,35 @@ document.addEventListener('DOMContentLoaded', function() {
     });
 });
 
-// Специальная обработка для iOS Safari
-if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
-    // Обработчик первого касания для запуска видео
-    document.addEventListener('touchstart', function() {
-        const videos = document.querySelectorAll('video[autoplay]');
+// Обработка для всех мобильных устройств
+if (window.innerWidth <= 1023) {
+    // Флаг для отслеживания первого взаимодействия
+    let firstInteraction = true;
+    
+    // Функция для запуска всех видео
+    function tryPlayAllVideos() {
+        if (!firstInteraction) return;
+        firstInteraction = false;
+        
+        const videos = document.querySelectorAll('video');
         videos.forEach(video => {
             if (video.paused) {
-                video.play().catch(e => console.log('iOS play error:', e));
+                video.play().then(() => {
+                    // Убираем контролы при успешном запуске
+                    video.controls = false;
+                }).catch(e => {
+                    // Оставляем контролы при ошибке
+                    video.controls = true;
+                    console.log('Видео требует ручного запуска:', e);
+                });
             }
         });
-    }, { once: true });
+    }
+    
+    // Обработчики для различных типов взаимодействия
+    ['touchstart', 'click', 'touchend'].forEach(event => {
+        document.addEventListener(event, tryPlayAllVideos, { once: true });
+    });
     
     // Дополнительная проверка при загрузке
     window.addEventListener('load', function() {
@@ -707,6 +725,7 @@ if (/iPhone|iPad|iPod/.test(navigator.userAgent)) {
                 video.classList.remove('home-banner_mobile_hidden');
                 video.style.display = 'block';
                 video.style.visibility = 'visible';
+                video.controls = true;
             });
         }, 500);
     });
