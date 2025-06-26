@@ -454,6 +454,7 @@ video[x5-video-player-type] {
     .s-primary-banner-swiper {
         height: auto !important;
         min-height: 720px !important;
+        position: relative !important;
     }
     
     .s-primary-banner .primary-banner_wrapper {
@@ -464,6 +465,18 @@ video[x5-video-player-type] {
         height: auto !important;
         object-fit: contain !important;
         object-position: center !important;
+    }
+    
+    /* Исправляем позиционирование точек пагинации */
+    .home-primary-banner .swiper-pagination {
+        position: absolute !important;
+        bottom: 20px !important;
+        z-index: 10 !important;
+    }
+    
+    /* Обеспечиваем правильное позиционирование слайдов */
+    .s-primary-banner {
+        position: relative !important;
     }
 }
 
