@@ -44,9 +44,29 @@ document.addEventListener('DOMContentLoaded', function() {
         
         // Специальная обработка для home-brand-module видео
         if (window.innerWidth <= 1023) {
-            // Для мобильной версии карусели
-            const mobileSwiperVideos = document.querySelectorAll('.home-brand-module-swiper_m video');
-            mobileSwiperVideos.forEach(video => {
+            // ВАЖНО: Показываем контейнеры home-brand-module
+            const brandModuleWrappers = document.querySelectorAll('.home-brand-module_wrapper');
+            brandModuleWrappers.forEach(wrapper => {
+                // Показываем PC версию на мобильных если mobile версия отсутствует
+                const pcModule = wrapper.querySelector('.home-brand-module_pc');
+                const mobileModule = wrapper.querySelector('.home-brand-module-swiper_m');
+                
+                if (pcModule) {
+                    pcModule.style.display = 'block';
+                    pcModule.style.visibility = 'visible';
+                    pcModule.style.opacity = '1';
+                }
+                
+                if (mobileModule) {
+                    mobileModule.style.display = 'block';
+                    mobileModule.style.visibility = 'visible';
+                    mobileModule.style.opacity = '1';
+                }
+            });
+            
+            // Показываем все видео в home-brand-module
+            const allBrandModuleVideos = document.querySelectorAll('.home-brand-module_wrapper video');
+            allBrandModuleVideos.forEach(video => {
                 video.style.display = 'block';
                 video.style.visibility = 'visible';
                 video.style.opacity = '1';
@@ -63,15 +83,13 @@ document.addEventListener('DOMContentLoaded', function() {
                 video.load();
             });
             
-            // Для десктопной версии на мобильных (если она показывается)
-            const desktopSwiperVideos = document.querySelectorAll('.home-brand-module_pc video');
-            desktopSwiperVideos.forEach(video => {
-                // Проверяем, должно ли это видео показываться на мобильных
-                const wrapper = video.closest('.home-brand-module_pc');
-                if (wrapper && window.getComputedStyle(wrapper).display !== 'none') {
-                    video.style.display = 'block';
-                    video.style.visibility = 'visible';
-                    video.style.opacity = '1';
+            // Показываем .segway-wh100 контейнеры с видео
+            const videoContainers = document.querySelectorAll('.segway-wh100');
+            videoContainers.forEach(container => {
+                if (container.querySelector('video')) {
+                    container.style.display = 'block';
+                    container.style.visibility = 'visible';
+                    container.style.opacity = '1';
                 }
             });
         }
