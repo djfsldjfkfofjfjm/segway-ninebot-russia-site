@@ -448,82 +448,45 @@ video[x5-video-player-type] {
     height: auto !important;
 }
 
-/* Критическое исправление для видео на мобильных устройствах */
+/* Исправление изображений в первом слайдере на мобильных */
+@media screen and (max-width: 959px) {
+    /* Исправляем обрезание изображений в основном слайдере */
+    .s-primary-banner-swiper {
+        height: auto !important;
+        min-height: 720px !important;
+    }
+    
+    .s-primary-banner .primary-banner_wrapper {
+        height: 100% !important;
+    }
+    
+    img.s-primary-banner_img {
+        height: auto !important;
+        object-fit: contain !important;
+        object-position: center !important;
+    }
+}
+
+/* Исправление ТОЛЬКО для видео элементов на мобильных устройствах */
 @media screen and (max-width: 1023px) {
-    /* Показываем все видео элементы */
-    video {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    /* Переопределяем скрытие для специфичных классов */
-    .home-banner_mobile_hidden {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    /* КРИТИЧЕСКИ ВАЖНО: Показываем видео даже в segway-pc контейнерах */
-    .home-brand-module_wrapper .segway-pc video,
-    .home-brand-module_pc video {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    /* Показываем сами контейнеры с видео */
-    .home-brand-module_wrapper .home-brand-module_pc,
-    .home-brand-module_wrapper .home-brand-module-swiper {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    /* Переопределяем скрытие слайдов с видео */
-    .home-brand-module-swiper .swiper-slide,
-    .home-brand-module-swiper_m .swiper-slide {
-        display: block !important;
-        opacity: 1 !important;
-    }
-    
-    /* Исправляем для home-brand-module */
-    .home-brand-module_wrapper video,
-    .home-brand-module-swiper video,
-    .home-brand-module-swiper_m video {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    /* Убеждаемся что segway-mobile видео показываются */
-    .segway-mobile video,
+    /* Показываем видео с классом segway-mobile */
     video.segway-mobile {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
     
-    /* Исправляем для всех segway-img100 видео */
-    video.segway-img100,
-    .segway-img100 video,
-    .s-primary-banner_img {
+    /* Удаляем скрытие с видео элементов */
+    video.home-banner_mobile_hidden {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;
     }
     
-    /* Переопределяем все возможные скрытия */
-    .home-brand-module_pc video[class*="hidden"],
-    .home-brand-module_wrapper video[class*="hidden"],
-    video[class*="hidden"] {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    /* Переопределяем скрытие .segway-wh100 контейнеров с видео */
-    .segway-wh100:has(video) {
+    /* Исправляем видео в каруселях */
+    .home-brand-module_wrapper video,
+    .home-brand-module-swiper video,
+    .home-brand-module-swiper_m video {
         display: block !important;
         visibility: visible !important;
         opacity: 1 !important;

@@ -23,48 +23,12 @@ document.addEventListener('DOMContentLoaded', function() {
             video.style.visibility = 'visible';
             video.style.opacity = '1';
             
-            // Проверяем все родительские элементы на скрытие
-            let parent = video.parentElement;
-            while (parent && parent !== document.body) {
-                const computed = window.getComputedStyle(parent);
-                if (computed.display === 'none' || computed.visibility === 'hidden' || computed.opacity === '0') {
-                    // Если это контейнер видео с классом segway-pc и мы на мобильном
-                    if (window.innerWidth <= 1023 && parent.classList.contains('segway-pc')) {
-                        // Пропускаем, так как это нормально
-                    } else if (window.innerWidth <= 1023 && parent.classList.contains('segway-mobile')) {
-                        // Форсируем показ мобильного контейнера
-                        parent.style.display = 'block';
-                        parent.style.visibility = 'visible';
-                        parent.style.opacity = '1';
-                    }
-                }
-                parent = parent.parentElement;
-            }
+            // НЕ трогаем родительские элементы, работаем только с видео
         });
         
         // Специальная обработка для home-brand-module видео
         if (window.innerWidth <= 1023) {
-            // ВАЖНО: Показываем контейнеры home-brand-module
-            const brandModuleWrappers = document.querySelectorAll('.home-brand-module_wrapper');
-            brandModuleWrappers.forEach(wrapper => {
-                // Показываем PC версию на мобильных если mobile версия отсутствует
-                const pcModule = wrapper.querySelector('.home-brand-module_pc');
-                const mobileModule = wrapper.querySelector('.home-brand-module-swiper_m');
-                
-                if (pcModule) {
-                    pcModule.style.display = 'block';
-                    pcModule.style.visibility = 'visible';
-                    pcModule.style.opacity = '1';
-                }
-                
-                if (mobileModule) {
-                    mobileModule.style.display = 'block';
-                    mobileModule.style.visibility = 'visible';
-                    mobileModule.style.opacity = '1';
-                }
-            });
-            
-            // Показываем все видео в home-brand-module
+            // Исправляем ТОЛЬКО видео элементы, не трогаем контейнеры
             const allBrandModuleVideos = document.querySelectorAll('.home-brand-module_wrapper video');
             allBrandModuleVideos.forEach(video => {
                 video.style.display = 'block';
@@ -81,16 +45,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 
                 // Перезагружаем видео
                 video.load();
-            });
-            
-            // Показываем .segway-wh100 контейнеры с видео
-            const videoContainers = document.querySelectorAll('.segway-wh100');
-            videoContainers.forEach(container => {
-                if (container.querySelector('video')) {
-                    container.style.display = 'block';
-                    container.style.visibility = 'visible';
-                    container.style.opacity = '1';
-                }
             });
         }
     }
