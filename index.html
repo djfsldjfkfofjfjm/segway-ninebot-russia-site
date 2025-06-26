@@ -448,35 +448,60 @@ video[x5-video-player-type] {
     height: auto !important;
 }
 
-/* Исправление изображений в первом слайдере на мобильных */
+/* КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ ПЕРВОГО СЛАЙДЕРА НА МОБИЛЬНЫХ */
 @media screen and (max-width: 959px) {
-    /* Исправляем обрезание изображений в основном слайдере */
-    .s-primary-banner-swiper {
+    /* ПЕРЕОПРЕДЕЛЯЕМ ВСЕ ВЫСОТЫ */
+    .home-primary-banner {
+        margin-bottom: 0 !important;
         height: auto !important;
-        min-height: 720px !important;
-        position: relative !important;
     }
     
-    .s-primary-banner .primary-banner_wrapper {
-        height: 100% !important;
+    .home-primary-banner .s-primary-banner-swiper {
+        height: auto !important;
+        min-height: unset !important;
+        max-height: 100vh !important;
     }
     
-    img.s-primary-banner_img {
+    .home-primary-banner .swiper-wrapper {
         height: auto !important;
+    }
+    
+    .home-primary-banner .s-primary-banner {
+        height: auto !important;
+    }
+    
+    .home-primary-banner .primary-banner_wrapper {
+        height: auto !important;
+        padding-bottom: 0 !important;
+    }
+    
+    .home-primary-banner img.s-primary-banner_img {
+        height: auto !important;
+        width: 100% !important;
         object-fit: contain !important;
-        object-position: center !important;
+        max-height: 70vh !important;
     }
     
-    /* Исправляем позиционирование точек пагинации */
+    /* ТОЧКИ ДЕЛАЕМ ПОВЕРХ КАРТИНКИ */
     .home-primary-banner .swiper-pagination {
         position: absolute !important;
         bottom: 20px !important;
-        z-index: 10 !important;
+        z-index: 100 !important;
+        width: 100% !important;
+        height: auto !important;
     }
     
-    /* Обеспечиваем правильное позиционирование слайдов */
-    .s-primary-banner {
-        position: relative !important;
+    /* УБИРАЕМ ВСЕ ПАДИНГИ У КОНТЕНТА */
+    .home-primary-banner .banner-content-wrapper {
+        padding-bottom: 60px !important;
+        height: auto !important;
+    }
+}
+
+/* ДОПОЛНИТЕЛЬНО ДЛЯ МАЛЕНЬКИХ ЭКРАНОВ */
+@media screen and (max-width: 767px) {
+    .home-primary-banner .s-primary-banner-swiper {
+        height: auto !important;
     }
 }
 
