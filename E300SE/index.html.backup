@@ -1,0 +1,701 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+      
+      
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+            
+      <link rel="stylesheet" href="assets/css/app.css">
+
+      <link href="assets/css/css2" rel="stylesheet">
+
+      <meta name="msapplication-TileColor" content="#da532c">
+      <meta name="theme-color" content="#ffffff">
+
+                  
+
+                                    
+    <title>E300SE - Мощный электроскутер нового поколения</title>
+    <meta name="description" content="">
+
+    <meta property="fb:app_id" content="">
+    <meta property="og:type" content="website">
+    <meta property="og:title" content="E300SE - Мощный электроскутер нового поколения">
+    <meta property="og:image" content="">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta property="og:description" content="">
+    <meta property="og:site_name" content="Россия">
+    <meta property="og:locale" content="ru">
+    <meta property="og:locale:alternate" content="bs">
+    <meta property="og:locale:alternate" content="bg">
+    <meta property="og:locale:alternate" content="hr">
+    <meta property="og:locale:alternate" content="cs">
+    <meta property="og:locale:alternate" content="nl">
+    <meta property="og:locale:alternate" content="en">
+    <meta property="og:locale:alternate" content="fr">
+    <meta property="og:locale:alternate" content="de">
+    <meta property="og:locale:alternate" content="el">
+    <meta property="og:locale:alternate" content="he">
+    <meta property="og:locale:alternate" content="hu">
+    <meta property="og:locale:alternate" content="it">
+    <meta property="og:locale:alternate" content="mk">
+    <meta property="og:locale:alternate" content="pl">
+    <meta property="og:locale:alternate" content="pt">
+    <meta property="og:locale:alternate" content="ro">
+    <meta property="og:locale:alternate" content="sr">
+    <meta property="og:locale:alternate" content="sk">
+    <meta property="og:locale:alternate" content="es">
+    <meta property="og:locale:alternate" content="uk">
+    
+        <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:site" content="">
+    <meta name="twitter:title" content="E300SE - Мощный электроскутер нового поколения">
+    <meta name="twitter:description" content="">
+    <meta name="twitter:image" content="">
+
+    
+
+       <link rel="stylesheet" href="assets/css/e300se-2.css">
+</head>
+<body class="ru" dir="ltr">
+    <main style="min-height: 341px;">
+            <section class="e300se e300se-1">
+    <div class="container">
+            <img src="assets/images/kv-2-2.png" alt="Background Image">
+        <div class="content">
+            <div class="feature">
+                <h2> Электроскутер </h2>
+                <h1> E300SE </h1>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-2">
+   <div class="container">
+       <div class="content">
+           <div class="stats-grid">
+               <div class="stat-item">
+                   <p class="value">130<span>км</span></p>
+                   <p class="description">Дальность хода</p>
+               </div>
+               <div class="stat-item">
+                   <p class="value">2.9<span>с</span></p>
+                   <p class="description">Разгон 0-50 км/ч</p>
+               </div>
+               <div class="stat-item">
+                   <p class="value">105<span>км/ч</span></p>
+                   <p class="description">Макс. скорость</p>
+               </div>
+               <div class="stat-item">
+                   <p class="value">10<span>кВт</span></p>
+                   <p class="description">Мощность</p>
+               </div>
+               <div class="stat-item">
+                   <p class="value">Двухканальная ABS</p>
+                   <p class="description">Безопасность и стабильность</p>
+               </div>
+               <div class="stat-item">
+                   <p class="value">TCS</p>
+                   <p class="description">Собственная разработка</p>
+               </div>
+           </div>
+     </div>
+   </div>
+</section>
+<section class="e300se e300se-4">
+    <div class="container">
+        <div class="content">
+            <div class="UpperContent">
+                <h1> Покори мощь электрического разгона! </h1>
+                <div class="description">
+                    <p>Приготовьтесь к невероятным ощущениям от производительности E300SE!</p>
+                </div>
+            </div>
+
+            <div class="feature-group">
+                <div>
+                    <div class="feature-power">
+                        <h1> 10  </h1>
+                        <h4> кВт </h4>
+                    </div>
+                    <p> Макс. мощность </p>
+                </div>
+                <div>
+                    <div class="feature-power">
+                        <h1> 200  </h1>
+                        <h4> Нм </h4>
+                    </div>
+                    <p> Крутящий момент </p>
+                </div>
+            </div>
+        </div>
+
+        <picture>
+            <source media="min-width: 780px" srcset="
+                    assets/images/2_2024-08-02-082253_vmim.png
+                    ">
+            <source media="max-width: 780px" srcset="
+                    assets/images/2_2024-08-02-082253_vmim.png
+                    ">
+            <img src="assets/images/2_2024-08-02-082253_vmim.png" alt="Background Image">
+        </picture>
+    </div>
+</section>
+<section class="e300se e300se-5">
+    <div class="container">
+        <div class="contentSection1">
+            <div class="UpperContent">
+                <h1> Умная система управления батареями  </h1>
+                <h3> Опыт безопасного управления 500 миллионами литиевых ячеек. </h3>
+            </div>
+        </div>
+
+        <div class="battery">
+            <picture>
+                <img src="assets/images/bms-1.png" alt="Background Image">
+            </picture>
+        </div>
+
+        <div class="contentSection2">
+            <div class="LowerContent">
+                <div>
+                    <h2> 4000 Вт·ч ёмкость  </h2>
+                    <h4> Двойные батареи 74В 27Ач </h4>
+                </div>
+                <div>
+                    <h2> BMS 6.0  </h2>
+                    <h4> Более 20 уровней защиты </h4>
+                </div>
+                <div>
+                    <h2> IPX7  </h2>
+                    <h4> Влагозащита </h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-6">
+    <div class="container">
+        <div class="content">
+            <div class="text-block">
+                <h1> Поддержка третьей батареи  </h1>
+                <h3> В стандартной комплектации 2000 Вт·ч × 2. Установка дополнительной батареи увеличивает дальность хода на 50% (опция). </h3>
+            </div>
+        </div>
+        <div class="feature-image">
+            <img src="assets/images/3rd-battery-2_2024-09-20-092910_chzz.png" alt="Background Image">
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-7">
+    <div class="container">
+        <div class="content">
+            <div class="text-block">
+                <h1> <p>Максимальная стабильность с двухканальной ABS</p>  </h1>
+                <h3> <p>E300SE оснащён двухканальной системой ABS для стабильного торможения без блокировки колёс. Двухпоршневые суппорты J.JUAN обеспечивают уверенный контроль даже при экстренном торможении.</p> </h3>
+            </div>
+        </div>
+
+        <div class="feature-image">
+            <img src="assets/images/abs-1.png" alt="Background Image">
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-8">
+    <div class="container">
+        <div class="image">
+            <img src="assets/images/2.png" alt="Background Image">
+        </div>
+
+        <div class="content">
+            <div class="text-block">
+                <h1> <p>Оппозитные четырёхпоршневые суппорты J.Juan</p>  </h1>
+                <div class="description">
+                    <p>Обеспечивают безопасное торможение</p>
+                </div>
+            </div>
+            <div class="text-block">
+                <h1> <p>Полусликовые шины Maxxis</p>  </h1>
+                <div class="description">
+                    <p>Лёгкая езда и разгон по любым городским дорогам</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-9">
+    <div class="container">
+        <div class="content">
+            <div class="feature">
+                <h1> Умная система контроля тяги TCS  </h1>
+                <h3> <p>Segway’s self developed Segway smart TCS (Traction Control System) enables multi-braking just by one trigger.&nbsp; TCS not only prevents the wheels from slipping but also improves acceleration performance, improve the ability to climb. You can fully feel the sense of safety in rainy and snowy conditions.</p> </h3>
+            </div>
+        </div>
+        <div style="width: 100%; background: #000; color: #fff; padding: 60px 20px; text-align: center; border-radius: 8px;">
+            <h3>Демонстрация системы TCS</h3>
+            <p style="opacity: 0.7;">Видео временно недоступно</p>
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-10">
+    <div class="container">
+        <div class="content">
+            <div class="feature">
+                <h1> Основная рама из стали HC420  </h1>
+                <h3> <p>Стальная рама электроскутера обеспечивает стабильную и плавную езду на высокой скорости, гарантируя баланс без вибраций и уверенное маневрирование.</p> </h3>
+            </div>
+        </div>
+
+        <div class="image">
+            <img src="assets/images/01-1.png" alt="Background Image">
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-11">
+    <div class="container">
+        <div class="content">
+            <div class="text-block">
+                <h1> Передняя и задняя подвески  </h1>
+                <div class="description">
+                    <p>Комфортная и стабильная езда на E300SE по любым дорогам.</p>
+                </div>
+            </div>
+
+            <div class="feature-group">
+                <div class="feature">
+                    <picture>
+                        <img src="assets/images/v02-1-1.png" alt="Background Image">
+                    </picture>
+                    <div class="text">
+                        <h2> <p>Передняя подвеска</p>  </h2>
+                        <h4> <p>Амортизатор: гидравлика и пружина</p> </h4>
+                    </div>
+                </div>
+                <div class="feature">
+                    <picture>
+                        <img src="assets/images/1-1.png" alt="Background Image">
+                    </picture>
+                    <div class="text">
+                        <h2> <p>Регулируемая задняя подвеска</p>  </h2>
+                        <h4> <p>Комбинация азота под давлением и пружины</p> </h4>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-12">
+    <div class="container">
+        <div class="content">
+            <div class="feature">
+                <h1> Эргономичная посадка для комфорта!  </h1>
+                <h3> <p>Создаёт идеальный баланс для максимально удобной, комфортной и безопасной посадки.</p> </h3>
+            </div>
+        </div>
+
+        <picture>
+            <img src="assets/images/1_2024-08-02-082259_hnjk.png" alt="Background Image">
+        </picture>
+    </div>
+</section>
+<section class="e300se e300se-13">
+    <div class="container">
+        <div class="content">
+            <div class="feature">
+                <h1><p>Матричная LED-фара&nbsp;</p>
+<p>класса C</p></h1>
+                <div class="description">
+                    <p>Ближний свет до 21м&nbsp;</p>
+<p>Дальний свет до 70м.</p>
+                </div>
+            </div>
+        </div>
+
+        <picture>
+            <img src="assets/images/2-2@2x.png" alt="Background Image">
+        </picture>
+    </div>
+</section>
+<section class="e300se e300se-14">
+    <div class="container">
+        <div class="content">
+            <div class="feature">
+                <h1> <p>Интегрированный задний фонарь</p>  </h1>
+                <h3> <p>Яркий интегрированный задний фонарь не только повышает безопасность, но и добавляет элегантности.</p> </h3>
+            </div>
+        </div>
+
+        <picture>
+            <source media="min-width: 780px" srcset="
+                    assets/images/1-2.png
+                    ">
+            <source media="max-width: 780px" srcset="
+                    assets/images/1-2.png
+                    ">
+            <img src="assets/images/1-2.png" alt="Background Image">
+        </picture>
+    </div>
+</section>
+<section class="e300se e300se-15">
+    <div class="container">
+        <div class="content">
+            <div class="feature">
+                <h1> <p>Цветная LED-панель приборов</p>  </h1>
+                <h3> <p>LED-панель ярко отображает всю ключевую информацию: режим езды, скорость и запас хода. Остаётся читаемой даже при ярком солнце, а при блокировке экран гаснет</p> </h3>
+            </div>
+        </div>
+
+        <picture>
+            <source media="min-width: 780px" srcset="
+                    assets/images/1_2024-08-02-082237_vtbc.png
+                    ">
+            <source media="max-width: 780px" srcset="
+                    assets/images/1_2024-08-02-082237_vtbc.png
+                    ">
+            <img src="assets/images/1_2024-08-02-082237_vtbc.png" alt="Background Image">
+        </picture>
+    </div>
+</section>
+<section class="e300se e300se-16">
+    <div class="container">
+        <div class="content">
+           <div>
+               <h1><p>Контроллер MoleDrive X600</p></h1>
+
+               <h3><p>Новый уровень управления. Мощно и плавно одновременно.</p></h3>
+           </div>
+
+            <div class="feature-container">
+                <div class="feature-image">
+                    <img class="test" src="assets/images/1-1_2024-08-02-082215_bsyy.png" alt="Background Image">
+                </div>
+
+                <div class="feature-list">
+                    <div class="feature">
+                        <h2><p>Технология OPD</p></h2>
+
+                        <div class="description">
+                            <h4><p>Одна ручка газа управляет разгоном и рекуперативным торможением. Мгновенный отклик для максимальной манёвренности.</p></h4>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <h2><p>Бесступенчатая рекуперация энергии</p></h2>
+
+                        <div class="description">
+                            <h4><p>Не просто плавное торможение, но и: </p>
+<p>· Увеличение запаса хода<br>· Продление срока службы тормозов<br>· Короче тормозной путь</p></h4>
+                        </div>
+                    </div>
+
+                    <div class="feature">
+                        <img src="assets/images/image-35.png" alt="Background Image">
+
+                        <div class="description">
+                            <p></p><p>MoleDrive — инновационная разработка компании LingJi innovations.</p><p></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-17">
+    <div class="container">
+        <div class="content">
+            <h1><p>Контроллер MoleDrive</p></h1>
+            <p></p><p>Вспомогательные функции для комфортной езды.</p><p></p>
+
+            <div class="feature-grid">
+                <div class="feature-item">
+                    <img src="assets/images/Cruise-control-E300SE.svg" alt="One-touch reverse icon">
+                    <h4>Круиз-контроль</h4>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/images/HHC-slope-park.svg" alt="One-touch reverse icon">
+                    <h4>Удержание на склоне</h4>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/images/Assist-pushing-E300SE.svg" alt="One-touch reverse icon">
+                    <h4>Помощь при толкании</h4>
+                </div>
+                <div class="feature-item">
+                    <img src="assets/images/One-touch-reverse-E300SE.svg" alt="One-touch reverse icon">
+                    <h4>Задний ход одним касанием</h4>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-18">
+    <div class="container">
+        <div class="content">
+            <h1><p>Многорежимное&nbsp;</p>
+<p>управление</p></h1>
+            <div class="feature-list">
+                <div class="feature">
+                    <h3>Режим ассистента</h3>
+                    <div class="description">
+                        <p>Помощь при толкании</p>
+<p>Ограничение 5 км/ч </p>
+<p>Полный крутящий момент</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <h3>Эко режим</h3>
+                    <div class="description">
+                        <p>Максимальная экономия</p>
+<p>Адаптивный крутящий момент</p>
+<p>Автоматическая рекуперация</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <h3>Городской режим</h3>
+                    <div class="description">
+                        <p>Для городских поездок</p>
+<p>Полный крутящий момент</p>
+<p>Пассивная рекуперация</p>
+                    </div>
+                </div>
+                <div class="feature">
+                    <h3>Спорт режим</h3>
+                    <div class="description">
+                        <p>Для агрессивной езды</p>
+<p>Полный крутящий момент </p>
+<p>Активная рекуперация</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="feature-image">
+            <img src="assets/images/1-1_2024-08-02-082135_haju.png" alt="Background Image">
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-19">
+    <div class="container">
+        <div class="content">
+            <h1><p>Длинное сиденье 780 мм</p></h1>
+
+            <div class="description">
+                <p>Продуманное распределение сиденья для стабильности при разгоне. Комфортные поездки на дальние расстояния для водителя и пассажира.</p>
+            </div>
+        </div>
+        <img src="assets/images/1-3.png" alt="Background Image">
+    </div>
+</section>
+<section class="e300se e300se-20">
+    <div class="container">
+        <div class="content">
+            <div class="feature-block">
+                <div class="feature">
+                    <h1>34Л</h1>
+                    <h2>Багажное отделение</h2>
+                    <div class="description">Вмещаются два открытых шлема</div>
+                </div>
+                <picture>
+                    <img src="assets/images/2-1-1.png" alt="Background Image">
+                </picture>
+            </div>
+
+            <div class="feature-block">
+                <div class="feature">
+                    <h1>17Л</h1>
+                    <h2>Остаётся</h2>
+                    <div class="description">После установки третьей батареи (опция)</div>
+                </div>
+                <picture>
+                    <img src="assets/images/3-1.png" alt="Background Image">
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-21">
+    <div class="container">
+        <div class="content">
+            <div class="header-text">
+                <h1>Умное подключение</h1>
+                <h2>Интеграция с мобильным приложением</h2>
+            </div>
+            <div class="items">
+                <div class="row">
+                    <div class="item">
+                        <div class="small-block">
+                            <div class="icon">
+                                <img id="e300seBlock21Icon1Icon" src="assets/images/Ninebot-airlock-E300SE.png" alt="One-touch reverse.png">
+                            </div>
+                        </div>
+                        <div class="item-text">
+                            <span>Бесключевой доступ AirLock</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="small-block">
+                            <div class="icon">
+                                <img id="e300seBlock21Icon2Icon" src="assets/images/Password-E300SE.png" alt="One-touch reverse.png">
+                            </div>
+                        </div>
+                        <div class="item-text">
+                            <span>Разблокировка паролем</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <div class="small-block">
+                            <div class="icon">
+                                <img id="e300seBlock21Icon3Icon" src="assets/images/Remote-Control-E300SE.png" alt="One-touch reverse.png">
+                            </div>
+                        </div>
+                        <div class="item-text">
+                            <span>Дистанционное управление</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="small-block">
+                            <div class="icon">
+                                <img id="e300seBlock21Icon4Icon" src="assets/images/OTA-E300SE.png" alt="One-touch reverse.png">
+                            </div>
+                        </div>
+                        <div class="item-text">
+                            <span>Обновления по воздуху</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <div class="small-block">
+                            <div class="icon">
+                                <img id="e300seBlock21Icon5Icon" src="assets/images/Real-time-information-E300SE.png" alt="One-touch reverse.png">
+                            </div>
+                        </div>
+                        <div class="item-text">
+                            <span>Данные в реальном времени</span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="small-block">
+                            <div class="icon">
+                                <img id="e300seBlock21Icon6Icon" src="assets/images/SOS-E300SE.png" alt="One-touch reverse.png">
+                            </div>
+                        </div>
+                        <div class="item-text">
+                            <span>Автоматический SOS</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="image">
+                <img class="product" src="assets/images/mask-group_2024-08-02-082519_khao_2024-09-19-153435_jxuj.png" alt="Product">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-22">
+    <div class="container">
+        <div class="content">
+            <div class="text">
+                <h1>Удобства для поездок</h1>
+            </div>
+            <div class="items">
+                <div class="item">
+                    <div class="item-text"><p>Разъёмы USB &amp; Type-C для зарядки</p></div>
+                </div>
+                <div class="item">
+                    <div class="item-text"><p>Дополнительное пространство для мелочей</p></div>
+                </div>
+                <div class="item">
+                    <div class="item-text"><span><p>Крючок для пакетов и сумок</p></span></div>
+                </div>
+            </div>
+            <div class="image">
+                <img class="" src="assets/images/0207-usb-1-2-1-1.png" alt="0207-USB-1-2 1">
+            </div>
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-23">
+    <div class="container">
+
+        <div class="content">
+            <div class="header-text">
+                <h1><p>Противоугонная система AHRS</p></h1>
+                <h2><p>Синхронизация с мобильным&nbsp;</p>
+<p>приложением.</p></h2>
+            </div>
+            <div class="items">
+                <div class="row">
+                    <div class="item">
+                        <div class="small-block">
+                            <div class="icon">
+                                <img id="e300seBlock23Icon1Icon" src="assets/images/Alert-movement-E300SE.png" alt="One-touch reverse.png">
+                            </div>
+                        </div>
+                        <div class="item-text">
+                            <span><p>Оповещение о подозрительных движениях</p></span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="small-block">
+                            <div class="icon">
+                                <img id="e300seBlock23Icon2Icon" src="assets/images/Battery-E300SE.png" alt="One-touch reverse.png">
+                            </div>
+                        </div>
+                        <div class="item-text">
+                            <span><p>Уведомление об отключении батареи</p></span>
+                        </div>
+                    </div>
+                </div>
+                <div class="row">
+                    <div class="item">
+                        <div class="small-block">
+                            <div class="icon">
+                                <img id="e300seBlock23Icon3Icon" src="assets/images/Toppling-alert-E300SE.png" alt="One-touch reverse.png">
+                            </div>
+                        </div>
+                        <div class="item-text">
+                            <span><p>Оповещение о падении<br></p></span>
+                        </div>
+                    </div>
+                    <div class="item">
+                        <div class="small-block">
+                            <div class="icon">
+                                <img id="e300seBlock23Icon4Icon" src="assets/images/SOS-2-E300SE.png" alt="One-touch reverse.png">
+                            </div>
+                        </div>
+                        <div class="item-text">
+                            <span><p>Экстренный вызов</p></span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="image">
+            <img class="product" src="assets/images/2-1_2024-09-19-201325_vxtb.png" alt="Product">
+        </div>
+    </div>
+</section>
+<section class="e300se e300se-24">
+    <div class="container">
+        <div class="content">
+            <div class="header-text">
+                <h1>GPS-трекинг всегда под рукой</h1>
+            </div>
+            <div class="image">
+                <picture>
+                    <source media="(max-width: 780px)" srcset="assets/images/e300SE-block24_2024-09-19-205908_tjqv.png">
+                    <source media="(min-width: 780px)" srcset="assets/images/e300SE-block24.png">
+                    <img src="assets/images/e300SE-block24.png" alt="background image">
+                </picture>
+            </div>
+        </div>
+    </div>
+</section>
+    </main>
+    
+</body>
+</html>

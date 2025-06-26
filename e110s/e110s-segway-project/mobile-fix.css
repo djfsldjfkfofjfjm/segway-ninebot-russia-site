@@ -1,0 +1,41 @@
+/* Исправления для мобильных устройств с viewport около 540x720 */
+@media (max-width: 668px) {
+    /* Убираем фиксированную минимальную высоту для блоков с изображениями */
+    .simple-image figure {
+        min-height: auto !important;
+        height: auto !important;
+    }
+    
+    /* Исправляем позиционирование изображений */
+    .simple-image figure img {
+        position: relative !important;
+        min-height: auto !important;
+        height: auto !important;
+        width: 100% !important;
+        object-fit: cover;
+        max-height: 70vh; /* Ограничиваем максимальную высоту */
+    }
+    
+    /* Убираем лишние отступы между блоками */
+    .simple-image + .simple-image {
+        margin: 0 !important;
+    }
+    
+    /* Дополнительная оптимизация для маленьких экранов */
+    article.simple-image {
+        margin-bottom: 0 !important;
+        padding-bottom: 0 !important;
+    }
+}
+
+/* Специальные стили для экранов около 540px */
+@media (max-width: 550px) {
+    .simple-image figure {
+        min-height: auto !important;
+    }
+    
+    .simple-image figure figcaption {
+        padding: 30px 20px !important;
+    }
+}
+

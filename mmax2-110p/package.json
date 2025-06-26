@@ -1,0 +1,13 @@
+{
+  "name": "mmax2-110p-modular",
+  "version": "1.0.0",
+  "type": "module",
+  "description": "Модульная структура сайта Ninebot MMAX2 110P",
+  "scripts": {
+    "test": "node test-site.js",
+    "server": "python3 -m http.server 8080"
+  },
+  "devDependencies": {
+    "puppeteer": "^22.15.0"
+  }
+}

@@ -1,0 +1,216 @@
+<input type="radio" name="product-tab-trigger" id="overview" checked="checked">		<div class="product-tab-container">
+                <figure class="hero ">
+            <img src="./E110S - Segway-Ninebot_files/Segway-eScooter_E110S_Hero-picture.jpg" alt="[главное изображение] Начните свое путешествие с электроскутером Segway E110S!" class="align-middle" data-cmp-info="10">
+    
+        <figcaption class="white center narrow">
+                    <h2>Электроскутер Segway E110S</h2>
+                <h1>Начните своё путешествие с электроскутером Segway E110S!</h1>
+        <p>Раздумываете о пересадке на электроскутер? Segway E110S сделает этот выбор очевидным.<br>С максимальным запасом хода до 75 км* (по стандарту WMTC: до 47 км для версии 25 км/ч; до 40 км для версии 45 км/ч), выбором из 5 цветов (включая матовый), множеством функций в мобильном приложении, таких как система Airlock и RideyGo - вопрос решен! Откройте для себя новый, экологичный и умный способ передвижения.</p>
+<p>*Протестировано в идеальных условиях</p>
+    </figcaption>
+    </figure>      <section class="product-features dark">
+    <div class="limiter">
+        <article>
+             <div class="grid row-5 feature-grid">
+                                    <div class="col">
+                        <img class="feature-icon" src="./E110S - Segway-Ninebot_files/icon-location.svg" alt="" data-cmp-info="10">
+                        <span class="feature-label">Запас хода: до 75 км* / по стандарту WMTC: до 47 км (версия 25 км/ч); до 40 км (версия 45 км/ч)</span>
+                    </div>
+                                    <div class="col">
+                        <img class="feature-icon" src="./E110S - Segway-Ninebot_files/icon-autobalance.svg" alt="" data-cmp-info="10">
+                        <span class="feature-label">Золотой треугольник комфорта</span>
+                    </div>
+                                    <div class="col">
+                        <img class="feature-icon" src="./E110S - Segway-Ninebot_files/ICON_Parking.svg" alt="" data-cmp-info="10">
+                        <span class="feature-label">Защита от угона с AHRS</span>
+                    </div>
+                                    <div class="col">
+                        <img class="feature-icon" src="./E110S - Segway-Ninebot_files/ICON_RideyGo.svg" alt="" data-cmp-info="10">
+                        <span class="feature-label">Умная система блокировки/разблокировки</span>
+                    </div>
+                                    <div class="col">
+                        <img class="feature-icon" src="./E110S - Segway-Ninebot_files/ICON_Airlock.svg" alt="" data-cmp-info="10">
+                        <span class="feature-label">Система Airlock</span>
+                    </div>
+                                    <div class="col">
+                        <img class="feature-icon" src="./E110S - Segway-Ninebot_files/ICON_Sensor-detector.svg" alt="" data-cmp-info="10">
+                        <span class="feature-label">Датчики обнаружения</span>
+                    </div>
+                                    <div class="col">
+                        <img class="feature-icon" src="./E110S - Segway-Ninebot_files/ICON_EBS_Energy-recovery.svg" alt="" data-cmp-info="10">
+                        <span class="feature-label">EBS: Система рекуперации энергии</span>
+                    </div>
+                                    <div class="col">
+                        <img class="feature-icon" src="./E110S - Segway-Ninebot_files/icon-app-control.svg" alt="" data-cmp-info="10">
+                        <span class="feature-label">Умные функции в мобильном приложении</span>
+                    </div>
+                                    <div class="col">
+                        <img class="feature-icon" src="./E110S - Segway-Ninebot_files/ICON_BMS.svg" alt="" data-cmp-info="10">
+                        <span class="feature-label">Умная система управления батареей</span>
+                    </div>
+                                    <div class="col">
+                        <img class="feature-icon" src="./E110S - Segway-Ninebot_files/icon-battery.svg" alt="" data-cmp-info="10">
+                        <span class="feature-label">Съёмная батарея в комплекте</span>
+                    </div>
+                            </div>
+        </article>
+    </div>
+</section>        <section class="simple-video  type-YouTube" style="padding: 0;">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%;">
+            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                    src="https://www.youtube.com/embed/tRX7sZddf-c?start=12&rel=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+	<article class="simple-image full-width ">
+
+
+			<figure>
+							<img src="./E110S - Segway-Ninebot_files/eScooter_AHRS-system.jpg" alt="Противоугонная система на базе AHRS" data-cmp-info="10">
+				<figcaption class="white left narrow">
+
+																<h1>Противоугонная система с технологией AHRS</h1>
+																<p>Благодаря системе AHRS (система определения положения и ориентации), ваш электроскутер надёжно защищён от угона. <br>The integrated 4G-enabled SIM and GPS can track the eScooter’s location at any time. In addition, the Segway eScooter's smart security system detects any irregular movements and sends notifications directly to your smartphone within seconds. Finally, once your eScooter is locked with a battery inside, any unusual actions such as pushing, moving, or accessing the vehicle will trigger the alarm system.</p>									</figcaption>
+						</figure>
+		</article>
+	<article class="simple-image full-width ">
+			<figure>
+							<img src="./E110S - Segway-Ninebot_files/eScooter_E110S_Lifestyle_RideyGo.jpg" alt="Представляем интеллектуальную систему RideyGo!" data-cmp-info="10">
+				<figcaption class="white right narrow">
+
+																<h1>Представляем интеллектуальную систему RideyGo!</h1>
+																<p>Электроскутер Segway E110S оснащен интеллектуальной системой RideyGo!, которая включает такие функции, как система Airlock, датчик парковки и умное определение наличия водителя. RideyGo! сэкономит ваше драгоценное время! Больше не нужно искать ключи или доставать смартфон* из кармана - скутер автоматически блокируется и разблокируется, когда вы находитесь в радиусе 2-10 метров, благодаря системе Airlock. А благодаря двум датчикам на парковочной подставке и сиденье, вы можете просто сесть на скутер и поехать!<br><br>*Требуется Bluetooth-соединение между скутером и смартфоном</p>									</figcaption>
+						</figure>
+		</article>
+	<article class="simple-image full-width ">
+			<figure>
+							<img src="./E110S - Segway-Ninebot_files/eScooter_E110S_Lifestyle_Dashboard_Pic-right.jpg" alt="Умная приборная панель" data-cmp-info="10">
+				<figcaption class="white left narrow">
+
+																<h1>Умная приборная панель</h1>
+																<p>Интуитивная цифровая цветная приборная панель предоставляет водителю всю необходимую информацию с первого взгляда: скорость, уровень заряда батареи, различные индикаторы (поворотники, коды ошибок, индикатор ГОТОВ и т.д.), режим езды, Bluetooth-подключение и многое другое. Кроме того, светодиодные индикаторы по краям экрана меняют цвет в зависимости от состояния скутера: </p>
+<p>- Оранжевый: парковочная подставка не убрана или на сиденье нет водителя</p>
+<p>- Синий: вы готовы к поездке!</p>
+<p>- Красный: предупреждение или ошибка</p>
+<p>- Зеленый: активна рекуперация энергии (EBS)</p>
+<p>*Требуется Bluetooth-соединение между скутером и смартфоном</p>									</figcaption>
+						</figure>
+		</article>
+        <section class="simple-video  type-YouTube" style="padding: 0;">
+        <div style="position: relative; padding-bottom: 56.25%; height: 0; overflow: hidden; width: 100%;">
+            <iframe style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; border: none;" 
+                    src="https://www.youtube.com/embed/pai_QTdKOJw?rel=0" 
+                    frameborder="0" 
+                    allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; fullscreen" 
+                    allowfullscreen>
+            </iframe>
+        </div>
+    </section>
+	<article class="simple-image full-width ">
+
+
+			<figure>
+							<img src="./E110S - Segway-Ninebot_files/eScooter_E110S_Golden-Riding-Triangle.jpg" alt="Золотое соотношение - максимальная стабильность" data-cmp-info="10">
+				<figcaption class="white left narrow">
+
+																<h1>Золотое соотношение - максимальная стабильность</h1>
+																<p>The structural design of the Segway eScooter has been optimised in order to offer a smooth first-class riding experience. The placement of the battery compartment under the foot panel makes the vehicle’s centre of gravity lower. This placement gives you the agility and the stability you need during your ride as well as plenty of storage under the seat (27 L). </p>
+<p>Золотой треугольник езды создает баланс, делая вашу посадку максимально приятной, удобной и безопасной.</p>									</figcaption>
+						</figure>
+		</article>
+	<article class="simple-image full-width ">
+			<figure>
+							<img src="./E110S - Segway-Ninebot_files/eScooter_E110S-E_Smart-Mobile-App.jpg" alt="Улучшите свой скутер с мобильным приложением" data-cmp-info="10">
+				<figcaption class="white left narrow">
+
+																<h1>Улучшите свой скутер с мобильным приложением</h1>
+																<p>Помимо физического ключа, у вас есть интегрированный умный ключ в смартфоне через приложение Segway-Ninebot.<br>Умное мобильное приложение также предлагает множество удобных функций:<br>- Блокировка и разблокировка скутера (система Airlock)<br>- Предоставление данных о каждой поездке<br>- Показывает, где вы припарковались<br>- Противоугонная система: отправляет уведомления при движении скутера и позволяет отслеживать его<br>- Доступ к послепродажному обслуживанию<br>- И многое другое... <br><br>*Обратите внимание, что после первых 2 лет подключения скутера, подписка 4G перестанет быть бесплатной независимо от смены владельца.</p>									</figcaption>
+						</figure>
+		</article>
+	<article class="simple-image full-width ">
+			<figure>
+							<img src="./E110S - Segway-Ninebot_files/eScooter_E110S_Lifestyle_Smart-LED-Matrix-Headlights.jpg" alt="Умная матричная LED-фара" data-cmp-info="10">
+				<figcaption class="white right narrow">
+
+																<h1>Умная матричная LED-фара</h1>
+																<p>Динамичная, как и характеристики скутера, светодиодная фара имеет уникальную матричную структуру и полный фронтальный горизонтальный дисплей, создающий широкий луч света и освещающий путь впереди. <br><br>The headlight delivers a premium experience while following the brand’s mission of always building smarter and more energy-efficient products.</p>									</figcaption>
+						</figure>
+		</article>
+	<article class="simple-image full-width ">
+			<figure>
+							<img src="./E110S - Segway-Ninebot_files/eScooter_E110S_Lifestyle_Riding-modes.jpg" alt="Настройте режим езды под свои потребности" data-cmp-info="10">
+				<figcaption class="white right narrow">
+
+																<h1>Настройте режим езды под свои потребности</h1>
+																<p>В зависимости от вашей модели (25 км/ч или 45 км/ч), доступны 3 режима езды, которые легко переключаются кнопками + и - на руле.<br><br>Режим 1 - самый медленный и экономичный, обеспечивающий максимальное время работы от батареи.<br>Режим 2 - стандартный режим, идеальный баланс между временем работы батареи и крейсерской скоростью.<br>Режим 3 - самый быстрый режим, позволяющий достичь максимальной скорости вашего скутера.<br><br></p>
+<p>Для дополнительного комфорта вы также можете легко активировать круиз-контроль прямо с руля.</p>									</figcaption>
+						</figure>
+		</article>
+<section class="image-text-collection">
+    <div class="limiter">
+                                                <article>
+
+        <figure>
+                                        <img src="./E110S - Segway-Ninebot_files/eScooter-E110S_Disc-brakes.jpg" alt="Безопасная тормозная система" data-cmp-info="10">
+                    </figure>
+            <div class="content">
+                
+                <h2 class="h1">Безопасная тормозная система</h2>
+
+                                    <p>Скутер оснащен раздельными передними и задними гидравлическими дисковыми тормозами. В сочетании с нашей продвинутой системой EBS (электронная тормозная система), это создает контролируемое и безопасное торможение с одновременной рекуперацией энергии.</p>                
+                
+            </div>
+        </article>
+                                                <article>
+
+        <figure>
+                                        <img src="./E110S - Segway-Ninebot_files/eScooter-E110S_Front-shock-absorption.jpg" alt="Точно настроенная амортизация" data-cmp-info="10">
+                    </figure>
+            <div class="content">
+                
+                <h2 class="h1">Точно настроенная амортизация</h2>
+
+                                    <p>Система амортизации (передняя и задняя) электроскутера Segway поглощает вибрации от дороги и компенсирует неровности, обеспечивая более плавную езду, чем когда-либо. Даже на сложной местности электроскутер Segway произведет впечатление.</p>                
+                
+            </div>
+        </article>
+            </div>
+</section>
+	<article class="simple-image full-width white">
+
+
+			<figure>
+							<img src="./E110S - Segway-Ninebot_files/eScooter_BMS-6.0.jpg" alt="Преимущества умной системы управления батареей (BMS)" data-cmp-info="10">
+				<figcaption class="white left narrow">
+
+																<h1>Преимущества умной системы управления батареей (BMS)</h1>
+																<p>Электроскутер Segway оснащен умной системой управления батареей (BMS) 6.0, которая обеспечивает более длительный срок службы батареи и предлагает множество умных функций.</p>
+<p>Благодаря BMS 6.0, ваш скутер требует меньше обслуживания. Система не только контролирует уровень заряда, управляет скоростью зарядки и корректирует информацию в реальном времени при разрядке батареи, но также предотвращает и защищает батарею от перезарядки/недозарядки.<br></p>									</figcaption>
+						</figure>
+		</article>
+        <section class="grid row-2 purchase-product">
+    <div class="limiter">
+      <figure>
+        
+                    
+	
+		
+			                <img src="./E110S - Segway-Ninebot_files/Segway_eScooter_E110S_All-colours_Square(1).png" alt="Электроскутер E110S" data-cmp-info="10">
+              	              
+         <figcaption>
+                       <h2 class="h1">Электроскутер E110S</h2>
+
+            <ul><li>Умный электроскутер</li><li>Доступен в 5 цветах: Арктический белый (глянцевый), Фантомный черный (глянцевый), Стальной серый (глянцевый), Каменный серый (матовый) и Насыщенный красный (глянцевый)</li><li>Запас хода: Максимально достижимый запас хода до 75 км* / По стандарту WMTC: до 47 км (версия 25 км/ч); до 40 км (версия 45 км/ч)</li><li>Доступен с максимальной скоростью до 25 км/ч и 45 км/ч</li><li>Одна съемная батарея в комплекте</li></ul><p><em>Пожалуйста, уточните о возможных национальных и/или местных государственных субсидиях на электротранспорт (экологические), которые могут быть доступны для покупки новых электроскутеров и электромопедов в вашем регионе</em></p>
+            
+            <div class="button-wrap">
+                          </div>
+
+                       <small class="disclaimer">*Данные о запасе хода зависят от грузоподъемности, температуры, скорости, дорожного покрытия и других факторов: данные о запасе хода измерены при температуре окружающей среды 25℃, с нагрузкой 70 кг и при равномерной скорости 20 км/ч.<br>
+<br>
+**Показанные&nbsp;изображения&nbsp;и&nbsp;видео&nbsp;приведены&nbsp;только&nbsp;для&nbsp;справки.&nbsp;Фактический&nbsp;продукт&nbsp;может&nbsp;отличаться,&nbsp;пожалуйста,&nbsp;обратитесь&nbsp;к&nbsp;фактическому&nbsp;продукту&nbsp;для&nbsp;получения&nbsp;подробной&nbsp;информации.</small>
+                    </figcaption>
+      </figure>
+    </div>

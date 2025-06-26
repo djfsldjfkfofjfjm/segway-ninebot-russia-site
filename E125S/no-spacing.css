@@ -1,0 +1,98 @@
+/* Убираем пустое пространство между секциями */
+
+/* Убираем отступы у всех секций */
+section {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Убираем отступы у видео секций */
+section.simple-video {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+/* Убираем отступы у статей */
+article {
+    margin: 0 !important;
+}
+
+article.simple-image {
+    margin: 0 !important;
+}
+
+/* Убираем отступы у контейнеров product-tab */
+.product-tab-container {
+    margin: 0 !important;
+}
+
+/* Убираем верхний отступ у секций после hero */
+.product-features {
+    margin-top: 0 !important;
+}
+
+/* Фиксим отступы только для контента внутри секций */
+.product-features .limiter {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+
+/* Отступы для контента в статьях */
+article.simple-image figcaption {
+    padding: 60px 40px !important;
+}
+
+/* Убираем отступы между статьями */
+article + article {
+    margin-top: 0 !important;
+}
+
+/* Убираем отступы перед и после видео */
+section.simple-video + article,
+article + section.simple-video,
+section + section.simple-video {
+    margin-top: 0 !important;
+}
+
+/* Секция покупки продукта */
+.purchase-product {
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+}
+
+.purchase-product .limiter {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+
+/* Убираем отступы у спецификаций */
+.product-specifications {
+    margin: 0 !important;
+    padding: 0 !important;
+}
+
+.product-specifications .limiter {
+    padding-top: 60px !important;
+    padding-bottom: 60px !important;
+}
+
+/* Убираем любые дополнительные отступы */
+main > * {
+    margin-bottom: 0 !important;
+}
+
+/* Убираем отступы у div внутри main */
+main > div {
+    margin: 0 !important;
+}
+
+/* Важно: сохраняем отступы только для текстового контента */
+p {
+    margin-top: 1em;
+    margin-bottom: 1em;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    margin-top: 0;
+    margin-bottom: 1em;
+}

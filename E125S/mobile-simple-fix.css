@@ -1,0 +1,359 @@
+/* Точечный фикс для мобильных */
+@media (max-width: 768px) {
+    /* РАДИКАЛЬНЫЙ ФИКС - убираем белую полосу */
+    html {
+        overflow-x: hidden !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    body {
+        overflow-x: hidden !important;
+        width: 100vw !important;
+        max-width: 100vw !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        position: relative !important;
+    }
+    
+    /* Убираем белую полосу справа */
+    *, *::before, *::after {
+        max-width: 100vw !important;
+        box-sizing: border-box !important;
+    }
+    
+    main, section, article, .limiter {
+        overflow-x: hidden !important;
+        max-width: 100% !important;
+        width: 100% !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+    }
+    
+    /* Фикс для grid элементов */
+    .grid {
+        max-width: 100% !important;
+        margin: 0 !important;
+        padding: 0 15px !important;
+        box-sizing: border-box !important;
+    }
+    
+    .grid .col {
+        max-width: 100% !important;
+        padding: 10px !important;
+    }
+    
+    /* Фикс для product-features */
+    .product-features .limiter {
+        padding: 30px 15px !important;
+    }
+    
+    /* Фикс для purchase-product */
+    .purchase-product {
+        overflow: hidden !important;
+    }
+    
+    .purchase-product .limiter {
+        padding: 30px 15px !important;
+    }
+    
+    /* Убираем минимальную ширину у всех элементов */
+    * {
+        min-width: 0 !important;
+    }
+    
+    /* Фикс для tab контейнеров */
+    .product-tab-container {
+        overflow-x: hidden !important;
+        max-width: 100vw !important;
+    }
+    
+    /* Фикс для спецификаций */
+    .product-specifications {
+        overflow-x: hidden !important;
+    }
+    
+    .product-specifications .limiter {
+        padding: 30px 15px !important;
+        overflow-x: auto !important;
+    }
+    
+    /* Фикс для video секций */
+    .simple-video {
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    /* КРИТИЧЕСКИЙ ФИКС - убираем все возможные источники overflow */
+    .product-tab-container.default-layout {
+        width: 100% !important;
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    /* Убираем псевдоэлементы которые могут вызывать overflow */
+    *::before,
+    *::after {
+        max-width: 100% !important;
+        overflow: hidden !important;
+    }
+    
+    /* Фикс для радио кнопок табов */
+    input[type="radio"][name="product-tab-trigger"] {
+        display: none !important;
+    }
+    
+    /* ФИНАЛЬНЫЙ ФИКС - убираем белую полосу */
+    /* Все изображения должны быть 100% ширины */
+    img {
+        max-width: 100% !important;
+        height: auto !important;
+    }
+    
+    /* Фикс для hero секции которая может вызывать overflow */
+    .hero {
+        overflow: hidden !important;
+        max-width: 100vw !important;
+    }
+    
+    .hero img {
+        max-width: 100% !important;
+        width: 100% !important;
+        object-fit: cover !important;
+    }
+    
+    /* Фикс для feature-grid */
+    .feature-grid {
+        padding: 0 15px !important;
+        margin: 0 !important;
+    }
+    
+    /* ПОЗИЦИОНИРОВАНИЕ КОНКРЕТНЫХ ИЗОБРАЖЕНИЙ */
+    /* Контейнер для обрезки изображений */
+    .simple-image figure {
+        overflow: hidden !important;
+    }
+    
+    /* Golden-Riding-Triangle - показываем ТОЛЬКО правую часть где скутер */
+    img[src*="eScooter_E125S_Golden-Riding-Triangle.jpg"] {
+        width: 200% !important;
+        max-width: 200% !important;
+        height: 100% !important;
+        min-height: 300px !important;
+        margin-left: -89% !important;
+        object-fit: cover !important;
+        object-position: right center !important;
+    }
+    
+    /* Smart-LED-Matrix-Headlights - показываем ТОЛЬКО левую часть где фара */
+    img[src*="eScooter_E125S_Lifestyle_Smart-LED-Matrix-Headlights.jpg"] {
+        width: 200% !important;
+        max-width: 200% !important;
+        height: 100% !important;
+        min-height: 300px !important;
+        margin-left: 0 !important;
+        margin-right: -100% !important;
+        object-fit: cover !important;
+        object-position: left center !important;
+    }
+    
+    /* RideyGo - показываем ТОЛЬКО левую часть где скутер */
+    img[src*="eScooter_E125S_RideyGo.jpg"] {
+        width: 200% !important;
+        max-width: 200% !important;
+        height: 100% !important;
+        min-height: 300px !important;
+        margin-left: 0 !important;
+        margin-right: -100% !important;
+        object-fit: cover !important;
+        object-position: left center !important;
+    }
+    
+    /* AHRS-system - показываем ТОЛЬКО правую часть где скутер */
+    img[src*="eScooter_E125S_AHRS-system.jpg"] {
+        width: 200% !important;
+        max-width: 200% !important;
+        height: 100% !important;
+        min-height: 300px !important;
+        margin-left: -94% !important;
+        object-fit: cover !important;
+        object-position: right center !important;
+    }
+    
+    /* Smart-App-2 - показываем ТОЛЬКО правую часть где приложение */
+    img[src*="eScooter_E125S_Smart-App-2.jpg"] {
+        width: 200% !important;
+        max-width: 200% !important;
+        height: 100% !important;
+        min-height: 300px !important;
+        margin-left: -100% !important;
+        object-fit: cover !important;
+        object-position: right center !important;
+    }
+    
+    /* Attention-to-details - показываем ТОЛЬКО левую часть */
+    img[src*="eScooter_E125S_Attention-to-details.jpg"] {
+        width: 200% !important;
+        max-width: 200% !important;
+        height: 100% !important;
+        min-height: 300px !important;
+        margin-left: 0 !important;
+        margin-right: -100% !important;
+        object-fit: cover !important;
+        object-position: left center !important;
+    }
+    
+    /* Easy-to-plug-unplug-battery - показываем ТОЛЬКО левую часть */
+    img[src*="eScooter_E125S_Easy-to-plug-unplug-battery.jpg"] {
+        width: 200% !important;
+        max-width: 200% !important;
+        height: 100% !important;
+        min-height: 300px !important;
+        margin-left: 0 !important;
+        margin-right: -100% !important;
+        object-fit: cover !important;
+        object-position: left center !important;
+    }
+    
+    /* BMS-6.0 - показываем ТОЛЬКО правую часть */
+    img[src*="eScooter_BMS-6.0.jpg"] {
+        width: 200% !important;
+        max-width: 200% !important;
+        height: 100% !important;
+        min-height: 300px !important;
+        margin-left: -100% !important;
+        object-fit: cover !important;
+        object-position: right center !important;
+    }
+    
+    /* ФИКС для purchase-product секции - убираем черный фон */
+    .purchase-product figure figcaption {
+        background: transparent !important;
+        color: #000 !important;
+        position: relative !important;
+    }
+    
+    .purchase-product figcaption h2,
+    .purchase-product figcaption .h1 {
+        color: #000 !important;
+    }
+    
+    .purchase-product figcaption ul,
+    .purchase-product figcaption ul li,
+    .purchase-product figcaption p,
+    .purchase-product figcaption small {
+        color: #000 !important;
+    }
+    
+    /* Особый фикс для элементов с позиционированием */
+    [style*="position: absolute"],
+    [style*="position: fixed"] {
+        left: 0 !important;
+        right: 0 !important;
+        max-width: 100% !important;
+    }
+    
+    /* Viewport фикс */
+    #viewport,
+    .viewport {
+        width: 100vw !important;
+        max-width: 100vw !important;
+        overflow-x: hidden !important;
+    }
+    
+    /* Фикс для ВСЕХ figure - текст ВСЕГДА НИЖЕ изображения */
+    figure {
+        display: flex !important;
+        flex-direction: column !important;
+        overflow: hidden !important;
+    }
+    
+    figure img {
+        position: relative !important;
+        width: 100% !important;
+        height: auto !important;
+        min-height: 200px !important;
+        object-fit: cover !important;
+    }
+    
+    /* Фикс для figcaption ТОЛЬКО в simple-image секциях */
+    .simple-image figure figcaption {
+        position: relative !important;
+        background: #030303 !important;
+        padding: 30px 20px !important;
+        left: 0 !important;
+        right: 0 !important;
+        top: auto !important;
+        bottom: auto !important;
+        width: 100% !important;
+        box-sizing: border-box !important;
+        align-items: flex-start !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+        word-break: break-word !important;
+    }
+    
+    /* Адаптивный текст - НЕ обрезается */
+    figcaption h1,
+    figcaption h2,
+    figcaption p,
+    figcaption .h1,
+    figcaption .h2 {
+        max-width: 100% !important;
+        width: 100% !important;
+        margin-left: 0 !important;
+        margin-right: 0 !important;
+        padding-left: 0 !important;
+        padding-right: 0 !important;
+        box-sizing: border-box !important;
+        overflow-wrap: break-word !important;
+        word-wrap: break-word !important;
+        white-space: normal !important;
+    }
+    
+    /* Убираем все ограничения ширины */
+    figcaption.narrow,
+    figcaption.narrow .h1,
+    figcaption.narrow h1,
+    figcaption.narrow p {
+        max-width: 100% !important;
+    }
+    
+    /* Фикс для hero секции */
+    .hero figcaption {
+        padding: 30px 20px !important;
+        background: #030303 !important;
+    }
+    
+    /* Убираем любые абсолютные позиции для ссылок */
+    figcaption a:not(.btn) {
+        position: relative !important;
+        margin: 0 !important;
+        padding: 0 !important;
+        width: auto !important;
+        height: auto !important;
+    }
+}
+
+/* Исправление проблемы с пустым пространством на разрешении 540x720 (из E110S) */
+@media (max-width: 668px) {
+    /* Убираем фиксированную минимальную высоту для блоков с изображениями */
+    .simple-image figure {
+        min-height: auto !important;
+        height: auto !important;
+    }
+    
+    /* Дополнительная оптимизация для изображений ABS и других */
+    .simple-image figure img {
+        max-height: 70vh !important; /* Ограничиваем максимальную высоту */
+    }
+    
+    /* Специальный фикс для всех figcaption в simple-image на мобильных */
+    .simple-image figure figcaption {
+        position: relative !important;
+        top: auto !important;
+        bottom: auto !important;
+    }
+}

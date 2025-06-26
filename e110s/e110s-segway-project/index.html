@@ -1,0 +1,1153 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+    
+    <title>E110S - Электроскутер Segway-Ninebot</title>
+    <meta name="description" content="">
+    
+    <!-- Загружаем стили сразу в head -->
+    <link rel="stylesheet" href="./E110S - Segway-Ninebot_files/app.css">
+    <link href="./E110S - Segway-Ninebot_files/css2" rel="stylesheet">
+    
+    <!-- Google Fonts: Orbitron + Exo 2 -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;700&display=swap" rel="stylesheet">
+    
+    <!-- Исправления для мобильных устройств -->
+    <link rel="stylesheet" href="./mobile-fix.css">
+    
+    <!-- Встроенные стили -->
+    <style id="_goober"> 
+    .go1475592160{height:0;}
+    .go1671063245{height:auto;}
+    .go1888806478{display:flex;flex-wrap:wrap;flex-grow:1;}
+    @media (min-width:600px){.go1888806478{flex-grow:initial;min-width:288px;}}
+    .go167266335{background-color:#313131;font-size:0.875rem;line-height:1.43;letter-spacing:0.01071em;color:#fff;align-items:center;padding:6px 16px;border-radius:4px;box-shadow:0px 3px 5px -1px rgba(0,0,0,0.2),0px 6px 10px 0px rgba(0,0,0,0.14),0px 1px 18px 0px rgba(0,0,0,0.12);}
+    .go3162094071{padding-left:20px;}
+    .go3844575157{background-color:#313131;}
+    .go1725278324{background-color:#43a047;}
+    .go3651055292{background-color:#d32f2f;}
+    .go4215275574{background-color:#ff9800;}
+    .go1930647212{background-color:#2196f3;}
+    .go946087465{display:flex;align-items:center;padding:8px 0;}
+    .go703367398{display:flex;align-items:center;margin-left:auto;padding-left:16px;margin-right:-8px;}
+    .go3963613292{width:100%;position:relative;transform:translateX(0);top:0;right:0;bottom:0;left:0;min-width:288px;}
+    .go1141946668{box-sizing:border-box;display:flex;max-height:100%;position:fixed;z-index:1400;height:auto;width:auto;transition:top 300ms ease 0ms,right 300ms ease 0ms,bottom 300ms ease 0ms,left 300ms ease 0ms,max-width 300ms ease 0ms;pointer-events:none;max-width:calc(100% - 40px);}
+    .go1141946668 .notistack-CollapseWrapper{padding:6px 0px;transition:padding 300ms ease 0ms;}
+    @media (max-width:599.95px){.go1141946668{width:100%;max-width:calc(100% - 32px);}}
+    .go3868796639 .notistack-CollapseWrapper{padding:2px 0px;}
+    .go3118922589{top:14px;flex-direction:column;}
+    .go1453831412{bottom:14px;flex-direction:column-reverse;}
+    .go4027089540{left:20px;}
+    @media (min-width:600px){.go4027089540{align-items:flex-start;}}
+    @media (max-width:599.95px){.go4027089540{left:16px;}}
+    .go2989568495{right:20px;}
+    @media (min-width:600px){.go2989568495{align-items:flex-end;}}
+    @media (max-width:599.95px){.go2989568495{right:16px;}}
+    .go4034260886{left:50%;transform:translateX(-50%);}
+    @media (min-width:600px){.go4034260886{align-items:center;}}
+    /* Стили видео теперь встроены в components/videos.html */
+    
+    /* Шрифты Orbitron + Exo 2 */
+    /* Заголовки */
+    h1, h2, h3, h4, h5, h6,
+    #sprites-title,
+    [id*="title"],
+    .title,
+    .product-feature,
+    .product-feature h1,
+    .product-feature h2,
+    .product-feature h3,
+    .product-feature h4,
+    .product-accordion summary,
+    .pc-product-part-container .title,
+    .pc-product-part-container .img-wrap .title,
+    .pc-product-part-container .img-wrap-1 .content .title {
+        font-family: 'Orbitron', sans-serif !important;
+        font-weight: 700 !important;
+        letter-spacing: 0.5px;
+    }
+    
+    /* Основной текст */
+    body,
+    p,
+    li,
+    label,
+    .desc,
+    .content,
+    .words-ani-words,
+    figcaption,
+    .specs_body,
+    .product-tab-container p,
+    .product-tab-container li,
+    .product-tab-container figcaption,
+    .pc-product-part-container .desc,
+    .pc-product-part-container .img-wrap .desc,
+    .pc-product-part-container .img-wrap-1 .content .desc,
+    .pc-product-part-container .img-wrap-3 .left .content-1,
+    .pc-product-part-container .img-wrap-3 .left .content-2,
+    .pc-product-part-container .img-wrap-3 .left .content-3,
+    .pc-product-part-container .img-wrap-3 .right .content {
+        font-family: 'Exo 2', sans-serif !important;
+        font-weight: 400;
+    }
+    
+    /* Кнопки и ссылки */
+    button,
+    a,
+    .product-tab-container a {
+        font-family: 'Exo 2', sans-serif !important;
+        font-weight: 500;
+    }
+    
+    /* Переопределяем все элементы с font-family MiSans */
+    [style*="MiSans"],
+    *[style*="font-family"] {
+        font-family: 'Orbitron', sans-serif !important;
+    }
+    
+    /* ИСПРАВЛЕНИЕ БЕЛЫХ ОТСТУПОВ МЕЖДУ СЕКЦИЯМИ */
+    .simple-video {
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .simple-image {
+        margin: 0 !important;
+    }
+    
+    article.simple-image {
+        margin: 0 !important;
+    }
+    
+    section {
+        margin: 0 !important;
+    }
+    
+    /* Убираем отступы после видео */
+    .simple-video + article,
+    .simple-video + section {
+        margin-top: 0 !important;
+    }
+    
+    /* Убираем отступы между статьями */
+    article + article {
+        margin-top: 0 !important;
+    }
+    
+    
+    /* МОБИЛЬНАЯ АДАПТАЦИЯ */
+    
+    /* КРИТИЧЕСКИЙ ФИКС - убираем обрезание текста */
+    * {
+        box-sizing: border-box !important;
+    }
+    
+    /* Базовые стили для мобильных */
+    body {
+        overflow-x: hidden;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    main {
+        overflow-x: hidden !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    /* Hero секция */
+    @media (max-width: 768px) {
+        figure.hero {
+            position: relative;
+        }
+        
+        figure.hero img {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+        }
+        
+        figure.hero figcaption {
+            padding: 20px 15px !important;
+            position: relative !important;
+            background: rgba(0, 0, 0, 0.8);
+        }
+        
+        figure.hero figcaption h1 {
+            font-size: 24px !important;
+            line-height: 32px !important;
+            margin-bottom: 15px !important;
+        }
+        
+        figure.hero figcaption h2 {
+            font-size: 16px !important;
+            line-height: 24px !important;
+        }
+        
+        figure.hero figcaption p {
+            font-size: 14px !important;
+            line-height: 22px !important;
+        }
+        
+        figure.hero .awards img {
+            max-width: 200px !important;
+            height: auto;
+        }
+    }
+    
+    /* Сетка функций */
+    @media (max-width: 768px) {
+        .grid.row-5.feature-grid {
+            display: grid !important;
+            grid-template-columns: 1fr 1fr !important;
+            gap: 15px !important;
+            padding: 0 15px !important;
+        }
+        
+        .grid.row-5.feature-grid .col {
+            text-align: center;
+            padding: 15px 10px;
+        }
+        
+        .feature-icon {
+            width: 40px !important;
+            height: 40px !important;
+            margin-bottom: 10px;
+        }
+        
+        .feature-label {
+            font-size: 12px !important;
+            line-height: 16px !important;
+        }
+    }
+    
+    /* Текстовые секции с изображениями */
+    @media (max-width: 768px) {
+        article.simple-image figure {
+            flex-direction: column !important;
+        }
+        
+        article.simple-image figure img {
+            width: 100% !important;
+            height: auto !important;
+            max-height: 300px;
+            object-fit: cover;
+        }
+        
+        article.simple-image figure figcaption {
+            position: relative !important;
+            padding: 20px 15px !important;
+            width: 100% !important;
+            background: rgba(0, 0, 0, 0.9);
+        }
+        
+        article.simple-image figure figcaption h1 {
+            font-size: 22px !important;
+            line-height: 28px !important;
+            margin-bottom: 15px !important;
+        }
+        
+        article.simple-image figure figcaption p {
+            font-size: 14px !important;
+            line-height: 22px !important;
+        }
+        
+        /* Левое/правое выравнивание на мобильных */
+        article.simple-image figure figcaption.left,
+        article.simple-image figure figcaption.right {
+            text-align: center !important;
+        }
+    }
+    
+    /* Секция характеристик */
+    @media (max-width: 768px) {
+        .product-specifications {
+            padding: 0 !important;
+        }
+        
+        .product-specifications .limiter {
+            padding: 20px 15px !important;
+        }
+        
+        .product-specifications h1 {
+            font-size: 24px !important;
+            margin-bottom: 20px !important;
+        }
+        
+        .product-specifications dl {
+            margin: 0 !important;
+        }
+        
+        .product-specifications dt {
+            font-size: 16px !important;
+            padding: 15px 0 10px !important;
+            border-bottom: 1px solid #333;
+            margin-bottom: 15px !important;
+        }
+        
+        .product-specifications dd {
+            margin: 0 0 20px 0 !important;
+        }
+        
+        .product-specifications .specification {
+            padding: 10px 0 !important;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .product-specifications .specification .data {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 5px !important;
+        }
+        
+        .product-specifications .specification .key {
+            font-size: 13px !important;
+            font-weight: 600 !important;
+            color: #666 !important;
+        }
+        
+        .product-specifications .specification .value {
+            font-size: 14px !important;
+            font-weight: 400 !important;
+        }
+    }
+    
+    /* Секция загрузок */
+    @media (max-width: 768px) {
+        .product-downloads {
+            padding: 0 !important;
+        }
+        
+        .product-downloads .limiter {
+            padding: 20px 15px !important;
+        }
+        
+        .product-downloads h1 {
+            font-size: 24px !important;
+            margin-bottom: 20px !important;
+        }
+        
+        .download-list {
+            list-style: none !important;
+            padding: 0 !important;
+            margin: 0 !important;
+        }
+        
+        .download-list li {
+            margin-bottom: 15px !important;
+            border-bottom: 1px solid #eee;
+            padding-bottom: 15px !important;
+        }
+        
+        .download-list-item-wrapper {
+            display: flex !important;
+            flex-direction: column !important;
+            gap: 10px !important;
+            align-items: flex-start !important;
+        }
+        
+        .download-list-item-wrapper span {
+            font-size: 14px !important;
+            line-height: 20px !important;
+            word-break: break-word;
+        }
+        
+        .download-list-item-wrapper a {
+            display: inline-flex !important;
+            align-items: center !important;
+            justify-content: center !important;
+            padding: 10px 20px !important;
+            background: #007bff;
+            color: white !important;
+            border-radius: 4px;
+            text-decoration: none !important;
+        }
+        
+        .download-list-item-wrapper a svg {
+            fill: white !important;
+            width: 16px;
+            height: 16px;
+        }
+        
+        .download-list-item-wrapper a:hover {
+            background: #0056b3;
+        }
+    }
+    
+    /* Общие стили для всех секций */
+    @media (max-width: 768px) {
+        .product-tab-container {
+            padding: 0 !important;
+        }
+        
+        .limiter {
+            padding: 0 15px !important;
+            max-width: 100% !important;
+        }
+        
+        /* Заголовки */
+        h1, .h1 {
+            font-size: 28px !important;
+            line-height: 36px !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+        }
+        
+        h2, .h2 {
+            font-size: 20px !important;
+            line-height: 28px !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+        }
+        
+        h3, .h3 {
+            font-size: 18px !important;
+            line-height: 26px !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+        }
+        
+        h4, .h4 {
+            font-size: 16px !important;
+            line-height: 24px !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+        }
+        
+        h5, .h5 {
+            font-size: 14px !important;
+            line-height: 22px !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+        }
+        
+        /* Параграфы */
+        p {
+            font-size: 14px !important;
+            line-height: 22px !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            width: 100% !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+        
+        /* Кнопки */
+        a.button, .button {
+            padding: 12px 24px !important;
+            font-size: 14px !important;
+        }
+        
+        /* Отступы секций */
+        section {
+            padding: 0 !important;
+        }
+        
+        /* Изображения */
+        img {
+            max-width: 100%;
+            height: auto;
+        }
+    }
+    
+    /* Ультра-маленькие экраны (< 480px) */
+    @media (max-width: 480px) {
+        /* Сетка фич - 1 колонка */
+        .grid.row-5.feature-grid {
+            grid-template-columns: 1fr !important;
+        }
+        
+        /* Еще меньшие шрифты */
+        figure.hero figcaption h1 {
+            font-size: 20px !important;
+            line-height: 26px !important;
+        }
+        
+        h1, .h1 {
+            font-size: 24px !important;
+            line-height: 32px !important;
+        }
+        
+        h2, .h2 {
+            font-size: 18px !important;
+            line-height: 24px !important;
+        }
+    }
+    
+    /* Фиксы для видео на мобильных */
+    @media (max-width: 768px) {
+        .simple-video {
+            margin: 0 !important;
+        }
+        
+        .video-container {
+            margin-bottom: 0 !important;
+        }
+    }
+    
+    /* Убираем горизонтальный скролл */
+    @media (max-width: 768px) {
+        body, html {
+            overflow-x: hidden !important;
+            width: 100% !important;
+            margin: 0 !important;
+            padding: 0 !important;
+        }
+        
+        /* НЕ используем max-width: 100vw - это обрезает текст! */
+        section, article, figure, div {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+        }
+    }
+    
+    /* Планшеты (768px - 1024px) */
+    @media (min-width: 768px) and (max-width: 1024px) {
+        /* Hero секция */
+        figure.hero figcaption {
+            padding: 30px 40px !important;
+        }
+        
+        figure.hero figcaption h1 {
+            font-size: 32px !important;
+            line-height: 40px !important;
+        }
+        
+        /* Сетка функций */
+        .grid.row-5.feature-grid {
+            display: grid !important;
+            grid-template-columns: repeat(3, 1fr) !important;
+            gap: 20px !important;
+        }
+        
+        /* Текстовые секции */
+        article.simple-image figure figcaption {
+            padding: 30px 40px !important;
+        }
+        
+        /* Общие отступы */
+        .limiter {
+            padding: 0 40px !important;
+        }
+        
+        section {
+            padding: 0 !important;
+        }
+    }
+    
+    /* Дополнительные фиксы для мобильных */
+    @media (max-width: 768px) {
+        /* Фикс для изображений в обзоре */
+        .simple-image img {
+            width: 100% !important;
+            height: auto !important;
+            display: block !important;
+        }
+        
+        /* Фикс для иконок функций */
+        .product-features {
+            background: #f5f5f5 !important;
+            padding: 30px 0 !important;
+        }
+        
+        .product-features.dark {
+            background: #1a1a1a !important;
+            color: white !important;
+        }
+        
+        .product-features.dark .feature-label {
+            color: rgba(255, 255, 255, 0.9) !important;
+        }
+        
+        /* Фикс позиционирования текста на изображениях */
+        article.simple-image figure {
+            display: block !important;
+            position: relative !important;
+        }
+        
+        article.simple-image figure img {
+            position: relative !important;
+            z-index: 1;
+        }
+        
+        article.simple-image figure figcaption {
+            position: relative !important;
+            z-index: 2;
+            margin-top: -4px !important; /* Убираем щель */
+        }
+        
+        /* ФИКС: убираем отступ внизу simple-image на мобильных */
+        article.simple-image {
+            margin-bottom: 0 !important;
+        }
+        
+        /* Кнопки скачивания */
+        .download-icon {
+            transform: rotate(90deg);
+        }
+        
+        /* Фикс для таблиц характеристик на маленьких экранах */
+        .product-specifications .specification:last-child {
+            border-bottom: none !important;
+        }
+        
+        /* Улучшение читаемости */
+        .product-specifications .value {
+            color: #333 !important;
+        }
+        
+        /* Фикс отступов для вложенных элементов */
+        .product-tab-container > * {
+            box-sizing: border-box !important;
+        }
+    }
+    
+    /* Ландшафтная ориентация на мобильных */
+    @media (max-width: 768px) and (orientation: landscape) {
+        /* Уменьшаем высоту hero */
+        figure.hero img {
+            max-height: 50vh !important;
+            object-fit: cover !important;
+        }
+        
+        /* Сетка фич в 3 колонки */
+        .grid.row-5.feature-grid {
+            grid-template-columns: repeat(3, 1fr) !important;
+        }
+        
+        /* Меньше отступов */
+        section {
+            padding: 0 !important;
+        }
+    }
+    
+    /* Убираем белое пространство сверху на мобильных */
+    @media (max-width: 768px) {
+        body {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+        }
+        
+        main {
+            padding-top: 0 !important;
+            margin-top: 0 !important;
+        }
+        
+        /* Убираем любые отступы у первого элемента */
+        main > *:first-child {
+            margin-top: 0 !important;
+        }
+        
+        /* Убираем отступы у radio кнопок (скрытых табов) */
+        input[type="radio"][name="product-tab-trigger"] {
+            position: absolute !important;
+            left: -9999px !important;
+            top: 0 !important;
+        }
+        
+        /* Первый контейнер должен быть без отступов */
+        .product-tab-container {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+        
+        /* Hero изображение должно начинаться с самого верха */
+        figure.hero {
+            margin-top: 0 !important;
+            padding-top: 0 !important;
+        }
+    }
+    
+    /* Специальные стили для iPhone X и новее (с вырезом) */
+    @supports (padding-top: env(safe-area-inset-top)) {
+        @media (max-width: 768px) {
+            body {
+                padding-top: env(safe-area-inset-top);
+                padding-bottom: env(safe-area-inset-bottom);
+            }
+            
+            .limiter {
+                padding-left: max(15px, env(safe-area-inset-left)) !important;
+                padding-right: max(15px, env(safe-area-inset-right)) !important;
+            }
+        }
+    }
+    
+    /* Анимации для мобильных */
+    @media (max-width: 768px) {
+        /* Убираем сложные анимации для производительности */
+        * {
+            animation-duration: 0.3s !important;
+            transition-duration: 0.3s !important;
+        }
+    }
+    
+    /* ПОКАЗЫВАЕМ ТОЛЬКО ПРАВУЮ ПОЛОВИНУ AHRS И RIDEYGO НА МОБИЛЬНЫХ */
+    @media (max-width: 768px) {
+        /* Конкретно для AHRS изображения */
+        .simple-image img[src*="eScooter_AHRS-system.jpg"] {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+            object-position: right !important;
+            aspect-ratio: 1/1 !important; /* Делаем квадратным */
+        }
+        
+        /* Конкретно для RideyGo изображения - ЛЕВАЯ часть */
+        .simple-image img[src*="eScooter_E110S_Lifestyle_RideyGo.jpg"] {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+            object-position: left !important; /* Показываем левую часть */
+            aspect-ratio: 1/1 !important; /* Делаем квадратным */
+        }
+        
+        /* Конкретно для Dashboard изображения - ПРАВАЯ часть */
+        .simple-image img[src*="eScooter_E110S_Lifestyle_Dashboard_Pic-right.jpg"] {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+            object-position: right !important; /* Показываем правую часть */
+            aspect-ratio: 1/1 !important; /* Делаем квадратным */
+        }
+        
+        /* Конкретно для Golden-Riding-Triangle изображения - ПРАВАЯ часть */
+        .simple-image img[src*="eScooter_E110S_Golden-Riding-Triangle.jpg"] {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+            object-position: right !important; /* Показываем правую часть */
+            aspect-ratio: 1/1 !important; /* Делаем квадратным */
+        }
+        
+        /* Конкретно для Smart-Mobile-App изображения - ПРАВАЯ часть */
+        .simple-image img[src*="eScooter_E110S-E_Smart-Mobile-App.jpg"] {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+            object-position: right !important; /* Показываем правую часть */
+            aspect-ratio: 1/1 !important; /* Делаем квадратным */
+        }
+        
+        /* Конкретно для Smart-LED-Matrix-Headlights изображения - ЛЕВАЯ часть */
+        .simple-image img[src*="eScooter_E110S_Lifestyle_Smart-LED-Matrix-Headlights.jpg"] {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+            object-position: left !important; /* Показываем левую часть */
+            aspect-ratio: 1/1 !important; /* Делаем квадратным */
+        }
+        
+        /* Конкретно для Riding-modes изображения - ЛЕВАЯ часть */
+        .simple-image img[src*="eScooter_E110S_Lifestyle_Riding-modes.jpg"] {
+            width: 100% !important;
+            height: auto !important;
+            object-fit: cover !important;
+            object-position: left !important; /* Показываем левую часть */
+            aspect-ratio: 1/1 !important; /* Делаем квадратным */
+        }
+    }
+    
+    /* Стили для печати */
+    @media print {
+        .simple-video,
+        .video-container,
+        iframe {
+            display: none !important;
+        }
+        
+        body {
+            font-size: 12pt !important;
+        }
+        
+        .download-list-item-wrapper a {
+            content: " (" attr(href) ")";
+        }
+    }
+    
+    /* КРИТИЧЕСКИЕ ФИКСЫ ДЛЯ МОБИЛЬНЫХ - ФИНАЛЬНЫЕ */
+    @media (max-width: 768px) {
+        /* Базовый сброс для всех элементов */
+        * {
+            box-sizing: border-box !important;
+        }
+        
+        /* Видео контейнеры должны оставаться как есть */
+        .simple-video,
+        .simple-video > div,
+        .simple-video iframe {
+            /* Не трогаем видео элементы */
+        }
+        
+        /* Убираем любые отрицательные отступы и неправильное позиционирование для НЕ-видео элементов */
+        *:not(iframe):not(.simple-video):not(.simple-video > div) {
+            transform: none !important;
+            left: auto !important;
+            right: auto !important;
+        }
+        
+        *:not(iframe):not(.simple-video):not(.simple-video > div):not([style*="position: absolute"]) {
+            position: relative !important;
+        }
+        
+        /* Фиксим все контейнеры */
+        .product-tab-container,
+        section,
+        article,
+        figure,
+        .limiter,
+        figcaption {
+            width: 100% !important;
+            max-width: 100% !important;
+            margin: 0 !important;
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            transform: none !important;
+        }
+        
+        /* Обязательные отступы для ВСЕГО текстового контента */
+        h1, h2, h3, h4, h5, h6, p, span, a, li, dt, dd, .key, .value, .feature-label {
+            position: relative !important;
+            left: 0 !important;
+            right: 0 !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            transform: none !important;
+            text-indent: 0 !important;
+        }
+        
+        /* Фиксим .limiter отступы для всех секций */
+        .limiter {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+            box-sizing: border-box !important;
+        }
+        
+        /* Специальный фикс для figcaption */
+        figcaption {
+            padding-left: 15px !important;
+            padding-right: 15px !important;
+            box-sizing: border-box !important;
+        }
+        
+        /* Фикс для абсолютно позиционированных элементов - НО НЕ ДЛЯ IFRAME И ВИДЕО КОНТЕЙНЕРОВ! */
+        [style*="position: absolute"]:not(iframe):not(.simple-video div),
+        [style*="position:absolute"]:not(iframe):not(.simple-video div) {
+            position: relative !important;
+        }
+        
+        /* ВАЖНО: Видео должны работать на мобильных */
+        
+        /* Видео секция */
+        section.simple-video {
+            display: block !important;
+            width: 100% !important;
+            padding: 0 !important;
+            margin: 0 !important;
+            min-height: 200px !important; /* Минимальная высота чтобы видео не схлопывалось */
+        }
+        
+        /* Видео контейнер с padding-bottom для соотношения сторон */
+        .simple-video > div {
+            position: relative !important;
+            padding-bottom: 56.25% !important; /* 16:9 соотношение */
+            height: 0 !important;
+            overflow: hidden !important;
+            width: 100% !important;
+            background: #000 !important; /* Черный фон пока загружается */
+        }
+        
+        /* iframe внутри видео контейнера */
+        .simple-video iframe {
+            position: absolute !important;
+            top: 0 !important;
+            left: 0 !important;
+            width: 100% !important;
+            height: 100% !important;
+            border: none !important;
+        }
+        
+        /* Убираем transform для всех элементов кроме видео */
+        [style*="transform"]:not(.simple-video):not(.simple-video div) {
+            transform: none !important;
+        }
+        
+        
+        /* Специальный фикс для списков */
+        ul, ol, dl {
+            margin-left: 0 !important;
+            padding-left: 20px !important;
+        }
+        
+        /* Фикс для списков определений */
+        dt, dd {
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+        }
+        
+        /* Убедимся что ВСЕ элементы видны */
+        main > div,
+        main section,
+        main article {
+            overflow: visible !important;
+            clip: auto !important;
+            clip-path: none !important;
+        }
+        
+        /* Специальный фикс для секции покупки продукта */
+        .purchase-product {
+            padding: 0 !important;
+        }
+        
+        .purchase-product .limiter {
+            padding: 0 15px !important;
+        }
+        
+        .purchase-product figure {
+            margin: 0 !important;
+            width: 100% !important;
+        }
+        
+        .purchase-product figcaption {
+            padding: 20px 15px !important;
+            width: 100% !important;
+            box-sizing: border-box !important;
+        }
+        
+        .purchase-product p,
+        .purchase-product em,
+        .purchase-product small,
+        .purchase-product .disclaimer {
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+            padding-left: 0 !important;
+            padding-right: 0 !important;
+            text-indent: 0 !important;
+            width: 100% !important;
+            word-wrap: break-word !important;
+            overflow-wrap: break-word !important;
+        }
+        
+        /* Фикс для текста отказа от ответственности */
+        small.disclaimer {
+            display: block !important;
+            font-size: 12px !important;
+            line-height: 18px !important;
+            margin-top: 15px !important;
+            color: #666 !important;
+        }
+        
+        /* Фикс для ul списков в секции покупки */
+        .purchase-product ul {
+            margin-left: 0 !important;
+            padding-left: 20px !important;
+            width: calc(100% - 20px) !important;
+        }
+        
+        .purchase-product li {
+            margin-left: 0 !important;
+            padding-left: 0 !important;
+            word-wrap: break-word !important;
+        }
+        
+        /* Убираем красную границу для отладки */
+        .simple-video {
+            border: none !important;
+        }
+    }
+    
+    /* СЕКЦИЯ IMAGE-TEXT-COLLECTION НА ПОЛНУЮ ШИРИНУ */
+    .image-text-collection {
+        width: 100vw !important;
+        margin-left: calc(-50vw + 50%) !important;
+        position: relative !important;
+    }
+    
+    .image-text-collection .limiter {
+        max-width: none !important;
+        width: 100% !important;
+        padding: 0 !important;
+    }
+    
+    .image-text-collection article {
+        display: flex !important;
+        align-items: center !important;
+        width: 100% !important;
+        margin: 0 !important;
+        padding: 0 !important;
+    }
+    
+    .image-text-collection figure {
+        width: 50% !important;
+        margin: 0 !important;
+        flex-shrink: 0 !important;
+    }
+    
+    .image-text-collection figure img {
+        width: 100% !important;
+        height: auto !important;
+        display: block !important;
+    }
+    
+    .image-text-collection .content {
+        width: 50% !important;
+        padding: 40px !important;
+        background: #f5f5f5 !important;
+        min-height: 100% !important;
+        display: flex !important;
+        flex-direction: column !important;
+        justify-content: center !important;
+    }
+    
+    /* Мобильная адаптация для image-text-collection */
+    @media (max-width: 768px) {
+        .image-text-collection {
+            width: 100vw !important;
+            margin-left: 0 !important;
+            margin-right: 0 !important;
+        }
+        
+        .image-text-collection article {
+            flex-direction: column !important;
+        }
+        
+        .image-text-collection figure {
+            width: 100% !important;
+        }
+        
+        .image-text-collection .content {
+            width: 100% !important;
+            padding: 20px 15px !important;
+        }
+        
+        .image-text-collection h2 {
+            font-size: 20px !important;
+            line-height: 28px !important;
+        }
+        
+        .image-text-collection p {
+            font-size: 14px !important;
+            line-height: 22px !important;
+        }
+    }
+    </style>
+    
+    
+</head>
+<body class="ru" dir="ltr">
+    <!-- Основной контент -->
+    <main style="min-height: 341px;">
+        <!-- Контейнеры содержимого вкладок -->
+        <div id="overview-section">Загрузка обзора...</div>
+        <div id="specifications-section">Загрузка характеристик...</div>
+        <div id="videos-section" style="display: none;">Загрузка видео...</div>
+    </main>
+    
+    <!-- Скрипт загрузчика -->
+    <script>
+        console.log('Начинается загрузка страницы...');
+        
+        // Функция для загрузки секций
+        async function loadSection(sectionFile, containerId) {
+            console.log(`Загрузка ${sectionFile} в ${containerId}...`);
+            try {
+                const response = await fetch(sectionFile);
+                if (!response.ok) {
+                    throw new Error(`Ошибка HTTP! статус: ${response.status}`);
+                }
+                const text = await response.text();
+                const container = document.getElementById(containerId);
+                if (!container) {
+                    throw new Error(`Контейнер ${containerId} не найден!`);
+                }
+                container.innerHTML = text;
+                console.log(`✅ Успешно загружен ${sectionFile}`);
+                return true;
+            } catch (error) {
+                console.error(`❌ Ошибка загрузки ${sectionFile}:`, error);
+                const container = document.getElementById(containerId);
+                if (container) {
+                    container.innerHTML = `<div style="color: red; padding: 10px; border: 1px solid red;">Ошибка загрузки ${sectionFile}: ${error.message}</div>`;
+                }
+                return false;
+            }
+        }
+        
+        // Загружаем все секции при загрузке страницы
+        window.addEventListener('DOMContentLoaded', async () => {
+            console.log('DOM загружен, начинается загрузка секций...');
+            
+            // Загружаем все секции
+            const loadPromises = [
+                loadSection('components/overview.html', 'overview-section'),
+                loadSection('components/specifications.html', 'specifications-section'),
+                loadSection('components/videos.html', 'videos-section')
+            ];
+            
+            const results = await Promise.all(loadPromises);
+            console.log('Все секции загружены:', results);
+        });
+    </script>
+    
+<script>
+// Применяем шрифты после загрузки страницы
+document.addEventListener('DOMContentLoaded', function() {
+    setTimeout(function() {
+        // Заголовки
+        const titles = document.querySelectorAll('#sprites-title, .title, [id*="title"], h1, h2, h3, h4, h5, h6');
+        titles.forEach(function(el) {
+            el.style.fontFamily = "'Orbitron', sans-serif";
+            el.style.fontWeight = "700";
+            el.style.letterSpacing = "0.5px";
+        });
+        
+        // Текстовые элементы
+        const texts = document.querySelectorAll('p, li, label, .desc, .content, .words-ani-words');
+        texts.forEach(function(el) {
+            if (!el.matches('h1, h2, h3, h4, h5, h6, .title, [id*="title"]')) {
+                el.style.fontFamily = "'Exo 2', sans-serif";
+                el.style.fontWeight = "400";
+            }
+        });
+        
+        // Кнопки и ссылки
+        const links = document.querySelectorAll('button, a');
+        links.forEach(function(el) {
+            el.style.fontFamily = "'Exo 2', sans-serif";
+            el.style.fontWeight = "500";
+        });
+    }, 1000); // Задержка для ожидания завершения всех анимаций
+});
+</script>
+
+</body>
+</html>

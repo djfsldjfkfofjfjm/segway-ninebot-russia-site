@@ -1,0 +1,14 @@
+{
+  "name": "ninebot-m95c-site",
+  "version": "1.0.0",
+  "description": "Ninebot M+ Series Website",
+  "main": "index.html",
+  "type": "module",
+  "scripts": {
+    "test": "node test-site.js",
+    "start": "python3 -m http.server 8080"
+  },
+  "dependencies": {
+    "puppeteer": "^22.15.0"
+  }
+}
