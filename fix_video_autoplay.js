@@ -1,27 +1,36 @@
 // Скрипт для исправления автовоспроизведения видео
+// Запускаем после загрузки DOM
 document.addEventListener('DOMContentLoaded', function() {
-    // Ждем немного для загрузки всех элементов
+    // Короткая задержка, чтобы видео успели появиться
     setTimeout(function() {
-        // Находим все видео элементы
         const videos = document.querySelectorAll('video');
-        
         videos.forEach(function(video) {
-            // Проверяем источники видео
-            const sources = video.querySelectorAll('source');
-            sources.forEach(function(source) {
-                // Убеждаемся что у источника есть src
-                if (\!source.src && source.dataset.src) {
+            // Удаляем класс, скрывающий видео
+            video.classList.remove('home-banner_mobile_hidden');
+
+            // Обновляем атрибуты для iOS
+            video.setAttribute('muted', '');
+            video.setAttribute('autoplay', '');
+            video.setAttribute('playsinline', '');
+            video.setAttribute('webkit-playsinline', '');
+            video.setAttribute('preload', 'metadata');
+
+            video.muted = true;
+            video.autoplay = true;
+            video.playsInline = true;
+            video.preload = 'metadata';
+
+            // Проверяем источники
+            video.querySelectorAll('source').forEach(function(source) {
+                if (!source.src && source.dataset.src) {
                     source.src = source.dataset.src;
                 }
             });
-            
-            // Принудительно загружаем видео
+
+            // Перезагружаем и пытаемся воспроизвести
             video.load();
-            
-            // Пытаемся воспроизвести видео
             video.play().catch(function(error) {
                 console.log('Ошибка воспроизведения видео:', error);
-                // Если не удалось, пробуем еще раз через секунду
                 setTimeout(function() {
                     video.play().catch(function(err) {
                         console.log('Повторная ошибка:', err);
@@ -29,7 +38,7 @@ document.addEventListener('DOMContentLoaded', function() {
                 }, 1000);
             });
         });
-        
+
         console.log('Обработано видео:', videos.length);
     }, 500);
 });
