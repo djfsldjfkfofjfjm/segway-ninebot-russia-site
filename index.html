@@ -414,35 +414,6 @@ p,
     }
 }
 
-/* ИСПРАВЛЕНИЯ ДЛЯ ВИДЕО НА МОБИЛЬНЫХ УСТРОЙСТВАХ */
-
-/* КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ - убираем скрытие видео классом home-banner_mobile_hidden */
-.home-banner_mobile_hidden {
-    display: block !important;
-    visibility: visible !important;
-    opacity: 1 !important;
-}
-
-/* Показываем видео на мобильных вместо скрытия */
-@media screen and (max-width: 1023px) {
-    .home-banner_mobile_hidden {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    /* Показываем мобильные видео */
-    .segway-mobile video {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-    }
-    
-    /* Исправляем трансформации */
-    video[style*="transform: scale"] {
-        transform: none !important;
-    }
-}
 
 /* Общие исправления для всех видео */
 video {
