@@ -54,6 +54,18 @@ body { margin: 0; padding: 0; background: #000; }
 .swiper-slide { width: 100%; height: 100%; }
 .s-primary-banner_img { width: 100%; height: 100%; object-fit: cover; }
 .segway-mobile { display: none; }
+
+/* КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ: Показать первый слайд сразу, не дожидаясь JavaScript */
+.swiper-slide[data-swiper-slide-index="0"] {
+    opacity: 1 !important;
+    transform: translate3d(0, 0, 0) !important;
+}
+/* После инициализации Swiper переопределит стили */
+.swiper-container-initialized .swiper-slide[data-swiper-slide-index="0"] {
+    opacity: inherit;
+    transform: inherit;
+}
+
 @media (max-width: 768px) {
     .segway-pc { display: none; }
     .segway-mobile { display: block; }
