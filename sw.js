@@ -1,5 +1,6 @@
 // Service Worker для Segway Russia
-const CACHE_NAME = 'segway-v2';
+// v3 - блокировка видео для мобильных устройств
+const CACHE_NAME = 'segway-v3';
 const urlsToCache = [
   './',
   './index.html',
@@ -34,6 +35,16 @@ self.addEventListener('install', event => {
 });
 
 self.addEventListener('fetch', event => {
+  const isMobile = /Mobile|Android/i.test(
+    event.request.headers.get('User-Agent') || ''
+  );
+  
+  // Блокируем видео на мобильных
+  if (isMobile && event.request.url.endsWith('.mp4')) {
+    event.respondWith(new Response('', { status: 204 }));
+    return;
+  }
+  
   event.respondWith(
     caches.match(event.request)
       .then(response => response || fetch(event.request))
