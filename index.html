@@ -743,20 +743,8 @@ if (window.innerWidth <= 1023) {
 </script>
 <!-- Mobile Video Blocker - блокирует видео ТОЛЬКО в мобильных блоках -->
 <script src="./mobile-video-blocker.js"></script>
-<!-- JS Bundle: App (app.js, core.wcm.components) - условная загрузка -->
-<script>
-if(window.innerWidth <= 768 || /Android|iPhone|iPad/i.test(navigator.userAgent)){
-  // Мобильные - грузим после загрузки страницы
-  window.addEventListener('load', function(){
-    var script = document.createElement('script');
-    script.src = './js-bundle-app.min.js';
-    document.body.appendChild(script);
-  });
-} else {
-  // ПК - как обычно
-  document.write('<script async src="./js-bundle-app.min.js"><\/script>');
-}
-</script>
+<!-- JS Bundle: App (app.js, core.wcm.components) -->
+<script async="" src="./js-bundle-app.min.js"></script>
 <script>
             window.isPublish = "true";
             var id = "G-JTL5HSZBRR";
@@ -826,20 +814,8 @@ if(window.innerWidth<=768||/Android|iPhone|iPad/i.test(navigator.userAgent)){
 <!-- -->
 <!-- CSS Bundle: Components (all clientlibs CSS) -->
 <link href="./css-bundle-components.min.css" rel="stylesheet" type="text/css"/>
-<!-- JS Bundle: Components (all clientlibs) - условная загрузка -->
-<script>
-if(window.innerWidth <= 768 || /Android|iPhone|iPad/i.test(navigator.userAgent)){
-  // Мобильные - грузим после загрузки страницы
-  window.addEventListener('load', function(){
-    var script = document.createElement('script');
-    script.src = './js-bundle-components.min.js';
-    document.body.appendChild(script);
-  });
-} else {
-  // ПК - как обычно
-  document.write('<script defer src="./js-bundle-components.min.js"><\/script>');
-}
-</script>
+<!-- JS Bundle: Components (all clientlibs) -->
+<script defer="" src="./js-bundle-components.min.js"></script>
 </div>
 </div>
 <main class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
