@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html lang="ru" style="--vh: 8.57px;"><script async="" src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/js" type="text/javascript"></script><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
+<html lang="ru" style="--vh: 8.57px;"><head><meta content="text/html; charset=utf-8" http-equiv="Content-Type"/>
 <title>Segway Россия - Премиальная электромобильность для современной жизни</title>
 <meta content="Откройте для себя мир Segway в России. Инновационные электросамокаты и персональный транспорт для комфортной городской жизни" name="description"/>
 <!-- <meta name="viewport" content="width=device-width, initial-scale=1"> -->
@@ -24,16 +24,16 @@
 <!-- Preload критических ресурсов -->
 <link as="image" href="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xyber_PC.webp" media="(min-width: 768px)" rel="preload"/>
 <link as="image" href="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xyber_M.webp" media="(max-width: 767px)" rel="preload"/>
-<link as="style" href="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/clientlib-base.3e21fb49801385d0ff2bda0061858216.css" rel="preload"/>
 <!-- Google Fonts: Orbitron + Exo 2 - оптимизированная загрузка (убрали лишние начертания) -->
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;family=Exo+2:wght@400;700&amp;display=swap&amp;subset=cyrillic" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;family=Exo+2:wght@400;700&amp;display=swap&amp;subset=cyrillic"></noscript>
-<script async="" src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/gtm.js"></script>
 <!-- JS Bundle: Vendor (jQuery, utils, vendors) -->
-<script src="./js-bundle-vendor.min.js"></script>
+<script defer src="./js-bundle-vendor.min.js"></script>
 <!-- CSS Bundle: Base -->
 <link href="./css-bundle-base.min.css" rel="stylesheet" type="text/css"/>
+<!-- CSS Bundle: Components (all clientlibs CSS) -->
+<link href="./css-bundle-components.min.css" rel="stylesheet" type="text/css"/>
 <!-- Критический CSS для мобильных inline -->
 <script>
 if(window.innerWidth<=768||/Android|iPhone|iPad/i.test(navigator.userAgent)){
@@ -738,7 +738,7 @@ if (window.innerWidth <= 1023) {
 }
 </script>
 <!-- Mobile Video Blocker - блокирует видео ТОЛЬКО в мобильных блоках -->
-<script src="./mobile-video-blocker.js"></script>
+<script defer src="./mobile-video-blocker.js"></script>
 <!-- JS Bundle: App (app.js, core.wcm.components) -->
 <script async="" src="./js-bundle-app.min.js"></script>
 <script>
@@ -808,8 +808,6 @@ if(window.innerWidth<=768||/Android|iPhone|iPad/i.test(navigator.userAgent)){
 };
 </script>
 <!-- -->
-<!-- CSS Bundle: Components (all clientlibs CSS) -->
-<link href="./css-bundle-components.min.css" rel="stylesheet" type="text/css"/>
 <!-- JS Bundle: Components (all clientlibs) -->
 <script defer="" src="./js-bundle-components.min.js"></script>
 </div>
