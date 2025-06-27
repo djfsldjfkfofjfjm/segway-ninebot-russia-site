@@ -25,15 +25,26 @@
 <link as="image" href="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xyber_PC.webp" media="(min-width: 768px)" rel="preload"/>
 <link as="image" href="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xyber_M.webp" media="(max-width: 767px)" rel="preload"/>
 <link as="style" href="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/clientlib-base.3e21fb49801385d0ff2bda0061858216.css" rel="preload"/>
-<!-- Google Fonts: Orbitron + Exo 2 - оптимизированная загрузка -->
-<link as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Exo+2:wght@300;400;500;700&amp;display=swap&amp;subset=cyrillic" rel="preload"/>
-<link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Exo+2:wght@300;400;500;700&amp;display=swap&amp;subset=cyrillic" media="print" onload="this.media='all'" rel="stylesheet"/>
-<noscript><link href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&amp;family=Exo+2:wght@300;400;500;700&amp;display=swap&amp;subset=cyrillic" rel="stylesheet"/></noscript>
+<!-- Google Fonts: Orbitron + Exo 2 - оптимизированная загрузка (убрали лишние начертания) -->
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;family=Exo+2:wght@400;700&amp;display=swap&amp;subset=cyrillic" as="style" onload="this.rel='stylesheet'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;family=Exo+2:wght@400;700&amp;display=swap&amp;subset=cyrillic"></noscript>
 <script async="" src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/gtm.js"></script>
 <!-- JS Bundle: Vendor (jQuery, utils, vendors) -->
 <script src="./js-bundle-vendor.min.js"></script>
-<!-- CSS Bundle: Base (clientlib-base + index.css) -->
-<link href="./css-bundle-base.min.css" rel="stylesheet" type="text/css"/>
+<!-- CSS Bundle: Base - условная загрузка -->
+<script>
+if(window.innerWidth<=768||/Android|iPhone|iPad/i.test(navigator.userAgent)){
+  // Критический CSS для мобильных inline
+  document.write('<style>body{margin:0;background:#000}.segway-mobile{display:block!important}.fixed-segway-logo{position:fixed;top:20px;left:20px;z-index:1000;width:40px}.home-primary-banner{position:relative;height:100vh}</style>');
+  // Остальное - асинхронно
+  document.write('<link rel="preload" href="./css-bundle-base.min.css" as="style" onload="this.rel=\'stylesheet\'">');
+  document.write('<noscript><link rel="stylesheet" href="./css-bundle-base.min.css"></noscript>');
+} else {
+  // ПК версия как обычно
+  document.write('<link href="./css-bundle-base.min.css" rel="stylesheet" type="text/css"/>');
+}
+</script>
 <!-- JS Bundle: Core (base, container, media, index) -->
 <script defer="" src="./js-bundle-core.min.js"></script>
 <!-- Отключен CSRF скрипт так как токен недоступен локально -->
@@ -2192,6 +2203,7 @@ preloadLinks.forEach(link => {
 </script>
 <!-- Глобальное исправление видео на мобильных -->
 <!-- fix_mobile_video_global.min.js включен в app bundle -->
+
 </body>
 </html>
 <!-- Trigger Vercel rebuild Thu Jun 26 18:02:10 MSK 2025 -->

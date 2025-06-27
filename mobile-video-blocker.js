@@ -1,12 +1,15 @@
 // mobile-video-blocker.js
 // Блокирует загрузку видео ТОЛЬКО в мобильных блоках (.segway-mobile)
 // НЕ трогает ПК версию!
+// Также блокирует тяжелые скрипты для мобильных
 
 (function() {
   const isMobile = window.innerWidth <= 768 || 
     /Android|iPhone|iPad/i.test(navigator.userAgent);
   
   if (isMobile) {
+    // Устанавливаем флаг для блокировки тяжелых скриптов
+    window.blockHeavyScripts = true;
     // Функция блокировки видео
     function blockMobileVideos() {
       // Блокируем видео ТОЛЬКО в .segway-mobile блоках
