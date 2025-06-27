@@ -30,12 +30,8 @@
 <link rel="preload" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;family=Exo+2:wght@400;700&amp;display=swap&amp;subset=cyrillic" as="style" onload="this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700&amp;family=Exo+2:wght@400;700&amp;display=swap&amp;subset=cyrillic"></noscript>
 <script async="" src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/gtm.js"></script>
-<!-- JS Bundle: Vendor (jQuery, utils, vendors) - только для ПК -->
-<script>
-if(window.innerWidth > 768 && !/Android|iPhone|iPad/i.test(navigator.userAgent)){
-  document.write('<script src="./js-bundle-vendor.min.js"><\/script>');
-}
-</script>
+<!-- JS Bundle: Vendor (jQuery, utils, vendors) -->
+<script src="./js-bundle-vendor.min.js"></script>
 <!-- CSS Bundle: Base -->
 <link href="./css-bundle-base.min.css" rel="stylesheet" type="text/css"/>
 <!-- Критический CSS для мобильных inline -->
@@ -45,7 +41,20 @@ if(window.innerWidth<=768||/Android|iPhone|iPad/i.test(navigator.userAgent)){
 }
 </script>
 <!-- JS Bundle: Core (base, container, media, index) -->
-<script defer="" src="./js-bundle-core.min.js"></script>
+<script>
+// Для мобильных - грузим после window.load
+if(window.innerWidth <= 768 || /Android|iPhone|iPad/i.test(navigator.userAgent)){
+  window.addEventListener('load', function(){
+    var script = document.createElement('script');
+    script.src = './js-bundle-core.min.js';
+    script.async = true;
+    document.body.appendChild(script);
+  });
+} else {
+  // Для десктопа - как было (defer)
+  document.write('<script defer src="./js-bundle-core.min.js"><\/script>');
+}
+</script>
 <!-- Отключен CSRF скрипт так как токен недоступен локально -->
 <!-- <script src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/csrf.a9dcac4698709ca8e1cbc88363cf0793.js"></script> -->
 <!-- 引入样式 -->
@@ -743,8 +752,21 @@ if (window.innerWidth <= 1023) {
 </script>
 <!-- Mobile Video Blocker - блокирует видео ТОЛЬКО в мобильных блоках -->
 <script src="./mobile-video-blocker.js"></script>
-<!-- JS Bundle: App (app.js, core.wcm.components) -->
-<script async="" src="./js-bundle-app.min.js"></script>
+<!-- JS Bundle: App (app.js, core.wcm.components) - отложенная загрузка для мобильных -->
+<script>
+if(window.innerWidth <= 768 || /Android|iPhone|iPad/i.test(navigator.userAgent)){
+  // Мобильные - грузим после загрузки страницы
+  window.addEventListener('load', function(){
+    var script = document.createElement('script');
+    script.src = './js-bundle-app.min.js';
+    script.async = true;
+    document.body.appendChild(script);
+  });
+} else {
+  // ПК - как обычно
+  document.write('<script async src="./js-bundle-app.min.js"><\/script>');
+}
+</script>
 <script>
             window.isPublish = "true";
             var id = "G-JTL5HSZBRR";
@@ -814,8 +836,21 @@ if(window.innerWidth<=768||/Android|iPhone|iPad/i.test(navigator.userAgent)){
 <!-- -->
 <!-- CSS Bundle: Components (all clientlibs CSS) -->
 <link href="./css-bundle-components.min.css" rel="stylesheet" type="text/css"/>
-<!-- JS Bundle: Components (all clientlibs) -->
-<script defer="" src="./js-bundle-components.min.js"></script>
+<!-- JS Bundle: Components (all clientlibs) - отложенная загрузка для мобильных -->
+<script>
+if(window.innerWidth <= 768 || /Android|iPhone|iPad/i.test(navigator.userAgent)){
+  // Мобильные - грузим после загрузки страницы
+  window.addEventListener('load', function(){
+    var script = document.createElement('script');
+    script.src = './js-bundle-components.min.js';
+    script.defer = true;
+    document.body.appendChild(script);
+  });
+} else {
+  // ПК - как обычно
+  document.write('<script defer src="./js-bundle-components.min.js"><\/script>');
+}
+</script>
 </div>
 </div>
 <main class="container responsivegrid aem-GridColumn aem-GridColumn--default--12">
