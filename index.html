@@ -513,36 +513,32 @@ video[x5-video-player-type] {
     }
 }
 
-/* КРИТИЧЕСКОЕ ИСПРАВЛЕНИЕ ВИДЕО НА МОБИЛЬНЫХ */
+/* СКРЫВАЕМ ВСЕ СЕКЦИИ С ВИДЕО НА МОБИЛЬНЫХ */
 @media screen and (max-width: 1023px) {
-    /* ПОКАЗЫВАЕМ ВСЕ ВИДЕО БЕЗ ИСКЛЮЧЕНИЙ */
-    video {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
-        width: 100% !important;
-        height: auto !important;
+    /* Скрываем секцию видео Xyber */
+    .xyber-video-section {
+        display: none !important;
     }
     
-    /* Убираем класс  */
-    . {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+    /* Скрываем весь блок слайдера с видео */
+    .home-brand-module_wrapper {
+        display: none !important;
     }
     
-    /* Форсируем показ мобильной карусели */
+    /* Скрываем любые видео секции */
+    .video-section-fullwidth {
+        display: none !important;
+    }
+    
+    /* Скрываем карусель с видео на мобильных */
     .home-brand-module-swiper_m {
-        display: block !important;
-        visibility: visible !important;
-        opacity: 1 !important;
+        display: none !important;
     }
     
     /* Скрываем десктопную карусель */
     .home-brand-module_pc {
         display: none !important;
     }
-    
 }
 </style>
 
