@@ -40,10 +40,10 @@
 <link rel="preload" as="image" href="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xyber_M.webp" media="(max-width: 767px)">
 <link rel="preload" as="style" href="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/clientlib-base.3e21fb49801385d0ff2bda0061858216.css">
 
-<!-- Google Fonts: Orbitron + Exo 2 - асинхронная загрузка -->
-<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;700&display=swap">
-<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;700&display=swap" media="print" onload="this.media='all'">
-<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;700&display=swap"></noscript>
+<!-- Google Fonts: Orbitron + Exo 2 - оптимизированная загрузка -->
+<link rel="preload" as="style" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;700&display=swap&subset=cyrillic">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;700&display=swap&subset=cyrillic" media="print" onload="this.media='all'">
+<noscript><link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Orbitron:wght@400;700;900&family=Exo+2:wght@300;400;500;700&display=swap&subset=cyrillic"></noscript>
 
     
 
@@ -70,6 +70,18 @@
 <script defer src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/index.js"></script>
 
 <style>
+/* КРИТИЧЕСКИЙ CSS ДЛЯ ПЕРВОГО ЭКРАНА */
+body { margin: 0; padding: 0; background: #000; }
+.home-primary-banner { position: relative; width: 100%; height: 100vh; overflow: hidden; }
+.s-primary-banner-swiper { width: 100%; height: 100%; }
+.swiper-slide { width: 100%; height: 100%; }
+.s-primary-banner_img { width: 100%; height: 100%; object-fit: cover; }
+.segway-mobile { display: none; }
+@media (max-width: 768px) {
+    .segway-pc { display: none; }
+    .segway-mobile { display: block; }
+}
+
 /* Прозрачное меню всегда */
 .segway-topnav-container,
 .top-nav-pc,
@@ -1033,31 +1045,31 @@ if (window.innerWidth <= 1023) {
 };
 </script>
 
-<div data-uuid="62b42c36-6280-3560-b4bf-96c65161f16f" class="home-primary-banner"><div class="banner_animaiton" style="display: none;"><div class="zoom_box"><div class="box_top"></div> <div class="box_middle"><div class="box_middle_left"></div> <div class="box_middle_center"></div> <div class="box_middle_right"></div></div> <div class="box_bottom"></div></div></div> <div class="swiper s-primary-banner-swiper swiper-container swiper-container-fade swiper-container-initialized swiper-container-horizontal"><div class="topShdow"></div> <div class="swiper-wrapper" style="transition-duration: 0ms;"><div data-img-link="./ebike/products/xyber.html?kid=K12302" class="s-primary-banner swiper-slide" data-swiper-slide-index="0" style="width: 1504px; transition-duration: 0ms; opacity: 0; transform: translate3d(-3008px, 0px, 0px);"><div class="segway-wh100 primary-banner_wrapper"><div class="segway-wh100"><img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xyber_PC.webp" alt="Xyber" class="s-primary-banner_img prprdcategoryprimarybanners segway-img100 segway-pc"> <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xyber_M.webp" alt="Xyber" class="segway-mobile segway-img100"></div> <!----></div> <div class="banner-content-wrapper"><div class="home-banner_t"><div class="home-eyebrow segway-pc">
+<div data-uuid="62b42c36-6280-3560-b4bf-96c65161f16f" class="home-primary-banner"><div class="banner_animaiton" style="display: none;"><div class="zoom_box"><div class="box_top"></div> <div class="box_middle"><div class="box_middle_left"></div> <div class="box_middle_center"></div> <div class="box_middle_right"></div></div> <div class="box_bottom"></div></div></div> <div class="swiper s-primary-banner-swiper swiper-container swiper-container-fade swiper-container-initialized swiper-container-horizontal"><div class="topShdow"></div> <div class="swiper-wrapper" style="transition-duration: 0ms;"><div data-img-link="./ebike/products/xyber.html?kid=K12302" class="s-primary-banner swiper-slide" data-swiper-slide-index="0" style="width: 1504px; transition-duration: 0ms; opacity: 0; transform: translate3d(-3008px, 0px, 0px);"><div class="segway-wh100 primary-banner_wrapper"><div class="segway-wh100"><img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xyber_PC.webp" alt="Xyber" class="s-primary-banner_img prprdcategoryprimarybanners segway-img100 segway-pc" loading="lazy"> <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xyber_M.webp" alt="Xyber" class="segway-mobile segway-img100" loading="lazy"></div> <!----></div> <div class="banner-content-wrapper"><div class="home-banner_t"><div class="home-eyebrow segway-pc">
               New
             </div> <div class="home-eyebrow segway-mobile">
               New
             </div> <picture>
         <source srcset="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/EBike_Xyber_PC.webp" type="image/webp">
-        <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/EBike_Xyber_PC.png" alt="" class="segway-pc titleImg">
+        <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/EBike_Xyber_PC.png" alt="" class="segway-pc titleImg" loading="lazy">
     </picture> <picture>
         <source srcset="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/EBike_Xyber_M.webp" type="image/webp">
-        <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/EBike_Xyber_M.png" alt="" class="segway-mobile titleImg">
+        <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/EBike_Xyber_M.png" alt="" class="segway-mobile titleImg" loading="lazy">
     </picture> <!----> <!----></div> <div class="home-banner_m banner-content_top"><div class="home-banner_desc segway-pc">
               An Icon in the Making
             </div> <div class="home-banner_desc segway-mobile">
               An Icon in the Making
-            </div> <div class="home-banner_btns"><div class="buttonItem"><a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Узнать больше&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;./ebike/products/xyber.html?kid=K12302&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;popUp&quot;:{&quot;popUpMediaType&quot;:&quot;img&quot;,&quot;popUpPCMedia&quot;:&quot;&quot;,&quot;popUpMobMedia&quot;:&quot;&quot;,&quot;popUpPCRichContentExperienceFragments&quot;:&quot;&quot;,&quot;popUpPCMediaThumnail&quot;:&quot;&quot;,&quot;popUpMobMediaThumnail&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;}}" class="common-btn_medium segway-pc common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Узнать больше&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;./ebike/products/xyber.html?kid=K12302&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;popUp&quot;:{&quot;popUpMediaType&quot;:&quot;img&quot;,&quot;popUpPCMedia&quot;:&quot;&quot;,&quot;popUpMobMedia&quot;:&quot;&quot;,&quot;popUpPCRichContentExperienceFragments&quot;:&quot;&quot;,&quot;popUpPCMediaThumnail&quot;:&quot;&quot;,&quot;popUpMobMediaThumnail&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;}}" class="common-btn_medium segway-mobile common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----> <!----></div><div class="buttonItem"><a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Заказать&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;#storequot;url&quot;url&quot;:&quot;#storequot;:&quot;url&quot;:&quot;#storequot;#" class="common-btn_medium segway-pc common-Btn-WhiteTxt-withborder common-Btn-rounded catchTrack" aria-label="Заказать">Заказать</a> <a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Заказать&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;#storequot;url&quot;url&quot;:&quot;#storequot;:&quot;url&quot;:&quot;#storequot;#" class="common-btn_medium segway-mobile common-Btn-WhiteTxt-withborder common-Btn-rounded catchTrack" aria-label="Заказать">Заказать</a> <!----> <!----></div></div></div></div></div><div data-img-link="./ebike/products/xafari.html?kid=K12201" class="s-primary-banner swiper-slide swiper-slide-active" data-swiper-slide-index="1" style="width: 1504px; transition-duration: 0ms; opacity: 1; transform: translate3d(-6016px, 0px, 0px);"><div class="segway-wh100 primary-banner_wrapper"><div class="segway-wh100"><img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xafari_PC.webp" alt="Xafari" class="s-primary-banner_img prprdcategoryprimarybanners segway-img100 segway-pc"> <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xafari_M.webp" alt="Xafari" class="segway-mobile segway-img100"></div> <!----></div> <div class="banner-content-wrapper"><div class="home-banner_t"><div class="home-eyebrow segway-pc">
+            </div> <div class="home-banner_btns"><div class="buttonItem"><a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Узнать больше&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;./ebike/products/xyber.html?kid=K12302&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;popUp&quot;:{&quot;popUpMediaType&quot;:&quot;img&quot;,&quot;popUpPCMedia&quot;:&quot;&quot;,&quot;popUpMobMedia&quot;:&quot;&quot;,&quot;popUpPCRichContentExperienceFragments&quot;:&quot;&quot;,&quot;popUpPCMediaThumnail&quot;:&quot;&quot;,&quot;popUpMobMediaThumnail&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;}}" class="common-btn_medium segway-pc common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Узнать больше&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;./ebike/products/xyber.html?kid=K12302&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;popUp&quot;:{&quot;popUpMediaType&quot;:&quot;img&quot;,&quot;popUpPCMedia&quot;:&quot;&quot;,&quot;popUpMobMedia&quot;:&quot;&quot;,&quot;popUpPCRichContentExperienceFragments&quot;:&quot;&quot;,&quot;popUpPCMediaThumnail&quot;:&quot;&quot;,&quot;popUpMobMediaThumnail&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;}}" class="common-btn_medium segway-mobile common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----> <!----></div><div class="buttonItem"><a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Заказать&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;#storequot;url&quot;url&quot;:&quot;#storequot;:&quot;url&quot;:&quot;#storequot;#" class="common-btn_medium segway-pc common-Btn-WhiteTxt-withborder common-Btn-rounded catchTrack" aria-label="Заказать">Заказать</a> <a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Заказать&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;#storequot;url&quot;url&quot;:&quot;#storequot;:&quot;url&quot;:&quot;#storequot;#" class="common-btn_medium segway-mobile common-Btn-WhiteTxt-withborder common-Btn-rounded catchTrack" aria-label="Заказать">Заказать</a> <!----> <!----></div></div></div></div></div><div data-img-link="./ebike/products/xafari.html?kid=K12201" class="s-primary-banner swiper-slide swiper-slide-active" data-swiper-slide-index="1" style="width: 1504px; transition-duration: 0ms; opacity: 1; transform: translate3d(-6016px, 0px, 0px);"><div class="segway-wh100 primary-banner_wrapper"><div class="segway-wh100"><img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xafari_PC.webp" alt="Xafari" class="s-primary-banner_img prprdcategoryprimarybanners segway-img100 segway-pc" loading="lazy"> <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/TopBanner_Xafari_M.webp" alt="Xafari" class="segway-mobile segway-img100" loading="lazy"></div> <!----></div> <div class="banner-content-wrapper"><div class="home-banner_t"><div class="home-eyebrow segway-pc">
               New
             </div> <div class="home-eyebrow segway-mobile">
               New
-            </div> <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/Xafari_PC.svg" alt="" class="segway-pc titleImg"> <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/Xarafri_M.svg" alt="" class="segway-mobile titleImg"> <!----> <!----></div> <div class="home-banner_m banner-content_top"><div class="home-banner_desc segway-pc">
+            </div> <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/Xafari_PC.svg" alt="" class="segway-pc titleImg" loading="lazy"> <img src="./Welcome to Segway ,Your Premier Choice for Personal Transportation_files/Xarafri_M.svg" alt="" class="segway-mobile titleImg" loading="lazy"> <!----> <!----></div> <div class="home-banner_m banner-content_top"><div class="home-banner_desc segway-pc">
               Limitless Funsploration
             </div> <div class="home-banner_desc segway-mobile">
               Limitless Funsploration
             </div> <div class="home-banner_btns"><div class="buttonItem"><a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Узнать больше&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;./ebike/products/xafari.html?kid=K12201&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;popUp&quot;:{&quot;popUpMediaType&quot;:&quot;img&quot;,&quot;popUpPCMedia&quot;:&quot;&quot;,&quot;popUpMobMedia&quot;:&quot;&quot;,&quot;popUpPCRichContentExperienceFragments&quot;:&quot;&quot;,&quot;popUpPCMediaThumnail&quot;:&quot;&quot;,&quot;popUpMobMediaThumnail&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;}}" class="common-btn_medium segway-pc common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteinRed common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Узнать больше&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;./ebike/products/xafari.html?kid=K12201&quot;,&quot;linkTarget&quot;:&quot;_self&quot;,&quot;popUp&quot;:{&quot;popUpMediaType&quot;:&quot;img&quot;,&quot;popUpPCMedia&quot;:&quot;&quot;,&quot;popUpMobMedia&quot;:&quot;&quot;,&quot;popUpPCRichContentExperienceFragments&quot;:&quot;&quot;,&quot;popUpPCMediaThumnail&quot;:&quot;&quot;,&quot;popUpMobMediaThumnail&quot;:&quot;&quot;,&quot;alt&quot;:&quot;&quot;}}" class="common-btn_medium segway-mobile common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----> <!----></div><div class="buttonItem"><a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Заказать&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;#storequot;url&quot;url&quot;:&quot;#storequot;:&quot;url&quot;:&quot;#storequot;#" class="common-btn_medium segway-pc common-Btn-WhiteTxt-withborder common-Btn-rounded catchTrack" aria-label="Заказать">Заказать</a> <a href="javascript:void(0)" data-button-item="{&quot;buttonStylePC&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;buttonStyleMob&quot;:&quot;common-Btn-WhiteTxt-withborder common-Btn-rounded&quot;,&quot;ctaButtonName&quot;:&quot;Заказать&quot;,&quot;buttonType&quot;:&quot;link&quot;,&quot;url&quot;:&quot;#storequot;url&quot;url&quot;:&quot;#storequot;:&quot;url&quot;:&quot;#storequot;#" class="common-btn_medium segway-mobile common-Btn-WhiteTxt-withborder common-Btn-rounded catchTrack" aria-label="Заказать">Заказать</a> <!----> <!----></div></div></div></div></div><div data-img-link="#" class="s-primary-banner swiper-slide" data-swiper-slide-index="2" style="width: 1504px; transition-duration: 0ms; opacity: 0; transform: translate3d(-9024px, 0px, 0px);"><div class="segway-wh100 primary-banner_wrapper"><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/F2z_P_1.webp" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/F2z_P_1.jpg" alt="F2z 110" class="s-primary-banner_img prprdcategoryprimarybanners segway-img100 segway-pc">
+        <img src="./local_assets/is/content/ninebotstage/F2z_P_1.jpg" alt="F2z 110" class="s-primary-banner_img prprdcategoryprimarybanners segway-img100 segway-pc" loading="lazy">
     </picture> <picture>
         <source srcset="./local_assets/is/content/ninebotstage/F2z_M_1.webp" type="image/webp">
         <img src="./local_assets/is/content/ninebotstage/F2z_M_1.jpg" alt="F2z 110" class="segway-mobile segway-img100" loading="lazy">
@@ -1771,42 +1783,66 @@ document.addEventListener('DOMContentLoaded', function() {
 
 <div class="sec__segway-prdCategory_content segway-home-prdCategory_container"><div class="segway-home-prdCategory_pc segway-pc"><div class="segway-row"><!----> <div class="segway-col segway-col-24"><div class="home-prdCategory_col_item"><div class="media-container"><a href="./xyber/xyber_refactored.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/xyber_new.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/xyber_new.png" alt="XYBER" class="segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/xyber_new.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/xyber_new.png" alt="XYBER" class="segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 XYBER
               </div> <!----></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a href="./xyber/xyber_refactored.html" target="_self" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div></div><div class="segway-row"><!----><!----> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a href="./E300SE/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/e300.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/e300.png" alt="E300SE" class="segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/e300.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/e300.png" alt="E300SE" class="segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 E300SE
               </div> <!----></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a href="./E300SE/index.html" target="_self" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a href="./E125S/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/e125s-P.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/e125s-P.png" alt="E125S" class="segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/e125s-P.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/e125s-P.png" alt="E125S" class="segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 E125S
               </div> <!----></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a href="./E125S/index.html" target="_self" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div></div><div class="segway-row"><!----><!----> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a href="./e110s/e110s-segway-project/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/e110s.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/e110s.png" alt="E110S" class="segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/e110s.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/e110s.png" alt="E110S" class="segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 E110S
               </div> <!----></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a href="./e110s/e110s-segway-project/index.html" target="_self" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a href="./q90/q90_final.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/q90.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/q90.png" alt="Q90" class="segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/q90.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/q90.png" alt="Q90" class="segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 Q90
               </div> <!----></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a href="./q90/q90_final.html" target="_self" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div></div><div class="segway-row"><!----><!----> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a href="./f2z 110/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/f2z_110.png" alt="F2z 110" class="segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/f2z_110.png" alt="F2z 110" class="segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 F2z 110
               </div> <!----></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a href="./f2z 110/index.html" target="_self" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a href="./f2z 110 max/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/f2110_MAX.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/f2110_MAX.png" alt="F2z 110 MAX" class="segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/f2110_MAX.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/f2110_MAX.png" alt="F2z 110 MAX" class="segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 F2z 110 MAX
               </div> <!----></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a href="./f2z 110 max/index.html" target="_self" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div></div><div class="segway-row"><!----><!----> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a href="./m3-95c-max/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/M3_95C_MAX.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/M3_95C_MAX.png" alt="M3 95C MAX" class="segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/M3_95C_MAX.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/M3_95C_MAX.png" alt="M3 95C MAX" class="segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 M3 95C MAX
               </div> <!----></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a href="./m3-95c-max/index.html" target="_self" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a href="./m95c/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
@@ -1821,12 +1857,18 @@ document.addEventListener('DOMContentLoaded', function() {
                 MMax2 110P
               </div> <!----></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a href="./mmax2-110p/index.html" target="_self" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a href="./v30c/v30c_final_clean.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/v30c.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/v30c.png" alt="V30" class="segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/v30c.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/v30c.png" alt="V30" class="segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 V30C
               </div> <!----></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a href="./v30c/v30c_final_clean.html" target="_self" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div></div><div class="segway-row"><!----> <div class="segway-col segway-col-24"><div class="home-prdCategory_col_item"><div class="media-container"><a href="./xafari/Segway_Xafari_RU.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/xafari.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/xafari.png" alt="Xafari" class="segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/xafari.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/xafari.png" alt="Xafari" class="segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 Xafari
               </div> <!----></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a href="./xafari/Segway_Xafari_RU.html" target="_self" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div></div></div> <div class="segway-home-prdCategory_mobile segway-mobile"><!----><!----><!----><!----><!----><!----><!----><!----><!----><!----> <div class="swiper-slide"><a href="./xyber/xyber_refactored.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
@@ -1837,34 +1879,61 @@ document.addEventListener('DOMContentLoaded', function() {
         <img src="./local_assets/is/content/ninebotstage/new/e300-m.png" alt="E300SE" class="segway-mobile segway-img100" loading="lazy">
     </picture></div> <!----></a> <div class="col-text-container"><div class="swiper-slide-item_title">E300SE</div> <div class="common-btns-container"><div class="buttonItem"><a href="./E300SE/index.html" target="_self" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div><div class="swiper-slide"><a href="./E125S/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/e125s-m.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/e125s-m.png" alt="E125S" class="segway-mobile segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/e125s-m.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/e125s-m.png" alt="E125S" class="segway-mobile segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a> <div class="col-text-container"><div class="swiper-slide-item_title">E125S</div> <div class="common-btns-container"><div class="buttonItem"><a href="./E125S/index.html" target="_self" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div><div class="swiper-slide"><a href="./e110s/e110s-segway-project/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/e110s-m.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/e110s-m.png" alt="E110S" class="segway-mobile segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/e110s-m.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/e110s-m.png" alt="E110S" class="segway-mobile segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a> <div class="col-text-container"><div class="swiper-slide-item_title">E110S</div> <div class="common-btns-container"><div class="buttonItem"><a href="./e110s/e110s-segway-project/index.html" target="_self" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div><div class="swiper-slide"><a href="./q90/q90_final.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/q90-m.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/q90-m.png" alt="Q90" class="segway-mobile segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/q90-m.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/q90-m.png" alt="Q90" class="segway-mobile segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a> <div class="col-text-container"><div class="swiper-slide-item_title">Q90</div> <div class="common-btns-container"><div class="buttonItem"><a href="./q90/q90_final.html" target="_self" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div><div class="swiper-slide"><a href="./f2z 110/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110_-_m.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/f2z_110_-_m.png" alt="F2z 110" class="segway-mobile segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110_-_m.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/f2z_110_-_m.png" alt="F2z 110" class="segway-mobile segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a> <div class="col-text-container"><div class="swiper-slide-item_title">F2z 110</div> <div class="common-btns-container"><div class="buttonItem"><a href="./f2z 110/index.html" target="_self" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div><div class="swiper-slide"><a href="./f2z 110 max/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110_MAX_-_m.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/f2z_110_MAX_-_m.png" alt="F2z 110 MAX" class="segway-mobile segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110_MAX_-_m.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/f2z_110_MAX_-_m.png" alt="F2z 110 MAX" class="segway-mobile segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a> <div class="col-text-container"><div class="swiper-slide-item_title">F2z 110 MAX</div> <div class="common-btns-container"><div class="buttonItem"><a href="./f2z 110 max/index.html" target="_self" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div><div class="swiper-slide"><a href="./m3-95c-max/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/M3_95C_MAX_-_m.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/M3_95C_MAX_-_m.png" alt="M3 95C MAX" class="segway-mobile segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/M3_95C_MAX_-_m.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/M3_95C_MAX_-_m.png" alt="M3 95C MAX" class="segway-mobile segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a> <div class="col-text-container"><div class="swiper-slide-item_title">M3 95C MAX</div> <div class="common-btns-container"><div class="buttonItem"><a href="./m3-95c-max/index.html" target="_self" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div><div class="swiper-slide"><a href="./m95c/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/m95c-m.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/m95c-m.png" alt="M95C" class="segway-mobile segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/m95c-m.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/m95c-m.png" alt="M95C" class="segway-mobile segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a> <div class="col-text-container"><div class="swiper-slide-item_title">M95C</div> <div class="common-btns-container"><div class="buttonItem"><a href="./m95c/index.html" target="_self" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div><div class="swiper-slide"><a href="./mmax2-110p/index.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/m2max-m.png" type="image/webp">
         <img src="./local_assets/is/content/ninebotstage/new/m2max-m.png" alt="Find your ride" class="segway-mobile segway-img100" loading="lazy">
     </picture></div> <!----></a> <div class="col-text-container"><div class="swiper-slide-item_title">MMax2 110P</div> <div class="common-btns-container"><div class="buttonItem"><a href="./mmax2-110p/index.html" target="_self" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div><div class="swiper-slide"><a href="./v30c/v30c_final_clean.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/v30c-m.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/v30c-m.png" alt="V30" class="segway-mobile segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/v30c-m.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/v30c-m.png" alt="V30" class="segway-mobile segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a> <div class="col-text-container"><div class="swiper-slide-item_title">V30C</div> <div class="common-btns-container"><div class="buttonItem"><a href="./v30c/v30c_final_clean.html" target="_self" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div><div class="swiper-slide"><a href="./xafari/Segway_Xafari_RU.html" target="_self" class="catchTrack" aria-label=" "><div class="segway-wh100"><picture>
         <source srcset="./local_assets/is/content/ninebotstage/new/xafari-m.png" type="image/webp">
-        <img src="./local_assets/is/content/ninebotstage/new/xafari-m.png" alt="Xafari" class="segway-mobile segway-img100" loading="lazy">
+        <picture>
+    <source srcset="./local_assets/is/content/ninebotstage/new/xafari-m.webp" type="image/webp">
+    <img src="./local_assets/is/content/ninebotstage/new/xafari-m.png" alt="Xafari" class="segway-mobile segway-img100" loading="lazy">
+</picture>
     </picture></div> <!----></a> <div class="col-text-container"><div class="swiper-slide-item_title">Xafari</div> <div class="common-btns-container"><div class="buttonItem"><a href="./xafari/Segway_Xafari_RU.html" target="_self" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" aria-label="Узнать больше">Узнать больше</a> <!----></div></div></div></div></div></div>
 
     
