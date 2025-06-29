@@ -1,0 +1,803 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ninebot E110S - Секции</title>
+    
+    <link href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/animate.min.css" rel="stylesheet">
+    <link href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/bootstrap.css" rel="stylesheet">
+    <link href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/swiper.min.css" rel="stylesheet">
+    <link href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/font-awesome.min.css" rel="stylesheet">
+    <link href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/idangerous.swiper2.7.6.css" rel="stylesheet">
+    <link href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/normalize.css" rel="stylesheet">
+    <link href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/app.min.css" rel="stylesheet">
+    <link href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/style_new.css" rel="stylesheet">
+    <link href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/style2.css" rel="stylesheet">
+    <link href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/style.css" rel="stylesheet">
+    <link href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/css.css" rel="stylesheet">
+    <link rel="stylesheet" href="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/E110S-black.css">
+    <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;700;900&display=swap" rel="stylesheet">
+    <style>
+        .m-info1 .tit, .m-info3 .tit, .m-info4 .tit, .m-info5 .tit, .m-info6 .tit, .m-info7 .tit, .m-info8 .tit, .m-info9 .tit, .m-info10 .tit, .m-info11 .tit, .m-info12 .tit, .m-info13 .tit, .m-info14 .tit, .m-info15 .tit {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 900 !important;
+            color: #E50111 !important;
+        }
+        .m-info1 .titsub, .m-info1 .desc, .m-info3 .desc, .m-info4 .desc, .m-info5 .desc, .m-info7 .desc, .m-info8 .desc, .m-info9 .desc, .m-info10 .desc, .m-info11 .desc, .m-info12 .desc, .m-info13 .desc, .m-list2 .tit {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 500 !important;
+        }
+        .m-list3 .tit, .m-list3 .desc, .m-list4 .tit, .m-list4 .desc, .m-list5 li, .m-list6 .t, .m-list6 .p {
+            font-family: 'Inter', sans-serif !important;
+            font-weight: 700 !important;
+        }
+        
+        /* Mobile Hero Section */
+        @media screen and (max-width: 1200px) {
+            .m-hero {
+                height: 70vh !important;
+            }
+            .m-hero h1 {
+                font-size: 36px !important;
+            }
+            .m-hero .hero-subtitle {
+                font-size: 16px !important;
+            }
+            .m-hero .hero-desc {
+                font-size: 14px !important;
+            }
+            .m-hero button {
+                font-size: 14px !important;
+                padding: 12px 24px !important;
+            }
+            .m-hero .hero-price {
+                font-size: 20px !important;
+            }
+        }
+        
+        @media screen and (max-width: 600px) {
+            .m-hero {
+                height: 70vh !important;
+                min-height: 400px !important;
+            }
+            .m-hero h1 {
+                font-size: 36px !important;
+                margin-bottom: 20px !important;
+                line-height: 1.2 !important;
+            }
+            .m-hero .hero-subtitle {
+                font-size: 16px !important;
+                margin-bottom: 10px !important;
+            }
+            .m-hero .hero-desc {
+                font-size: 14px !important;
+                padding: 0 20px;
+                margin-bottom: 30px !important;
+                line-height: 1.4 !important;
+            }
+            .m-hero .hero-actions {
+                flex-direction: column !important;
+                gap: 20px !important;
+            }
+            .m-hero button {
+                font-size: 16px !important;
+                padding: 16px 40px !important;
+                border-radius: 30px !important;
+                min-width: 260px !important;
+            }
+            .m-hero .hero-price {
+                font-size: 24px !important;
+            }
+            
+            /* Timeline mobile styles */
+            .m-info14 .wp > div:last-child {
+                flex-direction: column !important;
+                gap: 15px !important;
+            }
+            .m-info14 .wp > div:last-child > div {
+                flex: 1 1 100% !important;
+                min-width: 100% !important;
+                margin-bottom: 10px !important;
+            }
+            
+            /* Fix m-list3 on mobile */
+            .m-list3 {
+                display: flex !important;
+                flex-direction: column !important;
+                padding: 0 15px !important;
+                margin: 0 !important;
+                list-style: none !important;
+            }
+            .m-list3 li {
+                flex: 0 0 100% !important;
+                margin-bottom: 30px !important;
+                text-align: center !important;
+            }
+            .m-list3 li .con {
+                display: block !important;
+            }
+            .m-list3 li .tit {
+                font-size: 40px !important;
+                font-weight: 700 !important;
+                line-height: 1 !important;
+                color: #E50111 !important;
+                margin-bottom: 10px !important;
+                font-family: 'Inter', sans-serif !important;
+            }
+            .m-list3 li .desc {
+                font-size: 14px !important;
+                line-height: 1.2 !important;
+                color: #666 !important;
+                font-family: 'Inter', sans-serif !important;
+            }
+            .m-list3 li .desc p {
+                margin: 2px 0 !important;
+                padding: 0 !important;
+            }
+            
+            /* Fix m-list5 on mobile */
+            .m-list5 {
+                flex-direction: column !important;
+                padding: 20px !important;
+                gap: 20px !important;
+            }
+            .m-list5 li {
+                width: 100% !important;
+                padding: 15px !important;
+                background: rgba(255,255,255,0.1) !important;
+                border-radius: 10px !important;
+                font-size: 16px !important;
+                text-align: center !important;
+            }
+            
+            /* Fix m-info13 on mobile */
+            .m-info13 {
+                padding-top: 50px !important;
+            }
+            .m-info13 .info {
+                padding: 0 20px !important;
+            }
+            .m-info13 .tit {
+                font-size: 32px !important;
+                line-height: 1.2 !important;
+                margin-bottom: 20px !important;
+            }
+            .m-info13 .desc {
+                margin-bottom: 30px !important;
+            }
+            .m-info13 .desc p {
+                font-size: 16px !important;
+                line-height: 1.5 !important;
+                margin-bottom: 15px !important;
+            }
+            .m-info13 .m-list6 {
+                display: flex !important;
+                flex-direction: column !important;
+                gap: 20px !important;
+                padding: 0 20px !important;
+            }
+            .m-info13 .m-list6 li {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                text-align: center !important;
+                background: rgba(255,255,255,0.05) !important;
+                padding: 20px !important;
+                border-radius: 15px !important;
+            }
+            .m-info13 .m-list6 .icn {
+                margin-bottom: 15px !important;
+            }
+            .m-info13 .m-list6 .t {
+                font-size: 18px !important;
+                font-weight: 700 !important;
+                margin-bottom: 10px !important;
+            }
+            .m-info13 .m-list6 .p {
+                font-size: 14px !important;
+                line-height: 1.4 !important;
+                color: rgba(255,255,255,0.8) !important;
+            }
+            .m-info13 .copy {
+                font-size: 12px !important;
+                padding: 20px !important;
+                text-align: center !important;
+            }
+            
+            /* Hide m-info13 image on mobile */
+            .m-info13 .img {
+                display: none !important;
+            }
+            
+            /* Fix m-info9 on mobile */
+            .m-info9 {
+                padding: 20px 0 !important;
+            }
+            .m-info9 .info {
+                padding: 0 20px !important;
+                margin-bottom: 20px !important;
+            }
+            .m-info9 .tit {
+                font-size: 28px !important;
+                line-height: 1.2 !important;
+                margin-bottom: 20px !important;
+            }
+            .m-info9 .desc {
+                margin-bottom: 20px !important;
+            }
+            .m-info9 .desc p {
+                font-size: 16px !important;
+                line-height: 1.5 !important;
+                margin-bottom: 15px !important;
+            }
+            .m-info9 .m-list4 {
+                display: flex !important;
+                flex-direction: column !important;
+                align-items: center !important;
+                padding: 20px !important;
+                margin-bottom: -2rem !important;
+                gap: 20px !important;
+                position: relative !important;
+                z-index: 2 !important;
+            }
+            .m-info9 .m-list4 .con {
+                text-align: center !important;
+                width: 100% !important;
+                max-width: 300px !important;
+            }
+            .m-info9 .m-list4 .tit {
+                font-size: 36px !important;
+                color: #E50111 !important;
+                margin-bottom: 10px !important;
+                font-weight: 700 !important;
+            }
+            .m-info9 .m-list4 .desc {
+                font-size: 16px !important;
+                line-height: 1.4 !important;
+                color: #fff !important;
+            }
+            .m-info9 .m-list4 .line {
+                width: 80% !important;
+                height: 1px !important;
+                background: rgba(255,255,255,0.2) !important;
+                margin: 0 !important;
+            }
+            .m-info9 .img {
+                margin-top: 0 !important;
+            }
+            .m-info9 .wp {
+                margin: 0 !important;
+                padding: 10px 20px !important;
+            }
+            .m-info9 .m-copy {
+                margin: 0 !important;
+                font-size: 12px !important;
+            }
+        }
+        
+        /* PRELOADER STYLES */
+        @keyframes pulse{0%,100%{opacity:1;transform:scale(1)}50%{opacity:.8;transform:scale(.95)}}
+        @keyframes spin{0%{transform:rotate(0deg)}100%{transform:rotate(360deg)}}
+        #ninebot-preloader{will-change:opacity;transition:opacity .3s ease-out}
+        #ninebot-preloader.hide{opacity:0;pointer-events:none}
+        .preloader-logo{will-change:transform,opacity}
+        .preloader-spinner{will-change:transform}
+        @media(max-width:768px){.preloader-logo{width:80px;height:80px}}
+        
+        /* Фиксированный логотип Segway */
+        .fixed-segway-logo {
+            position: fixed;
+            top: 20px;
+            left: 20px;
+            z-index: 9999;
+            width: 50px;
+            height: 50px;
+        }
+        
+        .fixed-segway-logo a {
+            display: block;
+            width: 100%;
+            height: 100%;
+        }
+        
+        .fixed-segway-logo img {
+            width: 100%;
+            height: 100%;
+            filter: invert(1);
+            opacity: 0.9;
+            transition: opacity 0.3s ease;
+        }
+        
+        .fixed-segway-logo img:hover {
+            opacity: 1;
+        }
+        
+        /* Мобильная версия - делаем логотип немного меньше */
+        @media screen and (max-width: 959px) {
+            .fixed-segway-logo {
+                width: 40px;
+                height: 40px;
+                top: 15px;
+                left: 15px;
+            }
+        }
+    </style>
+</head>
+<body style="margin: 0; padding: 0; background-color: #fff;" class="" cz-shortcut-listen="true">
+    <!-- Ninebot Preloader -->
+    <div id="ninebot-preloader" style="position:fixed;top:0;left:0;width:100%;height:100%;background:#000;z-index:9999999;display:flex;align-items:center;justify-content:center;">
+        <div class="preloader-content">
+            <!-- Inline SVG для мгновенной загрузки -->
+            <svg class="preloader-logo" width="120" height="120" viewBox="0 0 180 180" style="margin-bottom:30px;animation:pulse 1.5s ease-in-out infinite;">
+                <path fill="#fff" d="M90,.21c49.59,0,89.79,40.19,89.79,89.79s-40.2,89.79-89.79,89.79S.21,139.59.21,90,40.41.21,90,.21ZM130.04,43.07c0-8.64-7.01-15.66-15.67-15.66s-15.67,7.01-15.67,15.66,7.01,15.67,15.67,15.67,15.67-7.01,15.67-15.67ZM118.86,91.3c2.87-8.93,2.46-15.88-1.64-21.09-5.44-7-14.67-6.84-16.66-6.84h-52.01c-2.57,0-4.66,2.09-4.66,4.67s2.09,4.66,4.66,4.66h51.91c1.73,0,6.94.15,9.29,3.49,2.53,3.57,1.5,8.28.22,12.27,0,0-14.41,46.03-15.51,49.55-2.33,7.51-8.96,13.21-16.78,9.91-6.31-2.66-6.23-9.61-3.38-15.16l14.74-29.16c2.96-5.83-.12-9.33-6.43-9.33h-27.46c-2.57,0-4.66,2.1-4.66,4.67s2.09,4.66,4.66,4.66h6.72c1.73-.01,6.58-.22,9.2,3.49,2.33,3.52,1.85,6.42.28,11.5l-5.84,18.76c-.99,3.12-2.94,13.81,8.41,18.96,11.24,5.11,24.66-.43,28.54-12.63,2.69-8.59,16.39-52.38,16.39-52.38ZM98.66,83.51c0-2.58-2.09-4.67-4.66-4.67h-58.13c-2.56,0-4.66,2.09-4.66,4.67s2.1,4.66,4.66,4.66h58.13c2.57,0,4.66-2.08,4.66-4.66Z"/>
+            </svg>
+            <div class="preloader-spinner" style="width:40px;height:40px;margin:0 auto;border:3px solid rgba(255,255,255,0.2);border-top-color:#fff;border-radius:50%;animation:spin 1s linear infinite;"></div>
+        </div>
+    </div>
+    <!-- Фиксированный логотип Segway -->
+    <div class="fixed-segway-logo">
+        <a aria-label="Segway Logo" href="/">
+            <img alt="Segway Logo" src="../../etc.clientlibs/segway-ninebot/clientlibs/clientlib-base/img/resources/favicon_black.svg"/>
+        </a>
+    </div>
+    <div class="main">
+            <!-- Hero Section -->
+            <div class="m-hero" style="position: relative; height: 10rem; background-color: #000; overflow: hidden;">
+                <video style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; object-fit: cover; opacity: 0.6;" autoplay muted loop playsinline>
+                    <source src="./E110S Animation.mp4" type="video/mp4">
+                </video>
+                <div style="position: absolute; top: 0; left: 0; width: 100%; height: 100%; background: linear-gradient(180deg, rgba(0,0,0,0.2) 0%, rgba(0,0,0,0.35) 100%);"></div>
+                <div style="position: relative; z-index: 10; height: 100%; display: flex; align-items: center; justify-content: center; text-align: center;">
+                    <div>
+                        <div class="hero-subtitle" style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: .3rem; color: #E50111; margin-bottom: .1rem;">Премиальный электроскутер</div>
+                        <h1 style="font-family: 'Inter', sans-serif; font-weight: 900; font-size: .8rem; color: #fff; margin: 0 0 .15rem 0; line-height: 1.1;">Ninebot<br>E110S и E125S</h1>
+                        <p class="hero-desc" style="font-family: 'Inter', sans-serif; font-weight: 400; font-size: .28rem; color: rgba(255,255,255,0.8); margin-bottom: .4rem;">
+                            Мощность 1800 Ватт • Скорость до 50 км/ч • Дальность до 65 км
+                        </p>
+                        <div class="hero-actions" style="display: flex; align-items: center; justify-content: center; gap: .5rem;">
+                            <button style="background-color: #E50111; color: #fff; font-family: 'Inter', sans-serif; font-weight: 700; font-size: .24rem; padding: .25rem .5rem; border: none; border-radius: 25px; cursor: pointer;">Забронировать тест-драйв</button>
+                            <div class="hero-price" style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: .36rem; color: #fff;">от 225 000 ₽</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="m-info1">
+                <div class="tit wow fadeInUp animated" style="visibility: visible;">Дизайн</div>
+                <div class="titsub wow fadeInUp animated" style="visibility: visible;">Притягивает взгляды</div>
+            </div>
+            <div class="m-img2" style="background-image: url(./static/images/E110S-black/bg01.png);">
+                <div class="pic wow fadeInLeft animated" style="visibility: visible;">
+                    <img src="./static/images/E110S-black/p03.png" alt="">
+                </div>
+            </div>
+            <div class="m-info3">
+                <div class="info">
+                    <div class="tit wow fadeInUp animated">Комфорт в каждой поездке</div>
+                    <div class="desc wow fadeInUp animated">
+                        <p>Вместительный багажный отсек под сиденьем</p>
+                        <p>Легко помещаются 2 шлема и всё необходимое</p>
+                    </div>
+                </div>
+                <div class="img"><img src="./static/images/E110S-black/p06.png" alt=""></div>
+            </div>
+            <div class="m-info4">
+                <div class="info">
+                    <div class="tit wow fadeInUp animated">Просторное сиденье для двоих</div>
+                    <div class="desc wow fadeInUp animated">
+                        <p>Увеличенное комфортное сиденье рассчитано на двоих</p>
+                        <p>Делитесь яркими моментами с близкими</p>
+                    </div>
+                </div>
+                <div class="img"><img src="./static/images/E110S-black/p07.png" alt=""></div>
+            </div>
+            <div class="m-info5">
+                <div class="info">
+                    <div class="tit wow fadeInUp animated">Увеличенная платформа для ног</div>
+                    <div class="desc wow fadeInUp animated">Просторная платформа обеспечивает комфорт даже в длительных поездках</div>
+                </div>
+                <div class="img"><img src="./static/images/E110S-black/p08.png" alt=""></div>
+            </div>
+            <div class="m-info6">
+                <div class="info">
+                    <div class="tit wow fadeInUp animated">Безупречное качество исполнения</div>
+                </div>
+                <div class="img"><img src="./static/images/E110S-black/p22.png" alt=""></div>
+            </div>
+            <div class="m-list2">
+                <div class="wp">
+                    <ul>
+                        <li class="wow fadeInUp animated">
+                            <div class="con">
+                                <div class="pic">
+                                    <div class="img" style="background-image: url(./static/images/E110S-black/p09.png);"></div>
+                                </div>
+                                <div class="info">
+                                    <div class="tit">Хромированные зеркала</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp animated">
+                            <div class="con">
+                                <div class="pic">
+                                    <div class="img" style="background-image: url(./static/images/E110S-black/p10.png);"></div>
+                                </div>
+                                <div class="info">
+                                    <div class="tit">Раздельный задний щиток</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp animated">
+                            <div class="con">
+                                <div class="pic">
+                                    <div class="img" style="background-image: url(./static/images/E110S-black/p11.png);"></div>
+                                </div>
+                                <div class="info">
+                                    <div class="tit">Хромированные тормозные рычаги</div>
+                                </div>
+                            </div>
+                        </li>
+                        <li class="wow fadeInUp animated">
+                            <div class="con">
+                                <div class="pic">
+                                    <div class="img" style="background-image: url(./static/images/E110S-black/p12.png);"></div>
+                                </div>
+                                <div class="info">
+                                    <div class="tit">Алюминиевая задняя вилка</div>
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-info7">
+                <div class="bg1" style="background-color: #000;"></div>
+                <div class="bg2" style="background-color: #F5F5F5;"></div>
+                <div class="info">
+                    <div class="tit wow fadeInUp animated">Производительность</div>
+                    <div class="desc wow fadeInUp animated">
+                        <p>Оптимальная мощность и спортивный характер для отличной динамики и точного управления</p>
+                        <p>Тщательно оптимизированная динамика езды подарит уверенность на дороге</p>
+                    </div>
+                    <div class="img wow fadeInRight animated">
+                        <img src="./static/images/E110S-black/p13.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="m-info8">
+                <div class="info">
+                    <div class="tit wow fadeInUp animated">Безграничные возможности</div>
+                    <div class="desc wow fadeInUp animated">
+                        <p>Съёмная батарея большой ёмкости</p>
+                        <p>Свобода передвижения без ограничений — наслаждайтесь каждой поездкой!</p>
+                    </div>
+                </div>
+                <ul class="m-list3">
+                    <li class="wow fadeInUp animated">
+                        <div class="con">
+                            <div class="tit"><span class="counter">65</span>km</div>
+                            <div class="desc">
+                                <p>Запас хода</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wow fadeInUp animated">
+                        <div class="con">
+                            <div class="tit">Литий-ионная<br>батарея</div>
+                            <div class="desc">
+                                <p>Высокая</p>
+                                <p>ёмкость</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wow fadeInUp animated">
+                        <div class="con">
+                            <div class="tit">BMS</div>
+                            <div class="desc">
+                                <p>Умная система</p>
+                                <p>управления батареей</p>
+                            </div>
+                        </div>
+                    </li>
+                    <li class="wow fadeInUp animated">
+                        <div class="con">
+                            <div class="tit"><span class="counter">50</span>km/h</div>
+                            <div class="desc">
+                                <p>Макс. скорость</p>
+                            </div>
+                        </div>
+                    </li>
+                </ul>
+                <div class="txt">
+                    <div class="tit"><img src="./static/images/E110S-black/p14-tit.png" alt=""></div>
+                    <div class="img wow fadeInLeft animated">
+                        <img src="./static/images/E110S-black/p14.png" alt="">
+                    </div>
+                </div>
+            </div>
+            <div class="m-info9">
+                <div class="info">
+                    <div class="tit wow fadeInUp animated">Больше мощности, дальше расстояние</div>
+                    <div class="desc wow fadeInUp animated">
+                        <p>Оснащён литий-ионными батареями 48В</p>
+                        <p>Повышенная энергоэффективность, минимальный нагрев, увеличенный срок службы</p>
+                        <p>Мощный двигатель 1800 Вт обеспечивает впечатляющую динамику</p>
+                    </div>
+                </div>
+                <div class="m-list4 wow fadeInUp animated">
+                    <div class="con">
+                        <div class="tit">48V 16Ah</div>
+                        <div class="desc">Литий-ионные<br>батареи</div>
+                    </div>
+                    <div class="line"></div>
+                    <div class="con">
+                        <div class="tit">1800 Вт</div>
+                        <div class="desc">Мощность мотора</div>
+                    </div>
+                </div>
+                <div class="img"><img src="./static/images/E110S-black/p15.png" alt=""></div>
+                <div class="wp">
+                    <div class="m-copy white">*Характеристики могут отличаться в зависимости от модели</div>
+                </div>
+            </div>
+            <div class="m-info10">
+                <div class="info">
+                    <div class="tit wow fadeInUp animated">Надёжное торможение, уверенная езда</div>
+                    <div class="desc wow fadeInUp animated">
+                        <p>Гидравлические дисковые тормоза и система ABS (на E125S)</p>
+                        <p>В сочетании с продвинутой системой EABS от Segway</p>
+                        <p>Контролируемое и безопасное торможение с рекуперацией энергии</p>
+                    </div>
+                </div>
+                <div class="img wow fadeInLeft animated">
+                    <img src="./static/images/E110S-black/p16.png" alt="">
+                </div>
+                <div class="wp">
+                    <div class="con wow fadeInUp animated">
+                        <div class="ltxt">EABS<br>Рекуперация энергии</div>
+                        <div class="rtxt">Передние и задние<br>дисковые тормоза</div>
+                    </div>
+                </div>
+            </div>
+            <div class="m-info11">
+                <div class="info">
+                    <div class="icn wow fadeInUp animated">
+                        <img src="./static/images/E110S-black/i04.png" alt="">
+                    </div>
+                    <div class="tit wow fadeInUp animated">Умные технологии, которые вас понимают</div>
+                    <div class="desc wow fadeInUp animated">
+                        <p>Инновационные функции: AirLock, датчики парковки и присутствия</p>
+                        <p>Умная система RideyGo! экономит ваше время</p>
+                    </div>
+                </div>
+            </div>
+            <div class="m-info12">
+                <div class="bg"><img src="./static/images/E110S-black/p17.png" alt=""></div>
+                <div class="img wow fadeInRight animated">
+                    <img src="./static/images/E110S-black/p18.png" alt="">
+                </div>
+                <div class="info">
+                    <div class="tit wow fadeInUp animated">Лёгкий старт</div>
+                    <div class="desc wow fadeInUp animated">
+                        <p>Простое и интуитивное управление. Каждая поездка становится безопаснее и приятнее</p>
+                    </div>
+                </div>
+                <div class="img wow fadeInLeft animated">
+                    <img src="./static/images/E110S-black/p19.png" alt="">
+                </div>
+                <div class="wp">
+                    <ul class="m-list5 wow fadeInUp animated" style="display: flex; justify-content: space-around;">
+                        <li style="width: 33.33%; float: none;">Круиз-контроль</li>
+                        <li style="width: 33.33%; float: none;">Задний ход</li>
+                        <li style="width: 33.33%; float: none;">OTA-обновления*</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="m-info13">
+                <div class="info">
+                    <div class="tit wow fadeInUp animated">Угнать? Миссия невыполнима</div>
+                    <div class="desc wow fadeInUp animated">
+                        <p>Встроенные 4G-модуль и GPS позволяют отслеживать местоположение в любое время</p>
+                        <p>Мгновенные уведомления на ваш смартфон</p>
+                    </div>
+                    <div class="wp">
+                        <ul class="m-list6">
+                            <li class="wow fadeInUp animated">
+                                <div class="icn"><img src="./static/images/E110S-black/i05.png" alt=""></div>
+                                <div class="t">Система определения положения AHRS</div>
+                                <div class="p">Мгновенное определение движения</div>
+                            </li>
+                            <li class="wow fadeInUp animated">
+                                <div class="icn"><img src="./static/images/E110S-black/i06.png" alt=""></div>
+                                <div class="t">GPS*</div>
+                                <div class="p">Точное определение местоположения</div>
+                            </li>
+                            <li class="wow fadeInUp animated">
+                                <div class="icn"><img src="./static/images/E110S-black/i07.png" alt=""></div>
+                                <div class="t">Приложение Segway-Ninebot</div>
+                                <div class="p">Уведомления о тревоге<br>Отслеживание местоположения</div>
+                            </li>
+                        </ul>
+                        <div class="copy wow fadeInUp animated">* Бесплатная подписка на умные сервисы Segway-Ninebot на первые 2 года, затем по подписке.</div>
+                    </div>
+                </div>
+                <div class="img"><img src="./static/images/E110S-black/p20.png" alt=""></div>
+            </div>
+            <!-- Технические характеристики -->
+            <div class="m-info15" style="background-color: #fff; padding: 1rem 0;">
+                <div class="wp">
+                    <div class="tit" style="text-align: center; font-family: 'Inter', sans-serif; font-weight: 900; font-size: .48rem; color: #E50111; margin-bottom: .6rem;">Технические характеристики</div>
+                    
+                    <!-- Модели -->
+                    <div style="display: flex; justify-content: space-around; margin-bottom: .4rem; text-align: center;">
+                        <div style="flex: 1;">
+                            <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: .36rem; color: #E50111;">E110S</div>
+                        </div>
+                        <div style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 500; font-size: .24rem; color: #666;">Характеристика</div>
+                        <div style="flex: 1;">
+                            <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: .36rem; color: #E50111;">E125S</div>
+                        </div>
+                    </div>
+                    
+                    <div style="max-width: 12rem; margin: 0 auto;">
+                        <!-- Производительность -->
+                        <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: .28rem; color: #E50111; margin: .4rem 0 .2rem; text-align: center;">Производительность</div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">50 км/ч</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">Макс. скорость</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">50 км/ч</span>
+                            </div>
+                        </div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">До 65 км</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">Дальность</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">До 65 км</span>
+                            </div>
+                        </div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">1800 Вт</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">Мощность мотора</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">1800 Вт</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Батарея -->
+                        <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: .28rem; color: #E50111; margin: .4rem 0 .2rem; text-align: center;">Батарея</div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">48V 16Ah</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">Ёмкость</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">48V 15.3Ah</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Параметры -->
+                        <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: .28rem; color: #E50111; margin: .4rem 0 .2rem; text-align: center;">Параметры</div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">13 кг</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">Вес скутера</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">15 кг</span>
+                            </div>
+                        </div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">100 кг</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">Макс. нагрузка</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">100 кг</span>
+                            </div>
+                        </div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">8 дюймов</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">Размер колес</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">10 дюймов</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Тормоза -->
+                        <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: .28rem; color: #E50111; margin: .4rem 0 .2rem; text-align: center;">Тормоза</div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">Диск + рекуперация</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">Система</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">Диск + рекуперация</span>
+                            </div>
+                        </div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">Нет</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">ABS система</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #E50111; text-align: center;">Есть</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Особенности -->
+                        <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: .28rem; color: #E50111; margin: .4rem 0 .2rem; text-align: center;">Особенности</div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">✓</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">Круиз-контроль</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">✓</span>
+                            </div>
+                        </div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">✓</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">Задний ход</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">✓</span>
+                            </div>
+                        </div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">✓</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">GPS антиугон</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">✓</span>
+                            </div>
+                        </div>
+                        <div style="border-bottom: 1px solid #e0e0e0; padding: .15rem 0;">
+                            <div style="display: flex; justify-content: space-between; align-items: center;">
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">✓</span>
+                                <span style="width: 40%; font-family: 'Inter', sans-serif; font-weight: 400; font-size: .2rem; color: #666; text-align: center;">Приложение</span>
+                                <span style="flex: 1; font-family: 'Inter', sans-serif; font-weight: 600; font-size: .22rem; color: #000; text-align: center;">✓</span>
+                            </div>
+                        </div>
+                        
+                        <!-- Цены -->
+                        <div style="margin-top: .6rem; padding: .4rem 0; background-color: #f7f7f7; border-radius: .2rem;">
+                            <div style="display: flex; justify-content: space-around; align-items: center;">
+                                <div style="flex: 1; text-align: center;">
+                                    <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: .36rem; color: #E50111; margin-bottom: .1rem;">E110S</div>
+                                    <div style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: .24rem; color: #000;">от 225 000 ₽</div>
+                                </div>
+                                <div style="width: 2px; height: 50px; background-color: #e0e0e0;"></div>
+                                <div style="flex: 1; text-align: center;">
+                                    <div style="font-family: 'Inter', sans-serif; font-weight: 700; font-size: .36rem; color: #E50111; margin-bottom: .1rem;">E125S</div>
+                                    <div style="font-family: 'Inter', sans-serif; font-weight: 500; font-size: .24rem; color: #000;">от 290 000 ₽</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>    </div>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/jquery-1.10.1.min.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/wow.min.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/swiper.animate1.0.2.min.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/idangerous.swiper2.7.6.min.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/swiper.min.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/app.min.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/common.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/common_new.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/rem.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/jquery.min.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/jquery.waypoints.min.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/jquery.countup.min.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/wow.js"></script>
+    <script src="./eMotorbike E110S&E125S - Product - Segway-Ninebot Australia_files/lib.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function() {
+            new WOW().init();
+            $('.counter').countUp();
+        });
+    </script>
+    
+    <!-- Preloader Script -->
+    <script>
+        // Скрытие прелоадера после загрузки страницы
+        window.addEventListener('load', function() {
+            var preloader = document.getElementById('ninebot-preloader');
+            if (preloader) {
+                setTimeout(function() {
+                    preloader.classList.add('hide');
+                    setTimeout(function() {
+                        preloader.style.display = 'none';
+                    }, 300);
+                }, 500);
+            }
+        });
+    </script>
+</body>
+</html>
