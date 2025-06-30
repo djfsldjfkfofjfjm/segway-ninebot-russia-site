@@ -319,16 +319,17 @@ body { margin: 0; padding: 0; background: #000; }
     
     /* Стили для текстового контейнера */
     .segway-home-prdCategory_mobile .col-text-container {
-        padding: 15px 20px !important;
+        padding: 20px 15px !important;
         display: flex !important;
-        flex-direction: row !important;
+        flex-direction: column !important;
         align-items: center !important;
-        justify-content: space-between !important;
+        justify-content: center !important;
         position: absolute !important;
         bottom: 0 !important;
         left: 0 !important;
         right: 0 !important;
-        background: linear-gradient(to top, rgba(0,0,0,0.8) 0%, rgba(0,0,0,0) 100%) !important;
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 70%, transparent 100%) !important;
+        text-align: center !important;
     }
     
     .segway-home-prdCategory_mobile .swiper-slide {
@@ -560,6 +561,259 @@ video[x5-video-player-type] {
     /* На всякий случай скрываем все видео элементы */
     video {
         display: none !important;
+    }
+}
+
+/* СТИЛИ ДЛЯ ТЕКСТОВ НА КАРТОЧКАХ МОДЕЛЕЙ */
+.home-prdCategory_col_item {
+    position: relative;
+}
+
+/* Описание и цена на карточках - десктоп */
+.home-prdCategory_col_item_desc {
+    position: absolute;
+    bottom: 80px;
+    left: 20px;
+    right: 20px;
+    color: white;
+    font-size: 14px;
+    line-height: 1.4;
+    font-family: 'Exo 2', sans-serif;
+    font-weight: 500;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.8);
+    background: linear-gradient(to bottom, transparent, rgba(0,0,0,0.7));
+    padding: 15px;
+    border-radius: 8px;
+}
+
+.home-prdCategory_col_item_price {
+    position: absolute;
+    top: 20px;
+    right: 20px;
+    color: white;
+    font-size: 18px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    background: rgba(255,0,0,0.9);
+    padding: 8px 16px;
+    border-radius: 20px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Мобильная версия */
+.swiper-slide-item_desc {
+    color: white;
+    font-size: 12px;
+    line-height: 1.3;
+    margin-top: 5px;
+    opacity: 0.9;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.8);
+}
+
+/* Мобильная версия цен */
+.swiper-slide-item_price {
+    color: white;
+    font-size: 14px;
+    font-family: 'Orbitron', sans-serif;
+    font-weight: 700;
+    background: rgba(255,0,0,0.9);
+    padding: 4px 10px;
+    border-radius: 15px;
+    display: inline-block;
+    margin-top: 8px;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.5);
+}
+
+/* Позиционирование контейнера текста на мобильных карточках */
+.segway-home-prdCategory_mobile .swiper-slide {
+    position: relative;
+    overflow: hidden;
+}
+
+.segway-home-prdCategory_mobile .col-text-container {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    background: linear-gradient(to top, rgba(0,0,0,0.9) 0%, rgba(0,0,0,0.7) 60%, transparent 100%);
+    padding: 30px 10px 15px;
+    text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-end;
+    align-items: center;
+    z-index: 2;
+    max-height: 35%;
+}
+
+/* Позиционирование изображений чтобы текст не перекрывал мотоциклы */
+.segway-home-prdCategory_mobile .swiper-slide img {
+    object-fit: cover;
+    object-position: center 20%;
+    width: 100%;
+    height: 100%;
+}
+
+/* Стили для заголовков на мобильных */
+.segway-home-prdCategory_mobile .swiper-slide-item_title {
+    font-size: 18px;
+    font-weight: 700;
+    color: white;
+    margin-bottom: 3px;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9);
+    line-height: 1.1;
+}
+
+/* Описание на мобильных - более компактное */
+.segway-home-prdCategory_mobile .swiper-slide-item_desc {
+    font-size: 11px;
+    line-height: 1.2;
+    margin-top: 2px;
+    color: rgba(255,255,255,0.9);
+}
+
+/* Цена на мобильных - меньше */
+.segway-home-prdCategory_mobile .swiper-slide-item_price {
+    font-size: 13px;
+    padding: 3px 8px;
+    margin-top: 5px;
+}
+
+/* Убираем лишние отступы у кнопок */
+.segway-home-prdCategory_mobile .common-btns-container {
+    margin-top: 8px;
+}
+
+/* Кнопка на мобильных - компактнее */
+.segway-home-prdCategory_mobile .common-btn_small {
+    font-size: 12px;
+    padding: 6px 12px;
+}
+
+/* ВАЖНЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ КАРТОЧЕК */
+.segway-home-prdCategory_mobile .swiper-slide {
+    position: relative !important;
+}
+
+.segway-home-prdCategory_mobile .col-text-container {
+    position: absolute !important;
+    bottom: 0 !important;
+    left: 0 !important;
+    right: 0 !important;
+    background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 70%, transparent 100%) !important;
+    padding: 50px 15px 15px !important;
+    z-index: 10 !important;
+}
+
+.segway-home-prdCategory_mobile .swiper-slide-item_title {
+    font-size: 22px !important;
+    font-weight: 700 !important;
+    color: white !important;
+    text-shadow: 2px 2px 4px rgba(0,0,0,0.9) !important;
+    margin-bottom: 5px !important;
+}
+
+.segway-home-prdCategory_mobile .swiper-slide-item_desc {
+    font-size: 11px !important;
+    line-height: 1.3 !important;
+    color: rgba(255,255,255,0.9) !important;
+    margin: 5px 0 !important;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.9) !important;
+}
+
+.segway-home-prdCategory_mobile .swiper-slide-item_price {
+    font-size: 14px !important;
+    background: rgba(255,0,0,0.9) !important;
+    padding: 4px 10px !important;
+    border-radius: 15px !important;
+    display: inline-block !important;
+    margin: 8px 0 !important;
+    color: white !important;
+    font-weight: 700 !important;
+    font-family: 'Orbitron', sans-serif !important;
+    text-shadow: 1px 1px 2px rgba(0,0,0,0.7) !important;
+}
+
+/* ЦЕНА В ПРАВОМ ВЕРХНЕМ УГЛУ КАРТОЧКИ */
+@media (max-width: 768px) {
+    .segway-home-prdCategory_mobile .swiper-slide-item_price {
+        position: absolute !important;
+        top: 20px !important;
+        right: 20px !important;
+        bottom: auto !important;
+        left: auto !important;
+        z-index: 100 !important;
+        margin: 0 !important;
+    }
+}
+
+/* ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ МОБИЛЬНЫХ - РАЗНОСИМ ЭЛЕМЕНТЫ */
+@media (max-width: 768px) {
+    /* Весь слайд - контейнер */
+    .segway-home-prdCategory_mobile .swiper-slide {
+        position: relative !important;
+    }
+    
+    
+    /* Градиент внизу для читаемости */
+    .segway-home-prdCategory_mobile .swiper-slide::after {
+        content: '' !important;
+        position: absolute !important;
+        bottom: 0 !important;
+        left: 0 !important;
+        right: 0 !important;
+        height: 250px !important;
+        background: linear-gradient(to top, rgba(0,0,0,0.95) 0%, rgba(0,0,0,0.7) 30%, transparent 100%) !important;
+        z-index: 5 !important;
+        pointer-events: none !important;
+    }
+    
+    
+    /* Название - внизу слева */
+    .segway-home-prdCategory_mobile .swiper-slide-item_title {
+        position: absolute !important;
+        bottom: 60px !important;
+        left: 20px !important;
+        margin: 0 !important;
+        text-align: left !important;
+        max-width: 55% !important;
+        z-index: 20 !important;
+    }
+    
+    /* Описание - под названием */
+    .segway-home-prdCategory_mobile .swiper-slide-item_desc {
+        position: absolute !important;
+        bottom: 25px !important;
+        left: 20px !important;
+        margin: 0 !important;
+        text-align: left !important;
+        max-width: 55% !important;
+        z-index: 20 !important;
+        line-height: 1.2 !important;
+    }
+    
+    /* Кнопка - внизу справа НА ОДНОЙ ЛИНИИ С ОПИСАНИЕМ */
+    .segway-home-prdCategory_mobile .common-btns-container {
+        position: absolute !important;
+        bottom: 20px !important;
+        right: 20px !important;
+        margin: 0 !important;
+        pointer-events: auto !important;
+        z-index: 20 !important;
+    }
+}
+
+/* Позиционирование текста, чтобы не перекрывать мотоциклы */
+@media (max-width: 768px) {
+    .home-prdCategory_col_item_desc {
+        bottom: 60px;
+        font-size: 12px;
+        padding: 10px;
+    }
+    
+    .home-prdCategory_col_item_price {
+        font-size: 16px;
+        padding: 6px 12px;
     }
 }
 </style>
@@ -1192,7 +1446,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "altPromotional": "",
           "cardLink": "./ekickscooter.html",
           "title": "XYBER",
-          "description": "",
+          "description": "Брутальный. Мощный. Твой. Разгон как у спортбайка. Парковка как у велосипеда. От 295 000 ₽",
           "mediaType": "img",
           "mediaPC": "./local_assets/is/content/ninebotstage/new/xyber_new.png",
           "mediaMob": "./local_assets/is/content/ninebotstage/FLORA-Delete_Text_Logo-9bb10add.png",
@@ -1241,7 +1495,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "altPromotional": "",
           "cardLink": "./ebike.html",
           "title": "E300SE",
-          "description": "",
+          "description": "Флагман. 130 км. 105 км/ч. От Химок до Домодедово на одном заряде. От 590 000 ₽",
           "mediaType": "img",
           "mediaPC": "./local_assets/is/content/ninebotstage/new/e300.png",
           "mediaMob": "./local_assets/is/content/ninebotstage/new/e300.png",
@@ -1286,7 +1540,7 @@ document.addEventListener('DOMContentLoaded', function() {
           "altPromotional": "",
           "cardLink": "./e110s_e125s/index.html",
           "title": "E110S / E125S",
-          "description": "",
+          "description": "Выбор москвичей №1. E110S для города (65 км). E125S для дачи (65 км). От 225 000 ₽",
           "mediaType": "img",
           "mediaPC": "./local_assets/us/en/segway/Category_Xyber_PC.webp",
           "mediaMob": "./local_assets/us/en/segway/Category_Xyber_PC.webp",
@@ -1693,6 +1947,85 @@ document.addEventListener('DOMContentLoaded', function() {
   ]
 };
 </script>
+
+<!-- ЗАГОЛОВОК СЕКЦИИ МОДЕЛЕЙ -->
+<div class="models-section-header">
+  <style>
+    .models-section-header {
+      text-align: center;
+      padding: 80px 20px 40px;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .models-section-header::before {
+      content: '';
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      transform: translate(-50%, -50%);
+      width: 300px;
+      height: 300px;
+      background: radial-gradient(circle, rgba(255, 168, 0, 0.1) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    .models-section-title {
+      font-size: 56px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      margin: 0 0 20px 0;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .models-section-title span {
+      background: linear-gradient(147deg, #FFF6B2 7.08%, #FFA800 133.77%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .models-section-subtitle {
+      font-size: 20px;
+      font-family: 'Exo 2', sans-serif;
+      color: #666;
+      margin: 0;
+      position: relative;
+      z-index: 1;
+    }
+    
+    @media (max-width: 768px) {
+      .models-section-header {
+        padding: 60px 20px 30px;
+      }
+      
+      .models-section-title {
+        font-size: 36px;
+        letter-spacing: 2px;
+        margin-bottom: 15px;
+      }
+      
+      .models-section-subtitle {
+        font-size: 16px;
+      }
+      
+      .models-section-header::before {
+        width: 200px;
+        height: 200px;
+      }
+    }
+  </style>
+  
+  <h2 class="models-section-title">ВЫБЕРИТЕ СВОЙ <span>NINEBOT</span></h2>
+  <p class="models-section-subtitle">От компактных до брутальных. Найдите идеальный для себя</p>
+</div>
+
 <div class="sec__segway-prdCategory_content segway-home-prdCategory_container"><div class="segway-home-prdCategory_pc segway-pc"><div class="segway-row"><!-- --> <div class="segway-col segway-col-24"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./xyber/xyber_refactored.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/xyber_new.webp" type="image/webp"/>
 <picture>
@@ -1701,7 +2034,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </picture>
 </picture></div> <!-- --></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 XYBER
-              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./xyber/xyber_refactored.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div></div><div class="segway-row"><!-- --><!-- --> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./E300SE/index.html" target="_self"><div class="segway-wh100"><picture>
+              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./xyber/xyber_refactored.html" target="_self">Узнать больше</a> <!-- --></div></div></div><div class="home-prdCategory_col_item_desc">Брутальный. Мощный. Твой.<br>Разгон как у спортбайка. Парковка как у велосипеда.</div><div class="home-prdCategory_col_item_price">от 295 000 ₽</div></div></div></div><div class="segway-row"><!-- --><!-- --> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./E300SE/index.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/e300.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/e300.webp" type="image/webp"/>
@@ -1709,7 +2042,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </picture>
 </picture></div> <!-- --></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 E300SE
-              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./E300SE/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./e110s_e125s/index.html" target="_self"><div class="segway-wh100"><picture>
+              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./E300SE/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div><div class="home-prdCategory_col_item_desc">Флагман. 130 км. 105 км/ч.<br>От Химок до Домодедово на одном заряде.</div><div class="home-prdCategory_col_item_price">от 590 000 ₽</div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./e110s_e125s/index.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/e125s-P.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/e125s-P.webp" type="image/webp"/>
@@ -1717,7 +2050,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </picture>
 </picture></div> <!-- --></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 E110S / E125S
-              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./e110s_e125s/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./q90/q90_final.html" target="_self"><div class="segway-wh100"><picture>
+              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./e110s_e125s/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div><div class="home-prdCategory_col_item_desc">Выбор москвичей №1.<br>E110S для города (65 км). E125S для дачи (65 км).</div><div class="home-prdCategory_col_item_price">от 225 000 ₽</div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./q90/q90_final.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/q90.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/q90.webp" type="image/webp"/>
@@ -1725,7 +2058,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </picture>
 </picture></div> <!-- --></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 Q90
-              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./q90/q90_final.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./xafari/Segway_Xafari_RU.html" target="_self"><div class="segway-wh100"><picture>
+              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./q90/q90_final.html" target="_self">Узнать больше</a> <!-- --></div></div></div><div class="home-prdCategory_col_item_desc">Создан для тебя, красотка.<br>Лёгкий. Изящный. Доедешь с идеальной укладкой.</div><div class="home-prdCategory_col_item_price">от 149 900 ₽</div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./xafari/Segway_Xafari_RU.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/xafari.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/xafari.webp" type="image/webp"/>
@@ -1733,7 +2066,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </picture>
 </picture></div> <!-- --></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 Xafari
-              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./xafari/Segway_Xafari_RU.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div></div><div class="segway-row"><!-- --><!-- --> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./f2z 110/index.html" target="_self"><div class="segway-wh100"><picture>
+              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./xafari/Segway_Xafari_RU.html" target="_self">Узнать больше</a> <!-- --></div></div></div><div class="home-prdCategory_col_item_desc">Покоритель бездорожья.<br>35-40 км по любым дорогам. Или вообще без них.</div><div class="home-prdCategory_col_item_price">от 310 000 ₽</div></div></div></div><div class="segway-row"><!-- --><!-- --> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./f2z 110/index.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110.webp" type="image/webp"/>
@@ -1741,7 +2074,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </picture>
 </picture></div> <!-- --></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 F2z 110
-              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./f2z 110/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./f2z 110 max/index.html" target="_self"><div class="segway-wh100"><picture>
+              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./f2z 110/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div><div class="home-prdCategory_col_item_desc">Народный любимец.<br>Просто работает. В любую погоду. Годами.</div><div class="home-prdCategory_col_item_price">от 188 000 ₽</div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./f2z 110 max/index.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/f2110_MAX.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/f2110_MAX.webp" type="image/webp"/>
@@ -1749,7 +2082,7 @@ document.addEventListener('DOMContentLoaded', function() {
 </picture>
 </picture></div> <!-- --></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 F2z 110 MAX
-              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./f2z 110 max/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div></div><div class="segway-row"><!-- --><!-- --> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./m3-95c-max/index.html" target="_self"><div class="segway-wh100"><picture>
+              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./f2z 110 max/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div><div class="home-prdCategory_col_item_desc">Больше батарея = меньше забот.<br>Заряжай раз в неделю. Езди каждый день.</div><div class="home-prdCategory_col_item_price">от 198 000 ₽</div></div></div></div><div class="segway-row"><!-- --><!-- --> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./m3-95c-max/index.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/M3_95C_MAX.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/M3_95C_MAX.webp" type="image/webp"/>
@@ -1757,17 +2090,17 @@ document.addEventListener('DOMContentLoaded', function() {
 </picture>
 </picture></div> <!-- --></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 M3 95C MAX
-              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./m3-95c-max/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./m95c/index.html" target="_self"><div class="segway-wh100"><picture>
+              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./m3-95c-max/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div><div class="home-prdCategory_col_item_desc">Выбор профи.<br>Для тех, кто в дороге весь день. Курьеры знают.</div><div class="home-prdCategory_col_item_price">от 279 000 ₽</div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./m95c/index.html" target="_self"><div class="segway-wh100"><picture>
 <!-- No WebP version for m95c.png -->
 <img alt="M95C" class="segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/m95c.png"/>
 </picture></div> <!-- --></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 M95C
-              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./m95c/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div></div><div class="segway-row"><!-- --><!-- --> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./mmax2-110p/index.html" target="_self"><div class="segway-wh100"><picture>
+              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./m95c/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div><div class="home-prdCategory_col_item_desc">Гибкий горожанин.<br>Работа-спортзал-бар-дом. Везде успеешь.</div><div class="home-prdCategory_col_item_price">от 239 000 ₽</div></div></div></div><div class="segway-row"><!-- --><!-- --> <div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./mmax2-110p/index.html" target="_self"><div class="segway-wh100"><picture>
 <!-- No WebP version for m2max.png -->
 <img alt="Find your ride" class="segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/m2max.png"/>
 </picture></div> <!-- --></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 MMax2 110P
-              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./mmax2-110p/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./v30c/v30c_final_clean.html" target="_self"><div class="segway-wh100"><picture>
+              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./mmax2-110p/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div><div class="home-prdCategory_col_item_desc">Максимум возможностей.<br>Когда хочется всё и сразу. И чтобы работало.</div><div class="home-prdCategory_col_item_price">от 270 000 ₽</div></div></div><div class="segway-col segway-col-12"><div class="home-prdCategory_col_item"><div class="media-container"><a aria-label=" " class="catchTrack" href="./v30c/v30c_final_clean.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/v30c.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/v30c.webp" type="image/webp"/>
@@ -1775,112 +2108,596 @@ document.addEventListener('DOMContentLoaded', function() {
 </picture>
 </picture></div> <!-- --></a></div> <div class="home-prdCategory_col_item_cname"></div> <div class="home-prdCategory_col_txts"><div class="txts_left"><div class="home-prdCategory_col_item_title">
                 V30C
-              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./v30c/v30c_final_clean.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div></div></div> <div class="segway-home-prdCategory_mobile segway-mobile"><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --> <div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./xyber/xyber_refactored.html" target="_self"><div class="segway-wh100"><picture>
+              </div> <!-- --></div> <div class="home-explore-more_item_btn"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_medium common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./v30c/v30c_final_clean.html" target="_self">Узнать больше</a> <!-- --></div></div></div><div class="home-prdCategory_col_item_desc">Компактный друг.<br>Влезет в любой лифт. Даже в хрущёвке.</div><div class="home-prdCategory_col_item_price">от 95 000 ₽</div></div></div></div></div> <div class="segway-home-prdCategory_mobile segway-mobile"><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --><!-- --> <div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./xyber/xyber_refactored.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/FLORA-Delete_Text_Logo-9bb10add.webp" type="image/webp"/>
 <img alt="XYBER" class="segway-mobile segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/FLORA-Delete_Text_Logo-9bb10add.png"/>
-</picture></div> <!-- --></a> <div class="col-text-container"><div class="swiper-slide-item_title">XYBER</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./xyber/xyber_refactored.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./E300SE/index.html" target="_self"><div class="segway-wh100"><picture>
+</picture></div> <!-- --></a> <div class="swiper-slide-item_price">от 295 000 ₽</div><div class="col-text-container"><div class="swiper-slide-item_title">XYBER</div> <div class="swiper-slide-item_desc">Брутальный. Мощный. Твой.<br>Разгон как у спортбайка.</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./xyber/xyber_refactored.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./E300SE/index.html" target="_self"><div class="segway-wh100"><picture>
 <img alt="E300SE" class="segway-mobile segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/e300-m.png"/>
-</picture></div> <!-- --></a> <div class="col-text-container"><div class="swiper-slide-item_title">E300SE</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./E300SE/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./e110s_e125s/index.html" target="_self"><div class="segway-wh100"><picture>
+</picture></div> <!-- --></a> <div class="swiper-slide-item_price">от 590 000 ₽</div><div class="col-text-container"><div class="swiper-slide-item_title">E300SE</div> <div class="swiper-slide-item_desc">Флагман. 130 км. 105 км/ч.<br>От Химок до Домодедово.</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./E300SE/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./e110s_e125s/index.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/e125s-m.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/e125s-m.webp" type="image/webp"/>
 <img alt="E125S" class="segway-mobile segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/e125s-m.png"/>
 </picture>
-</picture></div> <!-- --></a> <div class="col-text-container"><div class="swiper-slide-item_title">E110S / E125S</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./e110s_e125s/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./q90/q90_final.html" target="_self"><div class="segway-wh100"><picture>
+</picture></div> <!-- --></a> <div class="swiper-slide-item_price">от 225 000 ₽</div><div class="col-text-container"><div class="swiper-slide-item_title">E110S / E125S</div> <div class="swiper-slide-item_desc">Выбор москвичей №1.<br>E110S для города. E125S для дачи.</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./e110s_e125s/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./q90/q90_final.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/q90-m.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/q90-m.webp" type="image/webp"/>
 <img alt="Q90" class="segway-mobile segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/q90-m.png"/>
 </picture>
-</picture></div> <!-- --></a> <div class="col-text-container"><div class="swiper-slide-item_title">Q90</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./q90/q90_final.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./xafari/Segway_Xafari_RU.html" target="_self"><div class="segway-wh100"><picture>
+</picture></div> <!-- --></a> <div class="swiper-slide-item_price">от 149 900 ₽</div><div class="col-text-container"><div class="swiper-slide-item_title">Q90</div> <div class="swiper-slide-item_desc">Создан для тебя, красотка.<br>Лёгкий. Изящный.</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./q90/q90_final.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./xafari/Segway_Xafari_RU.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/xafari-m.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/xafari-m.webp" type="image/webp"/>
 <img alt="Xafari" class="segway-mobile segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/xafari-m.png"/>
 </picture>
-</picture></div> <!-- --></a> <div class="col-text-container"><div class="swiper-slide-item_title">Xafari</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./xafari/Segway_Xafari_RU.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./f2z 110/index.html" target="_self"><div class="segway-wh100"><picture>
+</picture></div> <!-- --></a> <div class="swiper-slide-item_price">от 310 000 ₽</div><div class="col-text-container"><div class="swiper-slide-item_title">Xafari</div> <div class="swiper-slide-item_desc">Покоритель бездорожья.<br>35-40 км по любым дорогам.</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./xafari/Segway_Xafari_RU.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./f2z 110/index.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110_-_m.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110_-_m.webp" type="image/webp"/>
 <img alt="F2z 110" class="segway-mobile segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/f2z_110_-_m.png"/>
 </picture>
-</picture></div> <!-- --></a> <div class="col-text-container"><div class="swiper-slide-item_title">F2z 110</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./f2z 110/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./f2z 110 max/index.html" target="_self"><div class="segway-wh100"><picture>
+</picture></div> <!-- --></a> <div class="swiper-slide-item_price">от 188 000 ₽</div><div class="col-text-container"><div class="swiper-slide-item_title">F2z 110</div> <div class="swiper-slide-item_desc">Народный любимец.<br>Просто работает. Годами.</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./f2z 110/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./f2z 110 max/index.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110_MAX_-_m.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/f2z_110_MAX_-_m.webp" type="image/webp"/>
 <img alt="F2z 110 MAX" class="segway-mobile segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/f2z_110_MAX_-_m.png"/>
 </picture>
-</picture></div> <!-- --></a> <div class="col-text-container"><div class="swiper-slide-item_title">F2z 110 MAX</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./f2z 110 max/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./m3-95c-max/index.html" target="_self"><div class="segway-wh100"><picture>
+</picture></div> <!-- --></a> <div class="swiper-slide-item_price">от 198 000 ₽</div><div class="col-text-container"><div class="swiper-slide-item_title">F2z 110 MAX</div> <div class="swiper-slide-item_desc">Больше батарея = меньше забот.<br>Заряжай раз в неделю.</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./f2z 110 max/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./m3-95c-max/index.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/M3_95C_MAX_-_m.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/M3_95C_MAX_-_m.webp" type="image/webp"/>
 <img alt="M3 95C MAX" class="segway-mobile segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/M3_95C_MAX_-_m.png"/>
 </picture>
-</picture></div> <!-- --></a> <div class="col-text-container"><div class="swiper-slide-item_title">M3 95C MAX</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./m3-95c-max/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./m95c/index.html" target="_self"><div class="segway-wh100"><picture>
+</picture></div> <!-- --></a> <div class="swiper-slide-item_price">от 279 000 ₽</div><div class="col-text-container"><div class="swiper-slide-item_title">M3 95C MAX</div> <div class="swiper-slide-item_desc">Выбор профи.<br>Для тех, кто в дороге весь день.</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./m3-95c-max/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./m95c/index.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/m95c-m.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/m95c-m.webp" type="image/webp"/>
 <img alt="M95C" class="segway-mobile segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/m95c-m.png"/>
 </picture>
-</picture></div> <!-- --></a> <div class="col-text-container"><div class="swiper-slide-item_title">M95C</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./m95c/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./mmax2-110p/index.html" target="_self"><div class="segway-wh100"><picture>
+</picture></div> <!-- --></a> <div class="swiper-slide-item_price">от 239 000 ₽</div><div class="col-text-container"><div class="swiper-slide-item_title">M95C</div> <div class="swiper-slide-item_desc">Гибкий горожанин.<br>Работа-спортзал-бар-дом.</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./m95c/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./mmax2-110p/index.html" target="_self"><div class="segway-wh100"><picture>
 <!-- No WebP version for m2max-m.png -->
 <img alt="Find your ride" class="segway-mobile segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/m2max-m.png"/>
-</picture></div> <!-- --></a> <div class="col-text-container"><div class="swiper-slide-item_title">MMax2 110P</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./mmax2-110p/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./v30c/v30c_final_clean.html" target="_self"><div class="segway-wh100"><picture>
+</picture></div> <!-- --></a> <div class="swiper-slide-item_price">от 270 000 ₽</div><div class="col-text-container"><div class="swiper-slide-item_title">MMax2 110P</div> <div class="swiper-slide-item_desc">Максимум возможностей.<br>Когда хочется всё и сразу.</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./mmax2-110p/index.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div><div class="swiper-slide"><a aria-label=" " class="catchTrack" href="./v30c/v30c_final_clean.html" target="_self"><div class="segway-wh100"><picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/v30c-m.webp" type="image/webp"/>
 <picture>
 <source srcset="./local_assets/is/content/ninebotstage/new/v30c-m.webp" type="image/webp"/>
 <img alt="V30" class="segway-mobile segway-img100" loading="lazy" src="./local_assets/is/content/ninebotstage/new/v30c-m.png"/>
 </picture>
-</picture></div> <!-- --></a> <div class="col-text-container"><div class="swiper-slide-item_title">V30C</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./v30c/v30c_final_clean.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div></div>
+</picture></div> <!-- --></a> <div class="swiper-slide-item_price">от 95 000 ₽</div><div class="col-text-container"><div class="swiper-slide-item_title">V30C</div> <div class="swiper-slide-item_desc">Компактный друг.<br>Влезет в любой лифт.</div> <div class="common-btns-container"><div class="buttonItem"><a aria-label="Узнать больше" class="common-btn_small common-Btn-WhiteinRed common-Btn-rounded catchTrack" href="./v30c/v30c_final_clean.html" target="_self">Узнать больше</a> <!-- --></div></div></div></div></div></div>
 <!-- clientlibs.1a1738743712784f3d13e2ba3bc6bcc1.css включен в components bundle -->
 <!-- clientlibs.155275a513596d979052c04931c21594.js включен в components bundle -->
 </div>
 </div>
-<div class="homeabout rootdialog aem-GridColumn aem-GridColumn--default--12">
-<div class="" data-component-path="segway-ninebot/components/homeabout">
-<script>
-  if(typeof window.component_about_json == 'undefined'){
-         window.component_about_json = new Object();
-   }
-   window.component_about_json["bf0ff7b0-b36b-3a44-a601-237fa2870317"] ={
-  "title": "",
-  "description": "",
-  "showDescriptionOnMob": false,
-  "align": "left",
-  "videoThumnailPC": "./local_assets/us/en/segway/CompanyVideo_PC.webp",
-  "videoPC": "./local_assets/is/content/ninebotstage/CompanyVideo_US_PC",
-  "videoThumnailMob": "./local_assets/us/en/segway/CompanyVideo_M.webp",
-  "videoMob": "./local_assets/is/content/ninebotstage/CompanyVideo_US_M",
-  "thumbnailAlt": "About Segway"
-};
-</script>
-<div class="home-about-segway" data-uuid="bf0ff7b0-b36b-3a44-a601-237fa2870317"><div class="maxw-1440 home-about-segway-wrapper"><div class="home-about-segway_txts textalign_left"><div class="home-about-segway_title"></div> <div class="home-about-segway_txt segway-pc">
+
+<!-- НОВАЯ СЕКЦИЯ: Сравнение -->
+<div class="comparison-section aem-GridColumn aem-GridColumn--default--12">
+  <style>
+    .comparison-section {
+      padding: 100px 20px;
+      background: #000;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .comparison-section::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      right: -20%;
+      width: 600px;
+      height: 600px;
+      background: radial-gradient(circle, rgba(255, 168, 0, 0.15) 0%, transparent 70%);
+      border-radius: 50%;
+      pointer-events: none;
+    }
+    
+    .comparison-container {
+      max-width: 1200px;
+      margin: 0 auto;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .comparison-title {
+      text-align: center;
+      font-size: 56px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 900;
+      margin-bottom: 20px;
+      color: #fff;
+      text-transform: uppercase;
+      letter-spacing: 3px;
+      position: relative;
+    }
+    
+    .comparison-title span {
+      background: linear-gradient(147deg, #FFF6B2 7.08%, #FFA800 133.77%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .comparison-subtitle {
+      text-align: center;
+      font-size: 24px;
+      font-family: 'Exo 2', sans-serif;
+      color: #666;
+      margin-bottom: 60px;
+    }
+    
+    .comparison-grid {
+      display: grid;
+      grid-template-columns: repeat(2, 1fr);
+      gap: 24px;
+      margin-bottom: 60px;
+    }
+    
+    .comparison-card {
+      background: rgba(20, 20, 20, 0.8);
+      backdrop-filter: blur(20px);
+      border: 1px solid rgba(255, 168, 0, 0.2);
+      border-radius: 24px;
+      padding: 40px;
+      position: relative;
+      transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+      overflow: hidden;
+    }
+    
+    .comparison-card::before {
+      content: '';
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 2px;
+      background: linear-gradient(90deg, transparent, #FFA800, transparent);
+      transform: translateX(-100%);
+      transition: transform 0.6s ease;
+    }
+    
+    .comparison-card:hover {
+      transform: translateY(-8px) scale(1.02);
+      border-color: rgba(255, 168, 0, 0.5);
+      background: rgba(30, 30, 30, 0.9);
+    }
+    
+    .comparison-card:hover::before {
+      transform: translateX(100%);
+    }
+    
+    .comparison-emoji {
+      text-align: center;
+      font-size: 64px;
+      margin-bottom: 20px;
+      filter: grayscale(0.2);
+      transition: all 0.3s ease;
+    }
+    
+    .comparison-card:hover .comparison-emoji {
+      filter: grayscale(0);
+      transform: scale(1.1) rotate(5deg);
+    }
+    
+    .comparison-vs {
+      text-align: center;
+      font-size: 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      color: #FFA800;
+      margin-bottom: 30px;
+      text-transform: uppercase;
+      letter-spacing: 2px;
+      position: relative;
+    }
+    
+    .comparison-vs::after {
+      content: '⚡';
+      position: absolute;
+      right: -30px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 24px;
+      opacity: 0.5;
+    }
+    
+    .comparison-items {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+    
+    .comparison-item {
+      padding: 24px;
+      background: rgba(255, 255, 255, 0.05);
+      border-radius: 16px;
+      border: 1px solid rgba(255, 255, 255, 0.1);
+      transition: all 0.3s ease;
+      position: relative;
+      overflow: hidden;
+    }
+    
+    .comparison-item::before {
+      content: '';
+      position: absolute;
+      top: -50%;
+      left: -50%;
+      width: 200%;
+      height: 200%;
+      background: radial-gradient(circle, rgba(255, 168, 0, 0.1) 0%, transparent 70%);
+      opacity: 0;
+      transition: opacity 0.3s ease;
+    }
+    
+    .comparison-item:hover {
+      background: rgba(255, 255, 255, 0.08);
+      border-color: rgba(255, 168, 0, 0.3);
+    }
+    
+    .comparison-item:hover::before {
+      opacity: 1;
+    }
+    
+    .comparison-item-title {
+      font-size: 18px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      margin-bottom: 10px;
+      text-transform: uppercase;
+      letter-spacing: 1px;
+    }
+    
+    .comparison-item.ninebot .comparison-item-title {
+      background: linear-gradient(147deg, #FFF6B2 7.08%, #FFA800 133.77%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+    }
+    
+    .comparison-item.other .comparison-item-title {
+      color: #666;
+    }
+    
+    .comparison-item-text {
+      font-size: 16px;
+      font-family: 'Exo 2', sans-serif;
+      line-height: 1.5;
+      color: #B3B3B3;
+    }
+    
+    .comparison-winner {
+      text-align: center;
+      padding: 50px;
+      background: linear-gradient(135deg, rgba(255, 246, 178, 0.1) 0%, rgba(255, 168, 0, 0.1) 100%);
+      border-radius: 32px;
+      border: 2px solid rgba(255, 168, 0, 0.5);
+      position: relative;
+      overflow: hidden;
+      backdrop-filter: blur(10px);
+    }
+    
+    .comparison-winner::before {
+      content: '💰';
+      position: absolute;
+      left: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 48px;
+      opacity: 0.3;
+    }
+    
+    .comparison-winner::after {
+      content: '🚀';
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 48px;
+      opacity: 0.3;
+    }
+    
+    .comparison-winner-text {
+      font-size: 28px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      color: #fff;
+      letter-spacing: 1px;
+      position: relative;
+      z-index: 1;
+    }
+    
+    .comparison-winner-text span {
+      background: linear-gradient(147deg, #FFF6B2 7.08%, #FFA800 133.77%);
+      -webkit-background-clip: text;
+      -webkit-text-fill-color: transparent;
+      background-clip: text;
+      font-size: 36px;
+    }
+    
+    @media (max-width: 768px) {
+      .comparison-title {
+        font-size: 36px;
+        margin-bottom: 50px;
+      }
+      
+      .comparison-grid {
+        grid-template-columns: 1fr;
+        gap: 20px;
+      }
+      
+      .comparison-card {
+        padding: 30px 20px;
+      }
+      
+      .comparison-items {
+        grid-template-columns: 1fr;
+        gap: 15px;
+      }
+      
+      .comparison-icon {
+        width: 60px;
+        height: 60px;
+        margin-bottom: 20px;
+      }
+      
+      .comparison-icon svg {
+        width: 35px;
+        height: 35px;
+      }
+      
+      .comparison-winner-text {
+        font-size: 20px;
+      }
+    }
+  </style>
+  
+  <div class="comparison-container">
+    <h2 class="comparison-title"><span>NINEBOT</span> VS ВСЁ ОСТАЛЬНОЕ</h2>
+    <p class="comparison-subtitle">Почему зумеры выбирают электромобильность 🤙</p>
+    
+    <div class="comparison-grid">
+      <!-- VS Автомобиль -->
+      <div class="comparison-card">
+        <div class="comparison-emoji">🚗</div>
+        <div class="comparison-vs">VS Автомобиль</div>
+        <div class="comparison-items">
+          <div class="comparison-item ninebot">
+            <div class="comparison-item-title">NINEBOT</div>
+            <div class="comparison-item-text">Паркуй где хочешь 😎</div>
+          </div>
+          <div class="comparison-item other">
+            <div class="comparison-item-title">Авто</div>
+            <div class="comparison-item-text">Корми парковки 💸</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- VS Метро -->
+      <div class="comparison-card">
+        <div class="comparison-emoji">🚇</div>
+        <div class="comparison-vs">VS Метро</div>
+        <div class="comparison-items">
+          <div class="comparison-item ninebot">
+            <div class="comparison-item-title">NINEBOT</div>
+            <div class="comparison-item-text">Вайб и музыка 🎵</div>
+          </div>
+          <div class="comparison-item other">
+            <div class="comparison-item-title">Метро</div>
+            <div class="comparison-item-text">Толпа и духота 🥵</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- VS Такси -->
+      <div class="comparison-card">
+        <div class="comparison-emoji">🚕</div>
+        <div class="comparison-vs">VS Такси</div>
+        <div class="comparison-items">
+          <div class="comparison-item ninebot">
+            <div class="comparison-item-title">NINEBOT</div>
+            <div class="comparison-item-text">Купил = профит ✅</div>
+          </div>
+          <div class="comparison-item other">
+            <div class="comparison-item-title">Такси</div>
+            <div class="comparison-item-text">Деньги улетают 📉</div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- VS Велосипед -->
+      <div class="comparison-card">
+        <div class="comparison-emoji">🚴</div>
+        <div class="comparison-vs">VS Велосипед</div>
+        <div class="comparison-items">
+          <div class="comparison-item ninebot">
+            <div class="comparison-item-title">NINEBOT</div>
+            <div class="comparison-item-text">Фреш лук 💯</div>
+          </div>
+          <div class="comparison-item other">
+            <div class="comparison-item-title">Велик</div>
+            <div class="comparison-item-text">Потный вайб 💦</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    
+    <div class="comparison-winner">
+      <div class="comparison-winner-text">
+        Экономия <span>300К+</span> в год. Это свобода, детка! 🔥
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- НОВАЯ СЕКЦИЯ: FAQ -->
+<div class="faq-section aem-GridColumn aem-GridColumn--default--12">
+  <style>
+    .faq-section {
+      padding: 80px 20px;
+      background-color: #f5f5f5;
+    }
+    
+    .faq-container {
+      max-width: 800px;
+      margin: 0 auto;
+    }
+    
+    .faq-title {
+      text-align: center;
+      font-size: 48px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 700;
+      margin-bottom: 60px;
+      color: #000;
+    }
+    
+    .faq-item {
+      background: white;
+      border-radius: 12px;
+      margin-bottom: 20px;
+      overflow: hidden;
+      box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+    }
+    
+    .faq-question {
+      padding: 25px 30px;
+      font-size: 20px;
+      font-family: 'Orbitron', sans-serif;
+      font-weight: 500;
+      color: #000;
+      cursor: pointer;
+      position: relative;
+      transition: background-color 0.3s ease;
+    }
+    
+    .faq-question:hover {
+      background-color: #f9f9f9;
+    }
+    
+    .faq-question::after {
+      content: '+';
+      position: absolute;
+      right: 30px;
+      top: 50%;
+      transform: translateY(-50%);
+      font-size: 28px;
+      color: #ff0000;
+      transition: transform 0.3s ease;
+    }
+    
+    .faq-item.active .faq-question::after {
+      transform: translateY(-50%) rotate(45deg);
+    }
+    
+    .faq-answer {
+      padding: 0 30px;
+      max-height: 0;
+      overflow: hidden;
+      transition: max-height 0.3s ease, padding 0.3s ease;
+    }
+    
+    .faq-item.active .faq-answer {
+      padding: 0 30px 25px;
+      max-height: 300px;
+    }
+    
+    .faq-answer p {
+      font-size: 16px;
+      font-family: 'Exo 2', sans-serif;
+      line-height: 1.6;
+      color: #666;
+    }
+    
+    @media (max-width: 768px) {
+      .faq-title {
+        font-size: 32px;
+        margin-bottom: 40px;
+      }
+      
+      .faq-question {
+        font-size: 18px;
+        padding: 20px;
+      }
+      
+      .faq-question::after {
+        right: 20px;
+      }
+      
+      .faq-answer {
+        padding: 0 20px;
+      }
+      
+      .faq-item.active .faq-answer {
+        padding: 0 20px 20px;
+      }
+    }
+  </style>
+  
+  <div class="faq-container">
+    <h2 class="faq-title">Частые вопросы</h2>
+    
+    <div class="faq-list">
+      <div class="faq-item">
+        <div class="faq-question">Это законно?</div>
+        <div class="faq-answer">
+          <p>Да. Нужны права категории М (есть в автомобильных).</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Где парковать?</div>
+        <div class="faq-answer">
+          <p>Дома. В офисе. В любом углу. Это же не машина.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">А зимой?</div>
+        <div class="faq-answer">
+          <p>Зимой отдыхает. Но даже 8 месяцев в году окупают покупку.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Сложно научиться?</div>
+        <div class="faq-answer">
+          <p>Проще велосипеда. Привыкание за 15 минут.</p>
+        </div>
+      </div>
+      
+      <div class="faq-item">
+        <div class="faq-question">Где заряжать?</div>
+        <div class="faq-answer">
+          <p>От обычной розетки. Как телефон, только больше.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  
+  <script>
+    // FAQ accordion functionality
+    document.addEventListener('DOMContentLoaded', function() {
+      const faqItems = document.querySelectorAll('.faq-item');
+      
+      faqItems.forEach(item => {
+        const question = item.querySelector('.faq-question');
         
-      </div> <!-- --></div> <div class="home-about-segway_video segway-wh100" style="padding-bottom: 56.25% !important; height: auto !important;">
-<div class="segway-pc">
-<video autoplay="" class="segway-img100" controls="" loop="" muted="" playsinline="" preload="metadata" webkit-playsinline="">
-<source src="./local_assets/is/content/ninebotstage/Segway Smart Ebikes.mp4" type="video/mp4"/>
-</video>
+        question.addEventListener('click', () => {
+          // Close all other items
+          faqItems.forEach(otherItem => {
+            if (otherItem !== item) {
+              otherItem.classList.remove('active');
+            }
+          });
+          
+          // Toggle current item
+          item.classList.toggle('active');
+        });
+      });
+    });
+  </script>
 </div>
-<div class="segway-mobile">
-<video class="segway-img100" controls="" loop="" muted="" playsinline="" preload="none" webkit-playsinline="">
-<source data-src="./local_assets/is/content/ninebotstage/Segway Smart Ebikes.mp4" type="video/mp4"/>
-</video>
-</div>
-</div></div></div>
-<!-- clientlibs.45cad44d18ed39e3cb2996f5bf3072a1.css включен в components bundle -->
-<!-- clientlibs.a637ad21f1705f275e4594b8a4c78336.js включен в components bundle -->
-</div>
-</div>
-<div class="popupimgvideo rootdialog aem-GridColumn aem-GridColumn--default--12">
-<div class="" data-component-path="segway-ninebot/components/popupimgvideo">
-<!-- -->
-<!-- clientlibs.82ef962449852a8073b819fb1211b7e7.css включен в components bundle -->
-<!-- clientlibs.977d07add01ba8ffee2be836ec746bd2.js включен в components bundle -->
-</div>
-</div>
-</div>
-</div>
+
 </div>
 </div>
 </div>
